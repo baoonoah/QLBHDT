@@ -29,7 +29,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT
 
         private void ĐăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frm = new FormDangNhap();
+            Form frm = new Hethong.FormDangNhap();
             frm.Text = "Đăng Nhập";
             frm.ShowDialog();
       
@@ -46,6 +46,49 @@ namespace LeGiaBao21._1UDPM_QLBHDT
         {
             this.Close();
         }
-       
+
+        private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form frm = new Capnhatdulieu.FormNhaCungCap();
+            frm.Text = "Nhà Cung Cấp";
+            frm.ShowDialog();
+        }
+
+        private void kháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form frm = new Capnhatdulieu.FormKhachHang();
+            frm.Text = "Khách Hàng";
+            frm.ShowDialog();
+        }
+
+        private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new Capnhatdulieu.FormNhanVien();
+            frm.Text = "Nhân Viên";
+            frm.ShowDialog();
+        }
+
+        private void sảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new Capnhatdulieu.FormSanPham();
+            frm.Text = "Sản Phẩm";
+            frm.ShowDialog();
+        }
+
+        private void hóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new Capnhatdulieu.FormHoaDon();
+            frm.Text = "Hóa Đơn";
+            frm.ShowDialog();
+        }
+
+        private void chiTiếtHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new Capnhatdulieu.FormChiTietHoaDon();
+            frm.Text = "Chi Tiết Hóa Đơn";
+            frm.ShowDialog();
+        }
     }
 }

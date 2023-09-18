@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
+namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 {
-    public partial class FormDangNhap : Form
+    public partial class FormSanPham : Form
     {
-        public FormDangNhap()
+        public FormSanPham()
         {
             InitializeComponent();
         }
