@@ -10,16 +10,11 @@ using System.Windows.Forms;
 
 namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 {
-    public partial class FormNhanVien : Form
+    public partial class FormChiTietHoaDon : Form
     {
-        public FormNhanVien()
+        public FormChiTietHoaDon()
         {
             InitializeComponent();
-        }
-
-        private void DgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
     }
 }

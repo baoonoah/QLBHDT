@@ -8,7 +8,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace LeGiaBao21._1UDPM_QLBHDT
+namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
 {
     public partial class FormDangNhap : Form
     {
