@@ -16,5 +16,15 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         {
             InitializeComponent();
         }
+
+        private void BtnThem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void FormKhachHang_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

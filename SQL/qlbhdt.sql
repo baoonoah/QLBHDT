@@ -1,4 +1,6 @@
-﻿	create table NhanVien
+﻿create database QLBHDT
+use QLBHDT
+	create table NhanVien
 
 	(
    		MaNV nvarchar(20) not null,
@@ -13,6 +15,7 @@
 	(
    		MaKH nvarchar(20) not null,
    		TenKH nvarchar(30) not null,
+		DiaChi nvarchar(255) not null,
    		DienThoai nvarchar(15) not null,
 		Email nvarchar(30),
    		Constraint  PK_MaKH Primary key (MaKH),
@@ -84,19 +87,6 @@
 
 
 	)
-	create table ChiTietHoaDon
-
-	(
-   		MaHD nvarchar(20) not null,
-   		MaSP nvarchar(20) not null,
-   		SoLuong numeric (18, 0 ) not null,
-   		Constraint  PK_ChiTietHoaDon Primary key (MaHD,MaSP),
-   		Constraint  FK_MaHD_ChiTietHoaDon foreign key (MaHD) references HoaDon(MaHD),
-   		Constraint  FK_MaSP_ChiTietHoaDon foreign key (MaSP) references SanPham(MaSP),
-   		Constraint CK_SoLuong_ChiTietHoaDon check (SoLuong >=0),
-
-
-	)
 
 	CREATE TABLE Users (
 		Id INT PRIMARY KEY,
@@ -130,6 +120,7 @@
 	insert into LoaiHang Values ('LH02', 'Samsung');
 	insert into LoaiHang Values ('LH03', 'Oppo');
 	insert into LoaiHang Values ('LH04', 'Xiaomi');
+	--nha cung cap--
 	insert into NhaCungCap Values ('CT01', 'Apple',N'Tòa nhà Deutsches Haus Ho Chi Minh City, Số 33, đường Lê Duẩn, phường Bến Nghé, quận 1,TP. Hồ Chí Minh, Việt Nam','18001192');
 	insert into NhaCungCap Values ('CT02', 'Samsung',N'Tầng 3, Crescent Mall, 101 Tôn Dật Tiên, P. Tân Phú, Q.7, TP.HCM.','1800-588-890');
 	insert into NhaCungCap Values ('CT03', 'Oppo',N'62A Cách Mạng Tháng Tám, phường Võ Thị Sáu, Quận 3, TP.HCM.','1800-588841');
@@ -166,30 +157,31 @@
 	insert into SanPham Values ('SP29','OPPO Reno10 Pro 5G','LH03','CT03', N'Cái',13700000, 13900000,50);
 	insert into SanPham Values ('SP30','OPPO Find X5 Pro 5G','LH03','CT03', N'Cái',17700000, 17900000,50);
 	--Khach Hang--
-	insert into KhachHang Values ('KH01', N'Nguyễn Quốc An','0123456789','nguyenquocan300503@gmail.com');
-	insert into KhachHang Values ('KH02', N'Huỳnh Phú Lộc','0135643589','huynhquloc@gmail.com');
-	insert into KhachHang Values ('KH03', N'Bạch Gia Quốc','0135663789','bachgiacuoc@gmail.com');
-	insert into KhachHang Values ('KH04', N'Ngô Thái Toàn','025356789','ngothaitoan@gmail.com');
-	insert into KhachHang Values ('KH05', N'Nguyễn Văn Hoài',N'025746789','nguyenvanhai@gmail.com');
-	insert into KhachHang Values ('KH06', N'Nguyễn Hoàng Đạo','0123443789','');
-	insert into KhachHang Values ('KH07', N'Nguyễn Hoài Thương','0135643589','');
-	insert into KhachHang Values ('KH08', N'Ngô Hải Nguyên Bách','013534379','');
-	insert into KhachHang Values ('KH09', N'Lê Gia Bảo','025466789','');
-	insert into KhachHang Values ('KH11', N'Nguyễn Bá Đạt',N'025724789','');
-	insert into KhachHang Values ('KH12', N'Nguyễn Bá Đạo',N'022324789','');
-	insert into KhachHang Values ('KH13', N'Nguyễn Văn A',N'025723589','');
-	insert into KhachHang Values ('KH14', N'Nguyễn Văn B',N'02354789','');
-	insert into KhachHang Values ('KH15', N'Nguyễn Văn C',N'02356789','');
-	insert into KhachHang Values ('KH16', N'Nguyễn Văn D',N'02334789','');
-	insert into KhachHang Values ('KH17', N'Nguyễn Văn E',N'02354789','');
-	insert into KhachHang Values ('KH18', N'Nguyễn Văn F',N'02355789','');
-	insert into KhachHang Values ('KH19', N'Nguyễn Văn J',N'02358789','');
-	insert into KhachHang Values ('KH20', N'Nguyễn Văn K',N'02354789','');
-	insert into KhachHang Values ('KH21', N'Nguyễn Văn L',N'02354289','');
-	insert into KhachHang Values ('KH22', N'Nguyễn Văn M',N'02354189','');
-	insert into KhachHang Values ('KH23', N'Nguyễn Văn N',N'02354709','');
-	insert into KhachHang Values ('KH24', N'Nguyễn Văn H',N'02354779','');
-	insert into KhachHang Values ('KH25', N'Nguyễn Văn T',N'02354739','');
+	insert into KhachHang Values ('KH01', N'Nguyễn Quốc An',N'Cần Thơ','0123456789','nguyenquocan300503@gmail.com');
+	insert into KhachHang Values ('KH02', N'Huỳnh Phú Lộc',N'Cần Thơ','0135643589','huynhquloc@gmail.com');
+	insert into KhachHang Values ('KH03', N'Bạch Gia Quốc',N'Hậu Giang','0135663789','bachgiacuoc@gmail.com');
+	insert into KhachHang Values ('KH04', N'Ngô Thái Toàn',N'Sóc Trăng','025356789','ngothaitoan@gmail.com');
+	insert into KhachHang Values ('KH05', N'Nguyễn Văn Hoài',N'Bạc Liêu','025746789','nguyenvanhai@gmail.com');
+	insert into KhachHang Values ('KH06', N'Nguyễn Hoàng Đạo',N'Cần Thơ','0123443789','');
+	insert into KhachHang Values ('KH07', N'Nguyễn Hoài Thương',N'Cần Thơ','0135643589','');
+	insert into KhachHang Values ('KH08', N'Ngô Hải Nguyên Bách',N'Cần Thơ','013534379','');
+	insert into KhachHang Values ('KH09', N'Lê Gia Bảo',N'Cần Thơ','025466789','');
+	insert into KhachHang Values ('KH10', N'Nguyễn Văn Khánh',N'Cần Thơ','025236789','');
+	insert into KhachHang Values ('KH11', N'Nguyễn Bá Đạt',N'Cần Thơ','025724789','');
+	insert into KhachHang Values ('KH12', N'Nguyễn Bá Đạo',N'Cần Thơ','022324789','');
+	insert into KhachHang Values ('KH13', N'Nguyễn Văn A',N'Cần Thơ','025723589','');
+	insert into KhachHang Values ('KH14', N'Nguyễn Văn B',N'Cần Thơ','02354789','');
+	insert into KhachHang Values ('KH15', N'Nguyễn Văn C',N'Cần Thơ','02356789','');
+	insert into KhachHang Values ('KH16', N'Nguyễn Văn D',N'Cần Thơ','02334789','');
+	insert into KhachHang Values ('KH17', N'Nguyễn Văn E',N'Cần Thơ','02354789','');
+	insert into KhachHang Values ('KH18', N'Nguyễn Văn F',N'Cần Thơ','02355789','');
+	insert into KhachHang Values ('KH19', N'Nguyễn Văn J',N'Cần Thơ','02358789','');
+	insert into KhachHang Values ('KH20', N'Nguyễn Văn K',N'Cần Thơ','02354789','');
+	insert into KhachHang Values ('KH21', N'Nguyễn Văn L',N'Cần Thơ','02354289','');
+	insert into KhachHang Values ('KH22', N'Nguyễn Văn M',N'Cần Thơ','02354189','');
+	insert into KhachHang Values ('KH23', N'Nguyễn Văn N',N'Cần Thơ','02354709','');
+	insert into KhachHang Values ('KH24', N'Nguyễn Văn H',N'Cần Thơ','02354779','');
+	insert into KhachHang Values ('KH25', N'Nguyễn Văn T',N'Cần Thơ','02354739','');
 	--Hoa Don--
 	insert into HoaDon Values ('HD01', 'NV01','KH01','10-05-2023','14-05-2023');
 	insert into HoaDon Values ('HD02', 'NV02','KH02','10-06-2023','13-06-2023');
@@ -223,7 +215,7 @@
 	insert into HoaDon Values ('HD30', 'NV08','KH21','10-09-2023','13-09-2023');
 	insert into HoaDon Values ('HD31', 'NV01','KH01','10-09-2023','13-09-2023');
 
-
+	set dateformat dmy
 	--Chi Tiet Hoa Don
 	
 	insert into ChiTietHoaDon Values ('HD01', 'SP02',2);
@@ -231,14 +223,14 @@
 	insert into ChiTietHoaDon Values ('HD02', 'SP05',1);
 	insert into ChiTietHoaDon Values ('HD03', 'SP07',1);
 	insert into ChiTietHoaDon Values ('HD03', 'SP09',1);
-	insert into ChiTietHoaDon Values ('HD03', 'SP010',1);
-	insert into ChiTietHoaDon Values ('HD03', 'SP011',1);
+	insert into ChiTietHoaDon Values ('HD03', 'SP10',1);
+	insert into ChiTietHoaDon Values ('HD03', 'SP11',1);
 	insert into ChiTietHoaDon Values ('HD04', 'SP03',1);
 	insert into ChiTietHoaDon Values ('HD05', 'SP30',1);
 	insert into ChiTietHoaDon Values ('HD02', 'SP01',1);
 	insert into ChiTietHoaDon Values ('HD03', 'SP04',1);
 	insert into ChiTietHoaDon Values ('HD04', 'SP02',1);
-	insert into ChiTietHoaDon Values ('HD05', 'SP39',1);
+	insert into ChiTietHoaDon Values ('HD05', 'SP29',1);
 	insert into ChiTietHoaDon Values ('HD06', 'SP05',1);
 	insert into ChiTietHoaDon Values ('HD07', 'SP07',1);
 	insert into ChiTietHoaDon Values ('HD08', 'SP03',1);
