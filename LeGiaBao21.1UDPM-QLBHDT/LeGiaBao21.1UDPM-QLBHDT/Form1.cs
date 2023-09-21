@@ -44,7 +44,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT
 
         private void ThoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)

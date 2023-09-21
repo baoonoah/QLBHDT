@@ -44,13 +44,13 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.txtTenSP = new System.Windows.Forms.TextBox();
-            this.cbMaLoaiHang = new System.Windows.Forms.ComboBox();
-            this.cbMaCongTy = new System.Windows.Forms.ComboBox();
-            this.label7 = new System.Windows.Forms.Label();
+            this.txtDonViTinh = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
-            this.txtDonViTinh = new System.Windows.Forms.TextBox();
+            this.label7 = new System.Windows.Forms.Label();
+            this.cbMaCongTy = new System.Windows.Forms.ComboBox();
+            this.cbMaLoaiHang = new System.Windows.Forms.ComboBox();
+            this.txtTenSP = new System.Windows.Forms.TextBox();
             this.dgvSanPham = new System.Windows.Forms.DataGridView();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -229,43 +229,17 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(86, 60);
+            this.panel1.Location = new System.Drawing.Point(86, 222);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(707, 231);
             this.panel1.TabIndex = 23;
             // 
-            // txtTenSP
+            // txtDonViTinh
             // 
-            this.txtTenSP.Location = new System.Drawing.Point(115, 76);
-            this.txtTenSP.Name = "txtTenSP";
-            this.txtTenSP.Size = new System.Drawing.Size(161, 20);
-            this.txtTenSP.TabIndex = 3;
-            // 
-            // cbMaLoaiHang
-            // 
-            this.cbMaLoaiHang.FormattingEnabled = true;
-            this.cbMaLoaiHang.Location = new System.Drawing.Point(115, 125);
-            this.cbMaLoaiHang.Name = "cbMaLoaiHang";
-            this.cbMaLoaiHang.Size = new System.Drawing.Size(161, 21);
-            this.cbMaLoaiHang.TabIndex = 12;
-            // 
-            // cbMaCongTy
-            // 
-            this.cbMaCongTy.FormattingEnabled = true;
-            this.cbMaCongTy.Location = new System.Drawing.Point(115, 175);
-            this.cbMaCongTy.Name = "cbMaCongTy";
-            this.cbMaCongTy.Size = new System.Drawing.Size(161, 21);
-            this.cbMaCongTy.TabIndex = 13;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(29, 181);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(71, 15);
-            this.label7.TabIndex = 14;
-            this.label7.Text = "Mã Công Ty";
+            this.txtDonViTinh.Location = new System.Drawing.Point(471, 36);
+            this.txtDonViTinh.Name = "txtDonViTinh";
+            this.txtDonViTinh.Size = new System.Drawing.Size(200, 20);
+            this.txtDonViTinh.TabIndex = 17;
             // 
             // txtSoLuong
             // 
@@ -284,12 +258,38 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "Số Lượng";
             // 
-            // txtDonViTinh
+            // label7
             // 
-            this.txtDonViTinh.Location = new System.Drawing.Point(471, 36);
-            this.txtDonViTinh.Name = "txtDonViTinh";
-            this.txtDonViTinh.Size = new System.Drawing.Size(200, 20);
-            this.txtDonViTinh.TabIndex = 17;
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.label7.Location = new System.Drawing.Point(29, 181);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(71, 15);
+            this.label7.TabIndex = 14;
+            this.label7.Text = "Mã Công Ty";
+            // 
+            // cbMaCongTy
+            // 
+            this.cbMaCongTy.FormattingEnabled = true;
+            this.cbMaCongTy.Location = new System.Drawing.Point(115, 175);
+            this.cbMaCongTy.Name = "cbMaCongTy";
+            this.cbMaCongTy.Size = new System.Drawing.Size(161, 21);
+            this.cbMaCongTy.TabIndex = 13;
+            // 
+            // cbMaLoaiHang
+            // 
+            this.cbMaLoaiHang.FormattingEnabled = true;
+            this.cbMaLoaiHang.Location = new System.Drawing.Point(115, 125);
+            this.cbMaLoaiHang.Name = "cbMaLoaiHang";
+            this.cbMaLoaiHang.Size = new System.Drawing.Size(161, 21);
+            this.cbMaLoaiHang.TabIndex = 12;
+            // 
+            // txtTenSP
+            // 
+            this.txtTenSP.Location = new System.Drawing.Point(115, 76);
+            this.txtTenSP.Name = "txtTenSP";
+            this.txtTenSP.Size = new System.Drawing.Size(161, 20);
+            this.txtTenSP.TabIndex = 3;
             // 
             // dgvSanPham
             // 
@@ -304,7 +304,7 @@
             this.GiaNhap,
             this.GiaBan,
             this.SoLuong});
-            this.dgvSanPham.Location = new System.Drawing.Point(69, 310);
+            this.dgvSanPham.Location = new System.Drawing.Point(49, 33);
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.Size = new System.Drawing.Size(808, 165);
             this.dgvSanPham.TabIndex = 24;

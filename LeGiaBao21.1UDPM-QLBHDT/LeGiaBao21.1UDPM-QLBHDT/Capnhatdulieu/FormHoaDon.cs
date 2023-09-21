@@ -16,5 +16,15 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         {
             InitializeComponent();
         }
+
+        private void Panel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void DgvHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
