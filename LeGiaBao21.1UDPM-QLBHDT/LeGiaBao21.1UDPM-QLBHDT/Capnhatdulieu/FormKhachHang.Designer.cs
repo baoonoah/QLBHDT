@@ -61,7 +61,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(662, 458);
+            this.btnThoat.Location = new System.Drawing.Point(651, 418);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(116, 31);
             this.btnThoat.TabIndex = 17;
@@ -74,7 +74,7 @@
             this.btnSua.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
             this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(368, 458);
+            this.btnSua.Location = new System.Drawing.Point(357, 418);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(116, 31);
             this.btnSua.TabIndex = 13;
@@ -87,7 +87,7 @@
             this.btnThem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(210, 458);
+            this.btnThem.Location = new System.Drawing.Point(199, 418);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(116, 31);
             this.btnThem.TabIndex = 12;
@@ -101,7 +101,7 @@
             this.btnNhapMoi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnNhapMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapMoi.Image")));
             this.btnNhapMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapMoi.Location = new System.Drawing.Point(54, 458);
+            this.btnNhapMoi.Location = new System.Drawing.Point(43, 418);
             this.btnNhapMoi.Name = "btnNhapMoi";
             this.btnNhapMoi.Size = new System.Drawing.Size(116, 31);
             this.btnNhapMoi.TabIndex = 11;
@@ -114,7 +114,7 @@
             this.btnXoa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(526, 458);
+            this.btnXoa.Location = new System.Drawing.Point(515, 418);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(116, 31);
             this.btnXoa.TabIndex = 16;
@@ -131,7 +131,7 @@
             this.DiaChi,
             this.DienThoai,
             this.Email});
-            this.dgvKhachHang.Location = new System.Drawing.Point(54, 254);
+            this.dgvKhachHang.Location = new System.Drawing.Point(57, 12);
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.Size = new System.Drawing.Size(672, 186);
             this.dgvKhachHang.TabIndex = 10;
@@ -260,9 +260,9 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(54, 76);
+            this.panel1.Location = new System.Drawing.Point(54, 213);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(672, 169);
+            this.panel1.Size = new System.Drawing.Size(675, 169);
             this.panel1.TabIndex = 9;
             // 
             // txtEmail
