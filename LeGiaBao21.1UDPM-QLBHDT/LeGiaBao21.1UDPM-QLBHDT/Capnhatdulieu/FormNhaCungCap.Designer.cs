@@ -42,12 +42,12 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvNhaCungCap = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.MaCongTy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.TenCongTy = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.txtDiaChi = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhaCungCap)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -192,29 +192,6 @@
             this.dgvNhaCungCap.Size = new System.Drawing.Size(672, 150);
             this.dgvNhaCungCap.TabIndex = 24;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.txtDiaChi);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtTenCongTy);
-            this.panel1.Controls.Add(this.txtDienThoai);
-            this.panel1.Controls.Add(this.txtMaCongTy);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label3);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(65, 87);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(672, 169);
-            this.panel1.TabIndex = 23;
-            // 
-            // txtDiaChi
-            // 
-            this.txtDiaChi.Location = new System.Drawing.Point(429, 36);
-            this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(161, 20);
-            this.txtDiaChi.TabIndex = 9;
-            // 
             // MaCongTy
             // 
             this.MaCongTy.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -243,6 +220,29 @@
             this.DienThoai.HeaderText = "Điện thoại";
             this.DienThoai.Name = "DienThoai";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.txtDiaChi);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txtTenCongTy);
+            this.panel1.Controls.Add(this.txtDienThoai);
+            this.panel1.Controls.Add(this.txtMaCongTy);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(65, 87);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(672, 169);
+            this.panel1.TabIndex = 23;
+            // 
+            // txtDiaChi
+            // 
+            this.txtDiaChi.Location = new System.Drawing.Point(429, 36);
+            this.txtDiaChi.Name = "txtDiaChi";
+            this.txtDiaChi.Size = new System.Drawing.Size(161, 20);
+            this.txtDiaChi.TabIndex = 9;
+            // 
             // FormNhaCungCap
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -257,6 +257,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "FormNhaCungCap";
             this.Text = "FormNhaCungCap";
+            this.Load += new System.EventHandler(this.FormNhaCungCap_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhaCungCap)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

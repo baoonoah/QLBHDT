@@ -113,7 +113,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             db.NhanViens.DeleteOnSubmit(tb);//xoa du lieu cua tb
             db.SubmitChanges();//xac nhan thay doi du lieu
             LoadData();//load du lieu moi
-            MessageBox.Show("Đã xóa xong!", "Thông báo");
+            MessageBox.Show("Đã Xóa!", "Thông báo");
         }
 
         private void BtnThoat_Click(object sender, EventArgs e)
@@ -123,15 +123,21 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
         private void DgvNhanVien_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
-
-            DataGridViewRow row = new DataGridViewRow();
-            row = dgvNhanVien.Rows[e.RowIndex];
-            txtMaNV.Text = row.Cells[0].Value.ToString();
-            txtHoLot.Text = row.Cells[1].Value.ToString();
-            txtTen.Text = row.Cells[2].Value.ToString();
-            dtpNgaySinh.Text = row.Cells[3].Value.ToString();
-            txtDiaChi.Text = row.Cells[4].Value.ToString();
-            txtDienThoai.Text = row.Cells[5].Value.ToString();
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dgvNhanVien.Rows[e.RowIndex];
+                txtMaNV.Text = row.Cells[0].Value.ToString();
+                txtHoLot.Text = row.Cells[1].Value.ToString();
+                txtTen.Text = row.Cells[2].Value.ToString();
+                dtpNgaySinh.Text = row.Cells[3].Value.ToString();
+                txtDiaChi.Text = row.Cells[4].Value.ToString();
+                txtDienThoai.Text = row.Cells[5].Value.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Vui lòng chọn 1 khách hàng!");
+            }
         }
     }
 }
