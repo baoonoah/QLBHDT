@@ -34,6 +34,7 @@
     <Type Name="KhachHang">
       <Column Name="MaKH" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
       <Column Name="TenKH" Type="System.String" DbType="NVarChar(30) NOT NULL" CanBeNull="false" />
+      <Column Name="DiaChi" Type="System.String" DbType="NVarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="DienThoai" Type="System.String" DbType="NVarChar(15) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
       <Association Name="KhachHang_HoaDon" Member="HoaDons" ThisKey="MaKH" OtherKey="MaKH" Type="HoaDon" />

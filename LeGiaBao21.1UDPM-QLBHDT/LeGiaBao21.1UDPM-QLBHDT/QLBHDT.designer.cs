@@ -779,6 +779,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT
 		
 		private string _TenKH;
 		
+		private string _DiaChi;
+		
 		private string _DienThoai;
 		
 		private string _Email;
@@ -793,6 +795,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT
     partial void OnMaKHChanged();
     partial void OnTenKHChanging(string value);
     partial void OnTenKHChanged();
+    partial void OnDiaChiChanging(string value);
+    partial void OnDiaChiChanged();
     partial void OnDienThoaiChanging(string value);
     partial void OnDienThoaiChanged();
     partial void OnEmailChanging(string value);
@@ -841,6 +845,26 @@ namespace LeGiaBao21._1UDPM_QLBHDT
 					this._TenKH = value;
 					this.SendPropertyChanged("TenKH");
 					this.OnTenKHChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_DiaChi", DbType="NVarChar(255) NOT NULL", CanBeNull=false)]
+		public string DiaChi
+		{
+			get
+			{
+				return this._DiaChi;
+			}
+			set
+			{
+				if ((this._DiaChi != value))
+				{
+					this.OnDiaChiChanging(value);
+					this.SendPropertyChanging();
+					this._DiaChi = value;
+					this.SendPropertyChanged("DiaChi");
+					this.OnDiaChiChanged();
 				}
 			}
 		}
