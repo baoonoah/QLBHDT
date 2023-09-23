@@ -48,8 +48,12 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
         private void BtnThem_Click(object sender, EventArgs e)
         {
-            
             //
+            if (txtMaKH.Text.Length > 20)
+            {
+                MessageBox.Show("Mã khách hàng không được vượt quá 20 ký tự!", "Thông báo");
+                return;
+            }
             if (dkienrong())
             {
                 MessageBox.Show(dkienthieutt(), "Thông báo"); ;
@@ -84,7 +88,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 db.KhachHangs.InsertOnSubmit(khachHang);*/
                 db.SubmitChanges();
                 LoadData();
-                MessageBox.Show("Đã thêm thành công khách hàng "+txtMaKH.Text , "Thông báo");
+                MessageBox.Show("Đã thêm thành công khách hàng: "+txtMaKH.Text , "Thông báo");
                 resetTxt();
             }//end try
             catch (Exception ex)
@@ -94,32 +98,40 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         }//end function them
           private void BtnSua_Click(object sender, EventArgs e)
         {
-            try
-            { 
-                if (dkienkhacrong())
-                {
-                    //khoi tao moi doi tuong tb moi
-                    KhachHang tb = new KhachHang();
-            tb = (from table in db.KhachHangs
-                  where table.MaKH == txtMaKH.Text
-                  select table).Single();
-            tb.TenKH = txtTenKH.Text;
-            tb.DiaChi = txtDiaChi.Text;
-            tb.DienThoai = txtDienThoai.Text;
-            tb.Email = txtEmail.Text;
-                    txtMaKH.Enabled = true;
-            db.SubmitChanges();
-            LoadData();
-            MessageBox.Show("Đã sửa thành công khách hàng " + tb.MaKH, "Thông báo");
-                }//end if
-                else
-                {
-                    MessageBox.Show(dkienthieutt(), "Thông báo");
-                }
-            }//end try
-            catch (Exception)
+
+            if (dkienrong())
             {
-                MessageBox.Show("Không có mã khách hàng "+txtMaKH.Text, "Thông báo");
+                MessageBox.Show(dkienthieutt(), "Thông báo");
+                return;
+            }
+            try
+            {
+                var khachHang = db.KhachHangs.FirstOrDefault(kh => kh.MaKH == txtMaKH.Text);
+                if (khachHang == null)
+                {
+                    MessageBox.Show("Không tìm thấy khách hàng có mã: " + txtMaKH.Text, "Thông báo");
+                    return;
+                }
+                //khoi tao moi doi tuong tb moi
+                KhachHang tb = new KhachHang();
+                tb = (from table in db.KhachHangs
+                      where table.MaKH == txtMaKH.Text
+                      select table).Single();
+                tb.TenKH = txtTenKH.Text;
+                tb.DiaChi = txtDiaChi.Text;
+                tb.DienThoai = txtDienThoai.Text;
+                tb.Email = txtEmail.Text;
+                txtMaKH.Enabled = true;
+                db.SubmitChanges();
+                LoadData();
+                MessageBox.Show("Đã sửa thành công khách hàng: " + tb.MaKH, "Thông báo");
+                resetTxt();
+                checkMaKH.Checked = true;
+            }//end try
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi sửa dữ liệu: " + ex.Message, "Thông báo");
+                checkMaKH.Checked = true;
             }
         }//end function sua
         private void BtnXoa_Click(object sender, EventArgs e)
@@ -141,27 +153,26 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 var khachHang = db.KhachHangs.FirstOrDefault(kh => kh.MaKH == txtMaKH.Text);
                 if (khachHang == null)
                 {
-                    MessageBox.Show("Không tìm thấy khách hàng có mã " + txtMaKH.Text, "Thông báo");
+                    MessageBox.Show("Không tìm thấy khách hàng có mã: " + txtMaKH.Text, "Thông báo");
                     return;
                 }
 
                 db.KhachHangs.DeleteOnSubmit(khachHang);
                 db.SubmitChanges();
                 LoadData();
-                MessageBox.Show("Đã xóa thành công khách hàng " + khachHang.MaKH, "Thông báo");
+                MessageBox.Show("Đã xóa thành công khách hàng: " + khachHang.MaKH, "Thông báo");
                 resetTxt();
                 checkMaKH.Checked = true;
             }
-            catch (Exception)
+            catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi xóa dữ liệu!", "Thông báo");
+                MessageBox.Show("Lỗi khi xóa dữ liệu: " + ex.Message, "Thông báo");
             }
         }//end function xoa
 
         private void BtnNhapMoi_Click(object sender, EventArgs e)
         {
             resetTxt();
-            txtMaKH.Enabled = true;
             checkMaKH.Checked = true;
             txtMaKH.Focus();
         }//end nhap moi
@@ -176,7 +187,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 txtDiaChi.Text = row.Cells[2].Value.ToString();
                 txtDienThoai.Text = row.Cells[3].Value.ToString();
                 txtEmail.Text = row.Cells[4].Value.ToString();
-                txtMaKH.Enabled = false;
                 checkMaKH.Checked = false;
             }//end try
             catch (Exception)
@@ -237,7 +247,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
               !string.IsNullOrEmpty(txtTenKH.Text) &&
               !string.IsNullOrEmpty(txtDiaChi.Text) &&
               !string.IsNullOrEmpty(txtDienThoai.Text) &&
-               string.IsNullOrEmpty(txtMaKH.Text) ? "Thiếu mã khách hàng" : "Nhập thiếu thông tin"; ;
+               string.IsNullOrEmpty(txtMaKH.Text) ? "Thiếu mã khách hàng!" : "Nhập thiếu thông tin!"; ;
         }
         //ham kiem tra cac dieu kien rong
         private bool dkienrong()
