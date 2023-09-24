@@ -35,3 +35,4 @@ D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGi
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu.FormNhaCungCap.resources
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu.FormNhanVien.resources
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu.FormSanPham.resources
+D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu.FormLoaiHang.resources

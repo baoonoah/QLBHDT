@@ -32,10 +32,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                                           table.DienThoai,
                                           table.Email
                                       };
-           
+
         }
-
-
         private void FormKhachHang_Click(object sender, EventArgs e)
         {
             LoadData();
@@ -258,13 +256,13 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 string.IsNullOrEmpty(txtDienThoai.Text);
         }
         //ham kiem tra cac dieu kien khac rong
-        private bool dkienkhacrong()
-        {
-            return !string.IsNullOrEmpty(txtMaKH.Text) &&
-            !string.IsNullOrEmpty(txtTenKH.Text) &&
-            !string.IsNullOrEmpty(txtDiaChi.Text) &&
-            !string.IsNullOrEmpty(txtDienThoai.Text);
-        }
+        //private bool dkienkhacrong()
+        //{
+        //    return !string.IsNullOrEmpty(txtMaKH.Text) &&
+        //    !string.IsNullOrEmpty(txtTenKH.Text) &&
+        //    !string.IsNullOrEmpty(txtDiaChi.Text) &&
+        //    !string.IsNullOrEmpty(txtDienThoai.Text);
+        //}
         private void DgvKhachHang_DoubleClick(object sender, EventArgs e)
         {
 
