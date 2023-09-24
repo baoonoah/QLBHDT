@@ -92,6 +92,7 @@
             this.btnSua.TabIndex = 27;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // btnThem
             // 
@@ -136,6 +137,7 @@
             this.btnXoa.TabIndex = 28;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
+            this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // txtGiaNhap
             // 
@@ -354,6 +356,7 @@
             this.dgvSanPham.Size = new System.Drawing.Size(1077, 203);
             this.dgvSanPham.TabIndex = 24;
             this.dgvSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellContentClick);
+            this.dgvSanPham.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSanPham_CellMouseClick);
             // 
             // MaSP
             // 
