@@ -65,6 +65,12 @@
     <Compile Include="Capnhatdulieu\FormKhachHang.Designer.cs">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
     </Compile>
+    <Compile Include="Capnhatdulieu\FormLoaiHang.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Capnhatdulieu\FormLoaiHang.Designer.cs">
+      <DependentUpon>FormLoaiHang.cs</DependentUpon>
+    </Compile>
     <Compile Include="Capnhatdulieu\FormNhaCungCap.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Capnhatdulieu\FormKhachHang.resx">
       <DependentUpon>FormKhachHang.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Capnhatdulieu\FormLoaiHang.resx">
+      <DependentUpon>FormLoaiHang.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Capnhatdulieu\FormNhaCungCap.resx">
       <DependentUpon>FormNhaCungCap.cs</DependentUpon>

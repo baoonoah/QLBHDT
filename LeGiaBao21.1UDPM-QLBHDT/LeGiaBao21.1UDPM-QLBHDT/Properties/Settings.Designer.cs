@@ -12,7 +12,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Properties {
     
     
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
-    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "16.0.0.0")]
+    [global::System.CodeDom.Compiler.GeneratedCodeAttribute("Microsoft.VisualStudio.Editors.SettingsDesigner.SettingsSingleFileGenerator", "17.3.0.0")]
     internal sealed partial class Settings : global::System.Configuration.ApplicationSettingsBase {
         
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
@@ -30,6 +30,17 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Properties {
         public string QLBHDTConnectionString {
             get {
                 return ((string)(this["QLBHDTConnectionString"]));
+            }
+        }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=LAPTOP-O9SMJSLO\\SQLEXPRESS;Initial Catalog=QLBHDT;Integrated Security" +
+            "=True")]
+        public string QLBHDTConnectionString1 {
+            get {
+                return ((string)(this["QLBHDTConnectionString1"]));
             }
         }
     }

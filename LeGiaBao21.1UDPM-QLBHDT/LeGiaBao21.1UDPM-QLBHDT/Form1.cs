@@ -90,5 +90,17 @@ namespace LeGiaBao21._1UDPM_QLBHDT
             frm.Text = "Chi Tiết Hóa Đơn";
             frm.ShowDialog();
         }
+
+        private void menuStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
+        {
+
+        }
+
+        private void loạiHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new Capnhatdulieu.FormLoaiHang();
+            frm.Text = "Loại Hàng";
+            frm.ShowDialog();
+        }
     }
 }
