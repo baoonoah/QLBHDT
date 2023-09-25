@@ -34,8 +34,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                                           table.GiaBan,
                                         table.SoLuong
                                     };
-
-            // Load data from the LoaiHang table into the MaLoaiHang ComboBox
+            //load du lieu tu LoaiHang vao comboBox
             var loaiHangData = from lh in db.LoaiHangs
                                select new
                                {
@@ -46,7 +45,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             cbMaLoaiHang.DisplayMember = "MaLoaiHang";
             cbMaLoaiHang.ValueMember = "MaLoaiHang";
 
-            // Load data from the NhaCungCap table into the MaCongTy ComboBox
+             //load du lieu tu NhaCungCap vao comboBox
             var nhaCungCapData = from ncc in db.NhaCungCaps
                                  select new
                                  {
@@ -62,10 +61,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         {
             LoadData();
             resetTxt();
-        }
-
-        private void FormSanPham_Click(object sender, EventArgs e)
-        {
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
@@ -153,10 +148,10 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             {
                 MessageBox.Show("Lỗi khi thêm dữ liệu: " + ex.Message, "Thông báo");
             }
-        }
+        }//end them
         private void btnSua_Click(object sender, EventArgs e)
         {
-            // Kiểm tra nếu có trường thông tin rỗng
+            // Kiểm tra nếu có thông tin rỗng
             if (dkienrong())
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo");
@@ -202,6 +197,45 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 MessageBox.Show("Lỗi khi sửa dữ liệu: " + ex.Message, "Thông báo");
                 checkMaSP.Checked = true;
             }
+        }//end sua
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            if (string.IsNullOrEmpty(txtMaSP.Text))
+            {
+                MessageBox.Show("Vui lòng chọn sản phẩm để xóa!", "Thông báo");
+                return;
+            }
+
+            try
+            {
+                //khoi tao moi doi tuong tb moi
+
+                //            KhachHang tb = new KhachHang();
+                //            tb = (from table in db.KhachHangs
+                //                  where table.MaKH == txtMaKH.Text
+                //                  select table).Single();
+                var sanPham = db.SanPhams.FirstOrDefault(sp => sp.MaSP == txtMaSP.Text);
+                if (sanPham == null)
+                {
+                    MessageBox.Show("Không tìm thấy sản phẩm có mã: " + txtMaSP.Text, "Thông báo");
+                    return;
+                }
+
+                db.SanPhams.DeleteOnSubmit(sanPham);
+                db.SubmitChanges();
+                LoadData();
+                MessageBox.Show("Đã xóa thành công sản phẩm: " + sanPham.MaSP, "Thông báo");
+                resetTxt();
+                checkMaSP.Checked = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa dữ liệu: " + ex.Message, "Thông báo");
+            }
+        }//end xoa
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         private void resetTxt()
         {
@@ -215,6 +249,27 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             cbMaLoaiHang.SelectedIndex = -1;
             cbMaCongTy.SelectedIndex = -1;
 
+        }
+        private void dgvSanPham_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dgvSanPham.Rows[e.RowIndex];
+                txtMaSP.Text = row.Cells[0].Value.ToString();
+                txtTenSP.Text = row.Cells[1].Value.ToString();
+                cbMaLoaiHang.Text = row.Cells[2].Value.ToString();
+                cbMaCongTy.Text = row.Cells[3].Value.ToString();
+                txtDonViTinh.Text = row.Cells[4].Value.ToString();
+                txtGiaNhap.Text = row.Cells[5].Value.ToString();
+                txtGiaBan.Text = row.Cells[6].Value.ToString();
+                txtSoLuong.Text = row.Cells[7].Value.ToString();
+                checkMaSP.Checked = false;
+            }//end try
+            catch (Exception)
+            {
+                MessageBox.Show("Chỉ được phép chọn 1 sản phẩm!");
+            }
         }
         /*cac ham dieu kien*/
         //lenh cmt ctrl k - ctrl c
@@ -231,16 +286,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         }
      
 
-        private void cbMaLoaiHang_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void cbMaCongTy_SelectedIndexChanged(object sender, EventArgs e)
-        {
-
-        }
-
+        
         private void btnNhapMoi_Click(object sender, EventArgs e)
         {
             resetTxt();
@@ -261,11 +307,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         }
 
     
-
-        private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
         //
         private bool checkMaLoaiHanghl(string maLoaiHang)
         {
@@ -291,35 +332,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         }
        
 
-        private void dgvSanPham_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
-        {
-            try
-            {
-                DataGridViewRow row = new DataGridViewRow();
-                row = dgvSanPham.Rows[e.RowIndex];
-                txtMaSP.Text = row.Cells[0].Value.ToString();
-                txtTenSP.Text = row.Cells[1].Value.ToString();
-                cbMaLoaiHang.Text = row.Cells[2].Value.ToString();
-                cbMaCongTy.Text = row.Cells[3].Value.ToString();
-                txtDonViTinh.Text = row.Cells[4].Value.ToString();
-                txtGiaNhap.Text = row.Cells[5].Value.ToString();
-                txtGiaBan.Text = row.Cells[6].Value.ToString();
-                txtSoLuong.Text = row.Cells[7].Value.ToString();
-                checkMaSP.Checked = false;
-            }//end try
-            catch (Exception)
-            {
-                MessageBox.Show("Chỉ được phép chọn 1 sản phẩm!");
-            }
-        }
-
-        private void btnXoa_Click(object sender, EventArgs e)
-        {
-            if (!string.IsNullOrEmpty(cbMaCongTy.Text))
-            {
-                MessageBox.Show("hehehe");
-            }
-        }
         //kiem tra dieu kien cac gia tien va so luong khong hop le
         private bool dkiennumber()
         {
@@ -358,6 +370,23 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             }
 
             return true; // Trả về giá trị true khi không có lỗi
+        }
+        ///
+        private void FormSanPham_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void cbMaLoaiHang_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void cbMaCongTy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void dgvSanPham_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
     }
 }
