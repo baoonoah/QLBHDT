@@ -86,6 +86,16 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 tb.Ten = txtTen.Text;
                 tb.DiaChi = txtDiaChi.Text;
                 tb.NgaySinh = DateTime.Parse(dtpNgaySinh.Text.ToString());
+                long dienThoai;
+                if (long.TryParse(txtDienThoai.Text, out dienThoai) && txtDienThoai.Text.Length == 10)
+                {
+                    tb.DienThoai = dienThoai.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại không hợp lệ!", "Thông báo");
+                    return;
+                } 
                 tb.DienThoai = txtDienThoai.Text;
                 db.NhanViens.InsertOnSubmit(tb);
                 db.SubmitChanges();
@@ -121,8 +131,17 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                   select table).Single();
             tb.HoLot = txtHoLot.Text;
             tb.Ten = txtTen.Text;
-            tb.DiaChi = txtDiaChi.Text;
-            tb.NgaySinh = DateTime.Parse(dtpNgaySinh.Text.ToString());
+                long dienThoai;
+                if (long.TryParse(txtDienThoai.Text, out dienThoai) && txtDienThoai.Text.Length == 10)
+                {
+                    tb.DienThoai = dienThoai.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại không hợp lệ!", "Thông báo");
+                    return;
+                }
+                tb.NgaySinh = DateTime.Parse(dtpNgaySinh.Text.ToString());
             tb.DienThoai = txtDienThoai.Text;
             db.SubmitChanges();
             LoadData();
@@ -251,3 +270,4 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
     }
 }
+

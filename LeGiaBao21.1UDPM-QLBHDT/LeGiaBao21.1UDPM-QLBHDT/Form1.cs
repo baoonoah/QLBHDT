@@ -102,5 +102,10 @@ namespace LeGiaBao21._1UDPM_QLBHDT
             frm.Text = "Loại Hàng";
             frm.ShowDialog();
         }
+
+        private void QuảnLýNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

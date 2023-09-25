@@ -34,27 +34,29 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                                           table.GiaBan,
                                         table.SoLuong
                                     };
-            //load du lieu tu LoaiHang vao comboBox
-            var loaiHangData = from lh in db.LoaiHangs
-                               select new
-                               {
-                                   lh.MaLoaiHang,
-                                   lh.TenLoaiHang
-                               };
-            cbMaLoaiHang.DataSource = loaiHangData.ToList();
-            cbMaLoaiHang.DisplayMember = "MaLoaiHang";
-            cbMaLoaiHang.ValueMember = "MaLoaiHang";
+            ////load du lieu tu LoaiHang vao comboBox
+            //var loaiHangData = from lh in db.LoaiHangs
+            //                   select new
+            //                   {
+            //                       lh.MaLoaiHang,
+            //                       lh.TenLoaiHang
+            //                   };
+            //cbMaLoaiHang.DataSource = loaiHangData.ToList();
+            //cbMaLoaiHang.DisplayMember = "MaLoaiHang";
+            //cbMaLoaiHang.ValueMember = "MaLoaiHang";
 
-             //load du lieu tu NhaCungCap vao comboBox
-            var nhaCungCapData = from ncc in db.NhaCungCaps
-                                 select new
-                                 {
-                                     ncc.MaCongTy,
-                                     ncc.TenCongTy
-                                 };
-            cbMaCongTy.DataSource = nhaCungCapData.ToList();
-            cbMaCongTy.DisplayMember = "MaCongTy";
-            cbMaCongTy.ValueMember = "MaCongTy";
+            // //load du lieu tu NhaCungCap vao comboBox
+            //var nhaCungCapData = from ncc in db.NhaCungCaps
+            //                     select new
+            //                     {
+            //                         ncc.MaCongTy,
+            //                         ncc.TenCongTy
+            //                     };
+            //cbMaCongTy.DataSource = nhaCungCapData.ToList();
+            //cbMaCongTy.DisplayMember = "MaCongTy";
+            //cbMaCongTy.ValueMember = "MaCongTy";
+            cbMaLoaiHang.DataSource = from lh in db.LoaiHangs select lh.MaLoaiHang;
+            cbMaCongTy.DataSource = from ncc in db.NhaCungCaps select ncc.MaCongTy;
         }
 
         private void FormSanPham_Load(object sender, EventArgs e)
@@ -80,14 +82,14 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 return;
             }
 
-            string selectedMaLoaiHang = cbMaLoaiHang.SelectedValue.ToString();
-            string selectedMaCongTy = cbMaCongTy.SelectedValue.ToString();
+            //string selectedMaLoaiHang = cbMaLoaiHang.SelectedValue.ToString();
+            //string selectedMaCongTy = cbMaCongTy.SelectedValue.ToString();
 
-            if (!checkMaLoaiHanghl(selectedMaLoaiHang) || !checkMaCongTyhl(selectedMaCongTy))
-            {
-                MessageBox.Show("Vui lòng chọn loại hàng hoặc công ty hợp lệ!", "Thông báo");
-                return;
-            }
+            //if (!checkMaLoaiHanghl(selectedMaLoaiHang) || !checkMaCongTyhl(selectedMaCongTy))
+            //{
+            //    MessageBox.Show("Vui lòng chọn loại hàng hoặc công ty hợp lệ!", "Thông báo");
+            //    return;
+            //}
             try
             {
                 var sanPham = db.SanPhams.FirstOrDefault(sp => sp.MaSP == txtMaSP.Text);
@@ -128,8 +130,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                     return;
                 }
 
-                int soLuong;
-                if (int.TryParse(txtSoLuong.Text, out soLuong))
+                long soLuong;
+                if (long.TryParse(txtSoLuong.Text, out soLuong))
                 {
                     newProduct.SoLuong = soLuong;
                 }
@@ -176,20 +178,45 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 sanPham.MaCongTy = cbMaCongTy.SelectedValue.ToString();
                 sanPham.DonViTinh = txtDonViTinh.Text;
                 //check cac dieu kien kieu number
-                if (dkiennumber())
+                decimal giaNhap;
+                if (decimal.TryParse(txtGiaNhap.Text, out giaNhap))
                 {
-                    // Lưu các thay đổi vào cơ sở dữ liệu
-                    db.SubmitChanges();
+                    sanPham.GiaNhap = giaNhap;
+                }
+                else
+                {
+                    MessageBox.Show("Giá nhập không hợp lệ!", "Thông báo");
+                    return;
+                }
+
+                decimal giaBan;
+                if (decimal.TryParse(txtGiaBan.Text, out giaBan))
+                {
+                    sanPham.GiaBan = giaBan;
+                }
+                else
+                {
+                    MessageBox.Show("Giá bán không hợp lệ!", "Thông báo");
+                    return;
+                }
+
+                long soLuong;
+                if (long.TryParse(txtSoLuong.Text, out soLuong))
+                {
+                    sanPham.SoLuong = soLuong;
+                }
+                else
+                {
+                    MessageBox.Show("Số lượng không hợp lệ!", "Thông báo");
+                    return;
+                }
+                // Lưu các thay đổi vào cơ sở dữ liệu
+                db.SubmitChanges();
                     // Tải lại dữ liệu
                     LoadData();
                     MessageBox.Show("Đã sửa thành công sản phẩm: " + sanPham.MaSP, "Thông báo");
                     resetTxt();
                     checkMaSP.Checked = true;
-                }
-                else
-                {
-                    return;
-                }
              
             }
             catch (Exception ex)
@@ -245,7 +272,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             txtGiaNhap.ResetText();
             txtGiaBan.ResetText();
             txtSoLuong.ResetText();
-            // Set the SelectedIndex to -1 to clear the selected value
             cbMaLoaiHang.SelectedIndex = -1;
             cbMaCongTy.SelectedIndex = -1;
 
@@ -308,17 +334,17 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
     
         //
-        private bool checkMaLoaiHanghl(string maLoaiHang)
-        {
-            var existingMaLoaiHang = db.LoaiHangs.FirstOrDefault(lh => lh.MaLoaiHang == maLoaiHang);
-            return existingMaLoaiHang != null;
-        }
+        //private bool checkMaLoaiHanghl(string maLoaiHang)
+        //{
+        //    var existingMaLoaiHang = db.LoaiHangs.FirstOrDefault(lh => lh.MaLoaiHang == maLoaiHang);
+        //    return existingMaLoaiHang != null;
+        //}
 
-        private bool checkMaCongTyhl(string maCongTy)
-        {
-            var existingMaCongTy = db.NhaCungCaps.FirstOrDefault(ct => ct.MaCongTy == maCongTy);
-            return existingMaCongTy != null;
-        }
+        //private bool checkMaCongTyhl(string maCongTy)
+        //{
+        //    var existingMaCongTy = db.NhaCungCaps.FirstOrDefault(ct => ct.MaCongTy == maCongTy);
+        //    return existingMaCongTy != null;
+        //}
         //kiem tra comboBox null
         private bool checknullcbb()
         {
@@ -329,47 +355,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         {
             return string.IsNullOrEmpty(cbMaLoaiHang.Text) && string.IsNullOrEmpty(cbMaCongTy.Text) ? "Vui lòng chọn mã loại hàng và mã công ty!":
                 !string.IsNullOrEmpty(cbMaLoaiHang.Text) && string.IsNullOrEmpty(cbMaCongTy.Text)? " Vui lòng chọn mã công ty!" : " Vui lòng chọn mã loại hàng!";
-        }
-       
-
-        //kiem tra dieu kien cac gia tien va so luong khong hop le
-        private bool dkiennumber()
-        {
-            var sanPham = db.SanPhams.FirstOrDefault(sp => sp.MaSP == txtMaSP.Text);
-            decimal giaNhap;
-            if (decimal.TryParse(txtGiaNhap.Text, out giaNhap))
-            {
-                sanPham.GiaNhap = giaNhap;
-            }
-            else
-            {
-                MessageBox.Show("Giá nhập không hợp lệ!", "Thông báo");
-                return false; 
-            }
-
-            decimal giaBan;
-            if (decimal.TryParse(txtGiaBan.Text, out giaBan))
-            {
-                sanPham.GiaBan = giaBan;
-            }
-            else
-            {
-                MessageBox.Show("Giá bán không hợp lệ!", "Thông báo");
-                return false; 
-            }
-
-            int soLuong;
-            if (int.TryParse(txtSoLuong.Text, out soLuong))
-            {
-                sanPham.SoLuong = soLuong;
-            }
-            else
-            {
-                MessageBox.Show("Số lượng không hợp lệ!", "Thông báo");
-                return false; 
-            }
-
-            return true; // Trả về giá trị true khi không có lỗi
         }
         ///
         private void FormSanPham_Click(object sender, EventArgs e)
