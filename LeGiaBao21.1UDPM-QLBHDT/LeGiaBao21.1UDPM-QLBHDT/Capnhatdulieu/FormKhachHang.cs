@@ -54,7 +54,9 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
         private void BtnThem_Click(object sender, EventArgs e)
         {
-          
+            try
+            {
+            
                 //khoi tao moi doi tuong tb moi
                 KhachHang tb = new KhachHang();
                 tb.MaKH = txtMaKH.Text;
@@ -62,8 +64,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 tb.DiaChi = txtDiaChi.Text;
                 tb.DienThoai = txtDienThoai.Text;
                 tb.Email = txtEmail.Text;
-            try
-            {
+           
                 if (!string.IsNullOrEmpty(txtMaKH.Text) &&
                     !string.IsNullOrEmpty(txtTenKH.Text) &&
                     !string.IsNullOrEmpty(txtDiaChi.Text) &&
@@ -81,7 +82,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Lỗi khi sửa dữ liệu: " + ex.Message, "Thông báo");
+                MessageBox.Show("Lỗi khi thêm dữ liệu! ", "Thông báo");
             }
         }
 
@@ -93,7 +94,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             txtDienThoai.ResetText();
             txtEmail.ResetText();
             txtMaKH.Focus();
-           
+           txtMaKH.Enabled = true;
         }
 
         private void DgvKhachHang_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
@@ -108,6 +109,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 txtDiaChi.Text = row.Cells[2].Value.ToString();
                 txtDienThoai.Text = row.Cells[3].Value.ToString();
                 txtEmail.Text = row.Cells[4].Value.ToString();
+                txtMaKH.Enabled = false;
             }
             catch (Exception)
             {
@@ -146,11 +148,14 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 MessageBox.Show("Lỗi khi sửa dữ liệu: " + ex.Message, "Thông báo");
             }
         }
-     //   hãy vô hiệu hóa không cho sửa textbox txtMaKH khi lấy dữ liệu từ cells đưa xuống
+        //   hãy vô hiệu hóa không cho sửa textbox txtMaKH khi lấy dữ liệu từ cells đưa xuống
         private void BtnXoa_Click(object sender, EventArgs e)
         {
-            if (!string.IsNullOrEmpty(txtMaKH.Text))
+           
+            try
             {
+                if (!string.IsNullOrEmpty(txtMaKH.Text))
+                {
                     //khoi tao moi doi tuong tb moi
 
                     KhachHang tb = new KhachHang();
@@ -160,12 +165,18 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                     db.KhachHangs.DeleteOnSubmit(tb);//xoa du lieu cua tb
                     db.SubmitChanges();//xac nhan thay doi du lieu
                     LoadData();//load du lieu moi
-                MessageBox.Show("Đã xóa thành công khách hàng " + tb.MaKH, "Thông báo");
-            }
-            else { 
-                    MessageBox.Show("Vui lòng chọn khách hàng để xóa " ,"Thông báo");
+                    MessageBox.Show("Đã xóa thành công khách hàng " + tb.MaKH, "Thông báo");
                 }
 
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn khách hàng để xóa ", "Thông báo");
+                }
+            }
+            catch(Exception ex)
+            {
+                MessageBox.Show("xoa sai ", "Thông báo");
+            }
         }
 
     
