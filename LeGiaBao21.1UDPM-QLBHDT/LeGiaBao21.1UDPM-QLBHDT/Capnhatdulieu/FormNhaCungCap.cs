@@ -143,6 +143,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            QLBHDTDataContext db = new QLBHDTDataContext();
             if (string.IsNullOrEmpty(txtMaCongTy.Text))
             {
                 MessageBox.Show("Vui lòng chọn nhà cung cấp để xóa!", "Thông báo");
@@ -181,7 +182,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         {
             this.Close();
         }
-
       
         private void dgvNhaCungCap_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {

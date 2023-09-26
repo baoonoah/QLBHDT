@@ -154,6 +154,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         }//end function sua
         private void BtnXoa_Click(object sender, EventArgs e)
         {
+            QLBHDTDataContext db = new QLBHDTDataContext();
             if (string.IsNullOrEmpty(txtMaKH.Text))
             {
                 MessageBox.Show("Vui lòng chọn khách hàng để xóa!", "Thông báo");

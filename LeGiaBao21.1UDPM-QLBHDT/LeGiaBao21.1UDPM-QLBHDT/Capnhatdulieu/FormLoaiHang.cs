@@ -125,6 +125,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            QLBHDTDataContext db = new QLBHDTDataContext();
             if (string.IsNullOrEmpty(txtMaLoaiHang.Text))
             {
                 MessageBox.Show("Vui lòng chọn loại hàng để xóa!", "Thông báo");

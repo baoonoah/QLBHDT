@@ -180,6 +180,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
         private void BtnXoa_Click(object sender, EventArgs e)
         {
+            QLBHDTDataContext db = new QLBHDTDataContext();
             if (string.IsNullOrEmpty(txtMaHD.Text))
             {
                 MessageBox.Show("Vui lòng chọn hóa đơn để xóa!", "Thông báo");

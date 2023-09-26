@@ -109,7 +109,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 //newProduct.GiaBan = decimal.Parse(txtGiaBan.Text);
                 //newProduct.SoLuong = int.Parse(txtSoLuong.Text);
                 decimal giaNhap;
-                if (decimal.TryParse(txtGiaNhap.Text, out giaNhap))
+                if (decimal.TryParse(txtGiaNhap.Text, out giaNhap) && txtGiaNhap.Text.Length <= 10)
                 {
                     newProduct.GiaNhap = giaNhap;
                 }
@@ -120,7 +120,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 }
 
                 decimal giaBan;
-                if (decimal.TryParse(txtGiaBan.Text, out giaBan))
+                if (decimal.TryParse(txtGiaBan.Text, out giaBan) && txtGiaBan.Text.Length <= 10)
                 {
                     newProduct.GiaBan = giaBan;
                 }
@@ -131,7 +131,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 }
 
                 long soLuong;
-                if (long.TryParse(txtSoLuong.Text, out soLuong))
+                if (long.TryParse(txtSoLuong.Text, out soLuong) && txtSoLuong.Text.Length <= 10)
                 {
                     newProduct.SoLuong = soLuong;
                 }
@@ -179,8 +179,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 sanPham.DonViTinh = txtDonViTinh.Text;
                 //check cac dieu kien kieu number
                 decimal giaNhap;
-                if (decimal.TryParse(txtGiaNhap.Text, out giaNhap))
-                {
+                if (decimal.TryParse(txtGiaNhap.Text, out giaNhap) && txtGiaNhap.Text.Length <=10)               {
                     sanPham.GiaNhap = giaNhap;
                 }
                 else
@@ -190,7 +189,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 }
 
                 decimal giaBan;
-                if (decimal.TryParse(txtGiaBan.Text, out giaBan))
+                if (decimal.TryParse(txtGiaBan.Text, out giaBan) && txtGiaBan.Text.Length <=10)
                 {
                     sanPham.GiaBan = giaBan;
                 }
@@ -201,7 +200,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 }
 
                 long soLuong;
-                if (long.TryParse(txtSoLuong.Text, out soLuong))
+                if (long.TryParse(txtSoLuong.Text, out soLuong) && txtSoLuong.Text.Length <= 10)
                 {
                     sanPham.SoLuong = soLuong;
                 }
@@ -227,6 +226,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         }//end sua
         private void btnXoa_Click(object sender, EventArgs e)
         {
+            QLBHDTDataContext db = new QLBHDTDataContext();
             if (string.IsNullOrEmpty(txtMaSP.Text))
             {
                 MessageBox.Show("Vui lòng chọn sản phẩm để xóa!", "Thông báo");

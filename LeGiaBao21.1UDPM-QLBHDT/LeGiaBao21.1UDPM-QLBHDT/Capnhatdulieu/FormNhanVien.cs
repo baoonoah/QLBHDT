@@ -96,7 +96,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                     MessageBox.Show("Số điện thoại không hợp lệ!", "Thông báo");
                     return;
                 } 
-                tb.DienThoai = txtDienThoai.Text;
                 db.NhanViens.InsertOnSubmit(tb);
                 db.SubmitChanges();
                 LoadData();
@@ -142,7 +141,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                     return;
                 }
                 tb.NgaySinh = DateTime.Parse(dtpNgaySinh.Text.ToString());
-            tb.DienThoai = txtDienThoai.Text;
             db.SubmitChanges();
             LoadData();
              MessageBox.Show("Đã sửa thành công nhân viên: " + tb.MaNV, "Thông báo");
@@ -159,6 +157,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
    
         private void BtnXoa_Click(object sender, EventArgs e)
         {
+            QLBHDTDataContext db = new QLBHDTDataContext();
             if (string.IsNullOrEmpty(txtMaNV.Text))
             {
                 MessageBox.Show("Vui lòng chọn khách hàng để xóa!", "Thông báo");

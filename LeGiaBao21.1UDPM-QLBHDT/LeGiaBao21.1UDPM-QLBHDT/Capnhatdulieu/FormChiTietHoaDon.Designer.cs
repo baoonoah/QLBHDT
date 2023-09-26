@@ -32,6 +32,8 @@
             this.cbMaSP = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.txtSoLuong = new System.Windows.Forms.TextBox();
+            this.cbMaHD = new System.Windows.Forms.ComboBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.btnThoat = new System.Windows.Forms.Button();
@@ -39,12 +41,10 @@
             this.btnNhapMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.dgvChiTietHoaDon = new System.Windows.Forms.DataGridView();
-            this.btnSua = new System.Windows.Forms.Button();
-            this.cbMaHD = new System.Windows.Forms.ComboBox();
-            this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.MaHoaDon = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSua = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).BeginInit();
             this.SuspendLayout();
@@ -80,6 +80,21 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(363, 169);
             this.panel1.TabIndex = 37;
+            // 
+            // txtSoLuong
+            // 
+            this.txtSoLuong.Location = new System.Drawing.Point(123, 120);
+            this.txtSoLuong.Name = "txtSoLuong";
+            this.txtSoLuong.Size = new System.Drawing.Size(161, 20);
+            this.txtSoLuong.TabIndex = 14;
+            // 
+            // cbMaHD
+            // 
+            this.cbMaHD.FormattingEnabled = true;
+            this.cbMaHD.Location = new System.Drawing.Point(123, 34);
+            this.cbMaHD.Name = "cbMaHD";
+            this.cbMaHD.Size = new System.Drawing.Size(161, 21);
+            this.cbMaHD.TabIndex = 13;
             // 
             // label2
             // 
@@ -166,34 +181,6 @@
             this.dgvChiTietHoaDon.Size = new System.Drawing.Size(672, 150);
             this.dgvChiTietHoaDon.TabIndex = 38;
             // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnSua.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(352, 392);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(116, 31);
-            this.btnSua.TabIndex = 41;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = false;
-            // 
-            // cbMaHD
-            // 
-            this.cbMaHD.FormattingEnabled = true;
-            this.cbMaHD.Location = new System.Drawing.Point(123, 34);
-            this.cbMaHD.Name = "cbMaHD";
-            this.cbMaHD.Size = new System.Drawing.Size(161, 21);
-            this.cbMaHD.TabIndex = 13;
-            // 
-            // txtSoLuong
-            // 
-            this.txtSoLuong.Location = new System.Drawing.Point(123, 120);
-            this.txtSoLuong.Name = "txtSoLuong";
-            this.txtSoLuong.Size = new System.Drawing.Size(161, 20);
-            this.txtSoLuong.TabIndex = 14;
-            // 
             // MaHoaDon
             // 
             this.MaHoaDon.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -215,6 +202,19 @@
             this.SoLuong.HeaderText = "Số Lượng";
             this.SoLuong.Name = "SoLuong";
             // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSua.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(352, 392);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(116, 31);
+            this.btnSua.TabIndex = 41;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = false;
+            // 
             // FormChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,6 +229,7 @@
             this.Controls.Add(this.btnSua);
             this.Name = "FormChiTietHoaDon";
             this.Text = "FormChiTietHoaDon";
+            this.Load += new System.EventHandler(this.FormChiTietHoaDon_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).EndInit();
