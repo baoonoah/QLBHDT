@@ -99,7 +99,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             // Kiểm tra nếu có thông tin rỗng
             if (string.IsNullOrEmpty(cbMaHD.Text))
             {
-                MessageBox.Show("Vui lòng nhập chọn 1 chi tiết hóa đơn!", "Thông báo");
+                MessageBox.Show("Vui lòng chọn 1 chi tiết hóa đơn để sửa!", "Thông báo");
                 return;
             }
             try
