@@ -81,15 +81,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 MessageBox.Show(checkcbb(), "Thông báo");
                 return;
             }
-
-            //string selectedMaLoaiHang = cbMaLoaiHang.SelectedValue.ToString();
-            //string selectedMaCongTy = cbMaCongTy.SelectedValue.ToString();
-
-            //if (!checkMaLoaiHanghl(selectedMaLoaiHang) || !checkMaCongTyhl(selectedMaCongTy))
-            //{
-            //    MessageBox.Show("Vui lòng chọn loại hàng hoặc công ty hợp lệ!", "Thông báo");
-            //    return;
-            //}
             try
             {
                 var sanPham = db.SanPhams.FirstOrDefault(sp => sp.MaSP == txtMaSP.Text);
@@ -310,9 +301,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             string.IsNullOrEmpty(txtGiaBan.Text) ||
             string.IsNullOrEmpty(txtSoLuong.Text);
         }
-     
-
-        
+           
         private void btnNhapMoi_Click(object sender, EventArgs e)
         {
             resetTxt();
@@ -331,21 +320,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 txtMaSP.Enabled = false;
             }
         }
-
-    
-        //
-        //private bool checkMaLoaiHanghl(string maLoaiHang)
-        //{
-        //    var existingMaLoaiHang = db.LoaiHangs.FirstOrDefault(lh => lh.MaLoaiHang == maLoaiHang);
-        //    return existingMaLoaiHang != null;
-        //}
-
-        //private bool checkMaCongTyhl(string maCongTy)
-        //{
-        //    var existingMaCongTy = db.NhaCungCaps.FirstOrDefault(ct => ct.MaCongTy == maCongTy);
-        //    return existingMaCongTy != null;
-        //}
-        //kiem tra comboBox null
         private bool checknullcbb()
         {
             return string.IsNullOrEmpty(cbMaLoaiHang.Text) || string.IsNullOrEmpty(cbMaCongTy.Text);

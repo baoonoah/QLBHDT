@@ -99,10 +99,10 @@ use QLBHDT
 
 
 	--User--
-	insert into Users Values (1, 'admin','admin@gmail.com','admin123','');
-	insert into Users Values (2, 'user1','user1@gmail.com','user123','');
-	insert into Users Values (3, 'user2','user2@gmail.com','user123','');
-
+	insert into Users Values ( 'admin','admin@gmail.com','admin123','');
+	insert into Users Values ( 'user1','user1@gmail.com','user123','');
+	insert into Users Values ( 'user2','user2@gmail.com','user123','');
+	set dateformat dmy
 
 	--Nhan vien--
 	insert into NhanVien Values ('NV01', N'Nguyễn Ngọc', N'Bích', '07-08-1998',N'89 Đặng Khôi', '0918557788');

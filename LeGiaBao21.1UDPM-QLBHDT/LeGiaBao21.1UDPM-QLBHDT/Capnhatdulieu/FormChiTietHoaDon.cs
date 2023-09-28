@@ -37,6 +37,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             txtSoLuong.ResetText();
             cbMaHD.SelectedIndex = -1;
             cbMaSP.SelectedIndex = -1;
+            cbMaHD.Enabled = true;
+            cbMaSP.Enabled = true;
         }
         private void FormChiTietHoaDon_Load(object sender, EventArgs e)
         {
@@ -52,10 +54,17 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
         private void btnThem_Click(object sender, EventArgs e)
         {
-            
-            if (checknullcbb())
+
+                if (dkiennull())
             {
-                MessageBox.Show(checkcbb(), "Thông báo");
+                MessageBox.Show(messnull(), "Thông báo");
+                return;
+            }
+            var CTHD = db.ChiTietHoaDons.FirstOrDefault(hd => hd.MaHD == cbMaHD.Text && hd.MaSP == cbMaSP.Text);
+
+            if (CTHD != null)
+            {
+                MessageBox.Show("Chi tiết hóa đơn này đã tồn tại!", "Thông báo");
                 return;
             }
             try
@@ -75,8 +84,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 }
                 db.ChiTietHoaDons.InsertOnSubmit(newCTHD);
                 db.SubmitChanges();
-                LoadData();
                 MessageBox.Show("Đã thêm thành công CTHD: " + cbMaHD.Text, "Thông báo");
+                LoadData();
                 resetTxt();
             }
             catch (Exception ex)
@@ -117,23 +126,49 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                     MessageBox.Show("Số lượng không hợp lệ!", "Thông báo");
                     return;
                 }
-                // Lưu các thay đổi vào cơ sở dữ liệu
                 db.SubmitChanges();
-                // Tải lại dữ liệu
-                LoadData();
                 MessageBox.Show("Đã sửa thành công chi tiết hóa đơn: " + CTHD.MaHD, "Thông báo");
+                LoadData();
                 resetTxt();
-
+                cbMaHD.Enabled = true;
+                cbMaSP.Enabled = true;
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi sửa dữ liệu: " + ex.Message, "Thông báo");
+                cbMaHD.Enabled = true;
+                cbMaSP.Enabled = true;
             }
         }//end sua
 
         private void btnXoa_Click(object sender, EventArgs e)
         {
-
+            QLBHDTDataContext db = new QLBHDTDataContext();
+            if (string.IsNullOrEmpty(cbMaHD.Text))
+            {
+                MessageBox.Show("Vui lòng chọn chi tiết hóa đơn để xóa!", "Thông báo");
+                return;
+            }
+            try
+            {
+                //var CTHD = db.ChiTietHoaDons.FirstOrDefault(hd => hd.MaHD == cbMaHD.Text && hd.MaSP == cbMaHD.Text);
+                ChiTietHoaDon cthd = new ChiTietHoaDon();
+                cthd = (from table in db.ChiTietHoaDons
+                        where table.MaHD == cbMaHD.Text && table.MaSP == cbMaSP.Text
+                        select table).Single();
+                db.ChiTietHoaDons.DeleteOnSubmit(cthd);
+                db.SubmitChanges();
+                LoadData();
+                MessageBox.Show("Đã xóa thành công chi tiết hóa đơn có mã hóa đơn " + cthd.MaHD+ "và mã sản phẩm: "+cthd.MaSP, "Thông báo");
+                resetTxt();
+                cbMaHD.Enabled = true;
+                cbMaSP.Enabled = true;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi xóa dữ liệu: " + ex.Message, "Thông báo");
+              
+            }
         }
 
         private void btnThoat_Click(object sender, EventArgs e)
@@ -151,21 +186,24 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 cbMaHD.Text = row.Cells[0].Value.ToString();
                 cbMaSP.Text = row.Cells[1].Value.ToString();
                 txtSoLuong.Text = row.Cells[2].Value.ToString();
+                cbMaHD.Enabled = false;
+                cbMaSP.Enabled = false;
             }//end try
             catch (Exception)
             {
                 MessageBox.Show("Chỉ được phép chọn 1 chi tiết hóa đơn!");
             }
         }
-        private bool checknullcbb()
+        private bool dkiennull()
         {
-            return string.IsNullOrEmpty(cbMaHD.Text) || string.IsNullOrEmpty(cbMaSP.Text);
+            return string.IsNullOrEmpty(cbMaHD.Text) || string.IsNullOrEmpty(cbMaSP.Text)|| string.IsNullOrEmpty(txtSoLuong.Text);
         }
         //hien thi thong bao
-        private string checkcbb()
+        private string messnull()
         {
-            return string.IsNullOrEmpty(cbMaHD.Text) && string.IsNullOrEmpty(cbMaSP.Text) ? "Vui lòng chọn mã hóa đơn và mã sản phẩm!" :
-                string.IsNullOrEmpty(cbMaHD.Text) && !string.IsNullOrEmpty(cbMaSP.Text) ? " Vui lòng chọn mã hóa đơn!" : " Vui lòng chọn mã sản phẩm!";
+            return string.IsNullOrEmpty(cbMaHD.Text) && string.IsNullOrEmpty(cbMaSP.Text) && string.IsNullOrEmpty(txtSoLuong.Text) ? "Vui lòng chọn đầy đủ mã hóa đơn, mã sản phẩm và số lượng!" :
+                string.IsNullOrEmpty(cbMaHD.Text) ? "Vui lòng chọn mã hóa đơn!" :
+                string.IsNullOrEmpty(cbMaSP.Text) ? " Vui lòng chọn mã sản phẩm!": " Vui lòng nhập số lượng!";
 
         }
     }

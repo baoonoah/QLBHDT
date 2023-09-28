@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLBHDT" Class="QLBHDTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-O9SMJSLO\SQLEXPRESS;Initial Catalog=QLBHDT;Integrated Security=True" SettingsObjectName="LeGiaBao21._1UDPM_QLBHDT.Properties.Settings" SettingsPropertyName="QLBHDTConnectionString1" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=may18;Initial Catalog=QLBHDT;Integrated Security=True" SettingsObjectName="LeGiaBao21._1UDPM_QLBHDT.Properties.Settings" SettingsPropertyName="QLBHDTConnectionString" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChiTietHoaDon" Member="ChiTietHoaDons">
     <Type Name="ChiTietHoaDon">
       <Column Name="MaHD" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
