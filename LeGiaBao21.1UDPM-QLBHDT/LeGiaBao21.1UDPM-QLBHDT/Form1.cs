@@ -17,6 +17,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT
     public partial class Form1 : Form
     {
         public string LoggedInUser { get; set; }
+        public bool ToolStripDropDown { get; private set; }
+
         private ToolTip toolTip;
        
         public Form1()
@@ -31,12 +33,13 @@ namespace LeGiaBao21._1UDPM_QLBHDT
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            
+            hienthilable();
             // Kiểm tra xem người dùng đã đăng nhập chưa
             if (string.IsNullOrEmpty(LoggedInUser))
             {
                 // Người dùng chưa đăng nhập
-              
+
+                cậpNhậtDữLiệuToolStripMenuItem.Enabled = false;
                 đổiMậtKhẩuToolStripMenuItem.Enabled = false;
                 tìmKiếmToolStripMenuItem.Enabled = false;
                 thốngKêBáoCáoToolStripMenuItem.Enabled = false;
@@ -46,6 +49,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT
             else
             {
                 // Người dùng đã đăng nhập
+                cậpNhậtDữLiệuToolStripMenuItem.Enabled = true;
                 đổiMậtKhẩuToolStripMenuItem.Enabled = true;
                 tìmKiếmToolStripMenuItem.Enabled = true;
                 thốngKêBáoCáoToolStripMenuItem.Enabled = true;
@@ -58,11 +62,11 @@ namespace LeGiaBao21._1UDPM_QLBHDT
             FormDangNhap frm = new Hethong.FormDangNhap();
             frm.Text = "Đăng Nhập";
             frm.ShowDialog();
-           
+            this.Hide();
             if (!string.IsNullOrEmpty(frm.LoggedInUser))
             {
                 LoggedInUser = frm.LoggedInUser;
-
+                
             }
         }
       
@@ -161,17 +165,25 @@ namespace LeGiaBao21._1UDPM_QLBHDT
 
         private void cậpNhậtDữLiệuToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            MessageBox.Show("Vui lòng đăng nhập để sử dụng chức năng này.");
-           
 
+          
         }
         private void tìmKiếmToolStripMenuItem_Click(object sender, EventArgs e)
         {
             
         }
-        private string mess()
+        private void hienthilable()
         {
-            return "Vui lòng đăng nhập để sử dụng chức năng nầy ok!";
+            if (string.IsNullOrEmpty(LoggedInUser))
+            {
+
+                lbhienthi.Text = "Vui lòng đăng nhập!";
+            }
+            else
+            {
+
+                lbhienthi.Text = "Xin chào " + LoggedInUser + "!";
+            }
         }
     }
 }
