@@ -51,12 +51,12 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin người dùng.");
                 return;
             }
-            //var existingUser = db.Users.FirstOrDefault(u => u.Username == txtUsername.Text);
-            //if(existingUser != null)
-            //{
-            //    MessageBox.Show("Tên người dùng đã tồn tại.");
-            //    return;
-            //}
+            var existingUser = db.Users.FirstOrDefault(u => u.Username == txtUsername.Text);
+            if (existingUser != null)
+            {
+                MessageBox.Show("Tên người dùng đã tồn tại.");
+                return;
+            }
             // Tạo một đối tượng User mới
             User user = new User();
                 user.Username = txtUsername.Text;
@@ -134,7 +134,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
             // Lấy ID của người dùng được chọn
             int selectedUserId = Convert.ToInt32(dgvQuanLy.SelectedRows[0].Cells["Id"].Value);
 
-            // Tìm người dùng trong cơ sở dữ liệu
+            // Tìm người dùng trong cơ sở dữ liệu 
             User userToDelete = db.Users.FirstOrDefault(u => u.Id == selectedUserId);
             if (userToDelete == null)
             {
@@ -143,9 +143,15 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
             }
 
             // Xóa người dùng khỏi cơ sở dữ liệu
-            db.Users.DeleteOnSubmit(userToDelete);
-            db.SubmitChanges();
-
+              
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn có muốn xóa người dùng "+ userToDelete.Username+" không?", "Trả lời",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+            {
+                db.Users.DeleteOnSubmit(userToDelete);
+                db.SubmitChanges();
+            }
             // Refresh dữ liệu trên DataGridView
             LoadData();
 
@@ -156,6 +162,28 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void dgvQuanLy_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
+        {
+
+            try
+            {
+                DataGridViewRow row = new DataGridViewRow();
+                row = dgvQuanLy.Rows[e.RowIndex];
+                txtUsername.Text = row.Cells[1].Value.ToString();
+                txtEmail.Text = row.Cells[2].Value.ToString();
+                txtPassword.Text = row.Cells[3].Value.ToString();
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Chỉ được phép chọn 1 nhân viên!");
+            }
+        }
+
+        private void btnNhapMoi_Click(object sender, EventArgs e)
+        {
+            ClearTxt();
         }
     }
 }

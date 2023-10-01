@@ -38,3 +38,4 @@ D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGi
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu.FormLoaiHang.resources
 D:\21.1UDPM-LeGiaBao\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu.FormLoaiHang.resources
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Hethong.FormQuanLyNguoiDung.resources
+D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Hethong.FormDangKy.resources

@@ -109,6 +109,7 @@
             this.btnNhapMoi.TabIndex = 25;
             this.btnNhapMoi.Text = "Nhập mới";
             this.btnNhapMoi.UseVisualStyleBackColor = false;
+            this.btnNhapMoi.Click += new System.EventHandler(this.btnNhapMoi_Click);
             // 
             // btnXoa
             // 
@@ -198,6 +199,7 @@
             this.dgvQuanLy.RowHeadersWidth = 51;
             this.dgvQuanLy.Size = new System.Drawing.Size(896, 185);
             this.dgvQuanLy.TabIndex = 24;
+            this.dgvQuanLy.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvQuanLy_CellMouseClick);
             // 
             // Id
             // 

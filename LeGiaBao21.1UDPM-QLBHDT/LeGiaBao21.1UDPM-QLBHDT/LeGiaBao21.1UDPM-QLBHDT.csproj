@@ -150,6 +150,9 @@
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Hethong\FormDangKy.resx">
+      <DependentUpon>FormDangKy.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Hethong\FormDangNhap.resx">
       <DependentUpon>FormDangNhap.cs</DependentUpon>
     </EmbeddedResource>
