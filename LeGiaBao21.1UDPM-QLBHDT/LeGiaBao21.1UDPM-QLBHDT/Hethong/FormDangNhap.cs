@@ -13,7 +13,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
 {
     public partial class FormDangNhap : Form
     {
-        private string connectionString = "Data Source=LAPTOP-O9SMJSLO\\SQLEXPRESS;Initial Catalog=QLBHDT;User ID=sa;Password=123;";
+        //private string connectionString = "Data Source=LAPTOP-O9SMJSLO\\SQLEXPRESS;Initial Catalog=QLBHDT;User ID=sa;Password=123;";
+        private string connectionString = "Data Source=MAY18;Initial Catalog=QLBHDT; Integrated Security =true";
         public string LoggedInUser { get; set; }
         public FormDangNhap()
         {
@@ -22,7 +23,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
 
         private void FormDangNhap_Load(object sender, EventArgs e)
         {
-
+            
         }
 
         private void btnDangNhap_Click(object sender, EventArgs e)

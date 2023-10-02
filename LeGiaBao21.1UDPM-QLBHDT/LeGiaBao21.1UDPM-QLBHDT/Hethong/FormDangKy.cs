@@ -76,7 +76,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
 
         private void btnThoat_Click(object sender, EventArgs e)
         {
-            
+              this.Close();
         }
     }
 }

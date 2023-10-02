@@ -32,16 +32,16 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.btnThoat = new System.Windows.Forms.Button();
+            this.btnXoaTK = new System.Windows.Forms.Button();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.txtPassReNew = new System.Windows.Forms.TextBox();
             this.txtPassNew = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
-            this.txtUser = new System.Windows.Forms.TextBox();
+            this.txtUsername = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.btnXoaTK = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
@@ -55,7 +55,7 @@
             this.groupBox1.Controls.Add(this.txtPassReNew);
             this.groupBox1.Controls.Add(this.txtPassNew);
             this.groupBox1.Controls.Add(this.txtPass);
-            this.groupBox1.Controls.Add(this.txtUser);
+            this.groupBox1.Controls.Add(this.txtUsername);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
             this.groupBox1.Controls.Add(this.label2);
@@ -87,6 +87,20 @@
             this.btnThoat.TabIndex = 9;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = true;
+            this.btnThoat.Click += new System.EventHandler(this.BtnThoat_Click);
+            // 
+            // btnXoaTK
+            // 
+            this.btnXoaTK.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnXoaTK.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaTK.Image")));
+            this.btnXoaTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnXoaTK.Location = new System.Drawing.Point(197, 223);
+            this.btnXoaTK.Name = "btnXoaTK";
+            this.btnXoaTK.Size = new System.Drawing.Size(151, 44);
+            this.btnXoaTK.TabIndex = 8;
+            this.btnXoaTK.Text = "Xóa tài khoản";
+            this.btnXoaTK.UseVisualStyleBackColor = true;
+            this.btnXoaTK.Click += new System.EventHandler(this.BtnXoaTK_Click);
             // 
             // btnXacNhan
             // 
@@ -99,6 +113,7 @@
             this.btnXacNhan.TabIndex = 8;
             this.btnXacNhan.Text = "Xác nhận";
             this.btnXacNhan.UseVisualStyleBackColor = true;
+            this.btnXacNhan.Click += new System.EventHandler(this.BtnXacNhan_Click);
             // 
             // txtPassReNew
             // 
@@ -124,12 +139,12 @@
             this.txtPass.Size = new System.Drawing.Size(196, 29);
             this.txtPass.TabIndex = 3;
             // 
-            // txtUser
+            // txtUsername
             // 
-            this.txtUser.Location = new System.Drawing.Point(197, 60);
-            this.txtUser.Name = "txtUser";
-            this.txtUser.Size = new System.Drawing.Size(196, 29);
-            this.txtUser.TabIndex = 1;
+            this.txtUsername.Location = new System.Drawing.Point(197, 60);
+            this.txtUsername.Name = "txtUsername";
+            this.txtUsername.Size = new System.Drawing.Size(196, 29);
+            this.txtUsername.TabIndex = 1;
             // 
             // label4
             // 
@@ -171,18 +186,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Tên Đăng Nhập";
             // 
-            // btnXoaTK
-            // 
-            this.btnXoaTK.Font = new System.Drawing.Font("Arial", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnXoaTK.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaTK.Image")));
-            this.btnXoaTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaTK.Location = new System.Drawing.Point(197, 223);
-            this.btnXoaTK.Name = "btnXoaTK";
-            this.btnXoaTK.Size = new System.Drawing.Size(151, 44);
-            this.btnXoaTK.TabIndex = 8;
-            this.btnXoaTK.Text = "Xóa tài khoản";
-            this.btnXoaTK.UseVisualStyleBackColor = true;
-            // 
             // FormDoiMatKhau
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -191,6 +194,7 @@
             this.Controls.Add(this.groupBox1);
             this.Name = "FormDoiMatKhau";
             this.Text = "FormDoiMatKhau";
+            this.Load += new System.EventHandler(this.FormDoiMatKhau_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
@@ -207,7 +211,7 @@
         private System.Windows.Forms.TextBox txtPassReNew;
         private System.Windows.Forms.TextBox txtPassNew;
         private System.Windows.Forms.TextBox txtPass;
-        private System.Windows.Forms.TextBox txtUser;
+        private System.Windows.Forms.TextBox txtUsername;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
