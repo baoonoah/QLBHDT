@@ -37,8 +37,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             txtSoLuong.ResetText();
             cbMaHD.SelectedIndex = -1;
             cbMaSP.SelectedIndex = -1;
-            cbMaHD.Enabled = true;
-            cbMaSP.Enabled = true;
+       
         }
         private void FormChiTietHoaDon_Load(object sender, EventArgs e)
         {
@@ -99,17 +98,28 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             // Kiểm tra nếu có thông tin rỗng
             if (string.IsNullOrEmpty(cbMaHD.Text))
             {
-                MessageBox.Show("Vui lòng nhập chọn 1 chi tiết hóa đơn!", "Thông báo");
+                MessageBox.Show("Vui lòng chọn 1 chi tiết hóa đơn để sửa!", "Thông báo");
+                return;
+            }
+            if (string.IsNullOrEmpty(cbMaSP.Text))
+            {
+                MessageBox.Show("Vui lòng chọn mã sản phẩm!", "Thông báo");
                 return;
             }
             try
             {
                 // Tìm hoa don cần sửa
-                var CTHD = db.ChiTietHoaDons.FirstOrDefault(hd => hd.MaHD == cbMaHD.Text);
+                var timMaHD = db.ChiTietHoaDons.FirstOrDefault(hd => hd.MaHD == cbMaHD.Text);
+                var timMaSP = db.ChiTietHoaDons.FirstOrDefault(hd => hd.MaHD == cbMaHD.Text);
                 // Kiểm tra nếu không tìm thấy ma hd
-                if (CTHD == null)
+                if (timMaHD == null)
                 {
                     MessageBox.Show("Không tìm thấy CTHD có mã hóa đơn: " + cbMaHD.Text, "Thông báo");
+                    return;
+                }
+                if (timMaSP == null)
+                {
+                    MessageBox.Show("Không tìm thấy CTHD có mã sản phẩm: " + cbMaSP.Text, "Thông báo");
                     return;
                 }
                 long soluong;
@@ -117,9 +127,13 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                     MessageBox.Show("Vui lòng nhập số lượng!", "Thông báo");
                     return;
                 }
+                ChiTietHoaDon cthd = new ChiTietHoaDon();
+                cthd = (from table in db.ChiTietHoaDons
+                        where table.MaHD == cbMaHD.Text && table.MaSP == cbMaSP.Text
+                        select table).Single();
                 if (long.TryParse(txtSoLuong.Text, out soluong) && txtSoLuong.Text.Length <= 10)
                 {
-                    CTHD.SoLuong = soluong;
+                    cthd.SoLuong = soluong;
                 }
                 else
                 {
@@ -127,17 +141,15 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                     return;
                 }
                 db.SubmitChanges();
-                MessageBox.Show("Đã sửa thành công chi tiết hóa đơn: " + CTHD.MaHD, "Thông báo");
+                MessageBox.Show("Đã sửa thành công chi tiết hóa đơn: " + cthd.MaHD, "Thông báo");
                 LoadData();
                 resetTxt();
-                cbMaHD.Enabled = true;
-                cbMaSP.Enabled = true;
+          
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Lỗi khi sửa dữ liệu: " + ex.Message, "Thông báo");
-                cbMaHD.Enabled = true;
-                cbMaSP.Enabled = true;
+            
             }
         }//end sua
 
@@ -186,8 +198,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 cbMaHD.Text = row.Cells[0].Value.ToString();
                 cbMaSP.Text = row.Cells[1].Value.ToString();
                 txtSoLuong.Text = row.Cells[2].Value.ToString();
-                cbMaHD.Enabled = false;
-                cbMaSP.Enabled = false;
+
             }//end try
             catch (Exception)
             {

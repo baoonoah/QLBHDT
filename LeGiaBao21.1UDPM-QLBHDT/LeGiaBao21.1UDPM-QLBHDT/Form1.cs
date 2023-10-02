@@ -1,4 +1,5 @@
-﻿using System;
+﻿using LeGiaBao21._1UDPM_QLBHDT.Hethong;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -6,12 +7,20 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+
 using System.Windows.Forms;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement;
+using ToolTip = System.Windows.Forms.ToolTip;
 
 namespace LeGiaBao21._1UDPM_QLBHDT
 {
     public partial class Form1 : Form
     {
+        public string LoggedInUser { get; set; }
+        public bool ToolStripDropDown { get; private set; }
+
+        private ToolTip toolTip;
+       
         public Form1()
         {
             InitializeComponent();
@@ -24,17 +33,43 @@ namespace LeGiaBao21._1UDPM_QLBHDT
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            hienthilable();
+            // Kiểm tra xem người dùng đã đăng nhập chưa
+            if (string.IsNullOrEmpty(LoggedInUser))
+            {
+                // Người dùng chưa đăng nhập
 
+                cậpNhậtDữLiệuToolStripMenuItem.Enabled = false;
+                đổiMậtKhẩuToolStripMenuItem.Enabled = false;
+                tìmKiếmToolStripMenuItem.Enabled = false;
+                thốngKêBáoCáoToolStripMenuItem.Enabled = false;
+                thôngTinToolStripMenuItem.Enabled = false;
+
+            }
+            else
+            {
+                // Người dùng đã đăng nhập
+                cậpNhậtDữLiệuToolStripMenuItem.Enabled = true;
+                đổiMậtKhẩuToolStripMenuItem.Enabled = true;
+                tìmKiếmToolStripMenuItem.Enabled = true;
+                thốngKêBáoCáoToolStripMenuItem.Enabled = true;
+                thôngTinToolStripMenuItem.Enabled = true;
+            }
         }
 
         private void ĐăngNhậpToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Form frm = new Hethong.FormDangNhap();
+            FormDangNhap frm = new Hethong.FormDangNhap();
             frm.Text = "Đăng Nhập";
             frm.ShowDialog();
-      
+            this.Hide();
+            if (!string.IsNullOrEmpty(frm.LoggedInUser))
+            {
+                LoggedInUser = frm.LoggedInUser;
+                
+            }
         }
-
+      
         private void ĐổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
         {
             Form frm = new Hethong.FormDoiMatKhau();
@@ -44,7 +79,11 @@ namespace LeGiaBao21._1UDPM_QLBHDT
 
         private void ThoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn muốn Thoát phải không?", "Trả lời",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                Application.Exit();
         }
 
         private void nhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
@@ -103,9 +142,48 @@ namespace LeGiaBao21._1UDPM_QLBHDT
             frm.ShowDialog();
         }
 
-        private void QuảnLýNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
+        private void đăngKýToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new Hethong.FormDangKy();
+            frm.Text = "Đăng Ký";
+            frm.ShowDialog();
+        }
+  
+        private void quảnLýNgườiDùngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            if (!string.IsNullOrEmpty(LoggedInUser) && LoggedInUser == "admin")
+            {
+                Form frm = new Hethong.FormQuanLyNguoiDung();
+                frm.Text = "Quản Lý Người Dùng";
+                frm.ShowDialog();
+            }
+            else
+            {
+                MessageBox.Show("Bạn cần đăng nhập với tài khoản admin để truy cập chức năng này.");
+            }
+        }
+
+        private void cậpNhậtDữLiệuToolStripMenuItem_Click(object sender, EventArgs e)
         {
 
+          
+        }
+        private void tìmKiếmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            
+        }
+        private void hienthilable()
+        {
+            if (string.IsNullOrEmpty(LoggedInUser))
+            {
+
+                lbhienthi.Text = "Vui lòng đăng nhập!";
+            }
+            else
+            {
+
+                lbhienthi.Text = "Xin chào " + LoggedInUser + "!";
+            }
         }
     }
 }
