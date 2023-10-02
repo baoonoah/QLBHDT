@@ -165,7 +165,7 @@ use QLBHDT
 	insert into KhachHang Values ('KH06', N'Nguyễn Hoàng Đạo',N'Cần Thơ','0123443789','');
 	insert into KhachHang Values ('KH07', N'Nguyễn Hoài Thương',N'Cần Thơ','0135643589','');
 	insert into KhachHang Values ('KH08', N'Ngô Hải Nguyên Bách',N'Cần Thơ','013534379','');
-	insert into KhachHang Values ('KH09', N'Lê Gia Bảo',N'Cần Thơ','025466789','');
+	insert into KhachHang Values ('KH09', N'Lê Gia Bảo',N'Cần Thơ','0948405402','');
 	insert into KhachHang Values ('KH10', N'Nguyễn Văn Khánh',N'Cần Thơ','025236789','');
 	insert into KhachHang Values ('KH11', N'Nguyễn Bá Đạt',N'Cần Thơ','025724789','');
 	insert into KhachHang Values ('KH12', N'Nguyễn Bá Đạo',N'Cần Thơ','022324789','');
