@@ -55,12 +55,12 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
                 return;
             }
 
-            //bool check = password == "manchesterunited" || password == "manchestercity";
-            //if (check)
-            //{
-            //    MessageBox.Show("Mật khẩu quá yếu!");
-            //    return;
-            //}
+            bool check = password == "manchesterunited" || password == "manchestercity";
+            if (check)
+            {
+                MessageBox.Show("Mật khẩu quá yếu!");
+                return;
+            }
             User user = new User();
             user.Username = txtUsername.Text;
             user.Email = txtEmail.Text;
