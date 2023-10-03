@@ -158,6 +158,19 @@ use QLBHDT
 	insert into SanPham Values ('SP28','OPPO A58','LH03','CT03', N'Cái',5300000, 5700000,50);
 	insert into SanPham Values ('SP29','OPPO Reno10 Pro 5G','LH03','CT03', N'Cái',13700000, 13900000,50);
 	insert into SanPham Values ('SP30','OPPO Find X5 Pro 5G','LH03','CT03', N'Cái',17700000, 17900000,50);
+
+	insert into SanPham Values ('SP31','Samsung Galaxy A51 5G','LH02','CT02', N'Cái',6300000, 6900000,50);
+	insert into SanPham Values ('SP32','Samsung Galaxy A14','LH02','CT02', N'Cái',2300000, 2450000,50);
+	insert into SanPham Values ('SP33','OPPO Find N2 Flip 5G','LH03','CT03', N'Cái',18000000, 19900000,50);
+	insert into SanPham Values ('SP34','OPPO Reno9 T 5G','LH03','CT03', N'Cái',7700000, 8400000,50);
+	insert into SanPham Values ('SP35','OPPO Reno7 series','LH03','CT03', N'Cái',12500000, 13900000,50);
+	insert into SanPham Values ('SP36','OPPO A72s','LH03','CT03', N'Cái',4700000, 5000000,50);
+	insert into SanPham Values ('SP37','OPPO A36','LH03','CT03', N'Cái',3700000, 4100000,50);
+	insert into SanPham Values ('SP38','OPPO A52','LH03','CT03', N'Cái',5300000, 5700000,50);
+	insert into SanPham Values ('SP39','OPPO Reno10 5G','LH03','CT03', N'Cái',12700000, 12900000,50);
+	insert into SanPham Values ('SP40','OPPO Find X2 Pro 5G','LH03','CT03', N'Cái',17700000, 17900000,50);
+	insert into SanPham Values ('SP41','Samsung Galaxy A24','LH02','CT02', N'Cái',3800000, 4000000,50);
+
 	--Khach Hang--
 	insert into KhachHang Values ('KH01', N'Nguyễn Quốc An',N'Cần Thơ','0123456789','nguyenquocan300503@gmail.com');
 	insert into KhachHang Values ('KH02', N'Huỳnh Phú Lộc',N'Cần Thơ','0135643589','huynhquloc@gmail.com');
@@ -184,6 +197,29 @@ use QLBHDT
 	insert into KhachHang Values ('KH23', N'Nguyễn Văn N',N'Cần Thơ','02354709','');
 	insert into KhachHang Values ('KH24', N'Nguyễn Văn H',N'Cần Thơ','02354779','');
 	insert into KhachHang Values ('KH25', N'Nguyễn Văn T',N'Cần Thơ','02354739','');
+	insert into KhachHang Values ('KH28', N'Nguyễn Tuấn Khang',N'Cần Thơ','0257446789','');
+	insert into KhachHang Values ('KH29', N'Nguyễn Văn Nghĩa',N'Bạc Liêu','0257496789','');
+	insert into KhachHang Values ('KH30', N'Nguyễn Văn Hậu',N'Hậu Giang','0257376789','');
+	insert into KhachHang Values ('KH31', N'Nguyễn Thị Ngân Thanh',N'Cần Thơ','0257076789','');
+	insert into KhachHang Values ('KH32', N'Lê Văn Tình',N'Vĩnh Long','0257476789','');
+	insert into KhachHang Values ('KH33', N'Nguyễn Phước Thọ',N'Cà Mau','0227476789','');
+
+	insert into KhachHang Values ('KH34', N'Nguyễn Hữu Phước',N'Thanh Hóa','0227376789','');
+	insert into KhachHang Values ('KH35', N'Nguyễn Thị Hồng Thủy',N'Hà Nội','0227476785','');
+	insert into KhachHang Values ('KH36', N'Nguyễn Văn Hài',N'Tiền Giang','0227476759','');
+	insert into KhachHang Values ('KH37', N'Nguyễn Văn Tuấn',N'Cần Thơ','0227476089','');
+	insert into KhachHang Values ('KH40', N'Nguyễn Vĩnh Khang',N'Cần Thơ','0247446789','');
+	insert into KhachHang Values ('KH41', N'Nguyễn Thị Hồng Ân',N'Mỹ Tho','0217496789','');
+	insert into KhachHang Values ('KH42', N'Võ Thị Hồng Hoa',N'Hà Nội','0252376789','');
+	insert into KhachHang Values ('KH43', N'Lê Thị Mỹ',N'Bắc Ninh','0457076789','');
+	insert into KhachHang Values ('KH44', N'Lê Văn Minh',N'Vĩnh Long','0257476785','');
+	insert into KhachHang Values ('KH45', N'Võ Thị Hồng My',N'Hậu Giang','0227476389','');
+	insert into KhachHang Values ('KH46', N'Nguyễn Tuấn Khang',N'Cà Mau','0257426789','');
+	insert into KhachHang Values ('KH47', N'Nguyễn Hữu Hậu',N'Bạc Liêu','0257416789','');
+	insert into KhachHang Values ('KH48', N'Nguyễn Văn Hậu',N'Hậu Giang','0257376789','');
+	insert into KhachHang Values ('KH49', N'Nguyễn Thị Thanh Ngân',N'Cần Thơ','0457076789','');
+	insert into KhachHang Values ('KH50', N'Lê Văn Bách',N'Vĩnh Long','0257476759','');
+	insert into KhachHang Values ('KH51', N'Nguyễn Hữu Thọ',N'Cà Mau','0227474789','');
 	--Hoa Don--
 	insert into HoaDon Values ('HD01', 'NV01','KH01','10-05-2023','14-05-2023');
 	insert into HoaDon Values ('HD02', 'NV02','KH02','10-06-2023','13-06-2023');
@@ -216,6 +252,83 @@ use QLBHDT
 	insert into HoaDon Values ('HD29', 'NV06','KH25','10-07-2023','13-07-2023');
 	insert into HoaDon Values ('HD30', 'NV08','KH21','10-09-2023','13-09-2023');
 	insert into HoaDon Values ('HD31', 'NV01','KH01','10-09-2023','13-09-2023');
+	insert into HoaDon Values ('HD32', 'NV04','KH26','07-03-2023','07-03-2023');
+	insert into HoaDon Values ('HD33', 'NV05','KH27','13-05-2023','13-05-2023');
+	insert into HoaDon Values ('HD34', 'NV06','KH28','18-05-2023','19-05-2023');
+	insert into HoaDon Values ('HD35', 'NV01','KH29','10-05-2023','10-05-2023');
+	insert into HoaDon Values ('HD36', 'NV02','KH31','10-03-2023','12-03-2023');
+	insert into HoaDon Values ('HD37', 'NV09','KH30','10-04-2023','10-04-2023');
+	insert into HoaDon Values ('HD38', 'NV10','KH24','10-01-2023','11-01-2023');
+	insert into HoaDon Values ('HD39', 'NV06','KH25','10-07-2023','10-07-2023');
+	insert into HoaDon Values ('HD40', 'NV07','KH21','10-09-2023','10-09-2023');
+	insert into HoaDon Values ('HD41', 'NV01','KH04','22-09-2023','23-09-2023');
+
+	insert into HoaDon Values ('HD42', 'NV01','KH30','07-03-2023','07-03-2023');
+	insert into HoaDon Values ('HD43', 'NV06','KH31','13-05-2023','13-05-2023');
+	insert into HoaDon Values ('HD44', 'NV06','KH32','18-05-2023','19-05-2023');
+	insert into HoaDon Values ('HD45', 'NV01','KH33','10-05-2023','10-05-2023');
+	insert into HoaDon Values ('HD46', 'NV05','KH34','10-03-2023','12-03-2023');
+	insert into HoaDon Values ('HD47', 'NV08','KH35','10-04-2023','10-04-2023');
+	insert into HoaDon Values ('HD48', 'NV10','KH35','10-01-2023','11-01-2023');
+	insert into HoaDon Values ('HD49', 'NV06','KH37','10-07-2023','10-07-2023');
+	insert into HoaDon Values ('HD50', 'NV02','KH36','10-09-2023','10-09-2023');
+
+	insert into HoaDon Values ('HD51', 'NV01','KH04','22-09-2023','23-09-2023');
+	insert into HoaDon Values ('HD52', 'NV02','KH37','04-03-2023','04-03-2023');
+	insert into HoaDon Values ('HD53', 'NV06','KH31','13-06-2023','18-06-2023');
+	insert into HoaDon Values ('HD54', 'NV03','KH32','18-12-2023','19-12-2023');
+	insert into HoaDon Values ('HD55', 'NV01','KH44','12-05-2023','12-05-2023');
+	insert into HoaDon Values ('HD56', 'NV05','KH45','10-03-2023','12-03-2023');
+	insert into HoaDon Values ('HD57', 'NV08','KH46','23-02-2023','23-02-2023');
+	insert into HoaDon Values ('HD58', 'NV10','KH47','10-01-2023','11-01-2023');
+	insert into HoaDon Values ('HD59', 'NV07','KH40','10-07-2023','10-07-2023');
+	insert into HoaDon Values ('HD60', 'NV08','KH48','10-11-2023','10-11-2023');
+
+
+	insert into HoaDon Values ('HD61', 'NV01','KH45','22-01-2023','23-01-2023');
+	insert into HoaDon Values ('HD62', 'NV02','KH37','04-06-2023','04-06-2023');
+	insert into HoaDon Values ('HD63', 'NV06','KH42','13-06-2023','18-06-2023');
+	insert into HoaDon Values ('HD64', 'NV10','KH11','18-12-2023','19-12-2023');
+	insert into HoaDon Values ('HD65', 'NV04','KH43','12-05-2023','12-05-2023');
+	insert into HoaDon Values ('HD66', 'NV10','KH45','10-03-2023','12-03-2023');
+	insert into HoaDon Values ('HD67', 'NV08','KH51','23-02-2023','23-02-2023');
+	insert into HoaDon Values ('HD68', 'NV09','KH47','10-01-2023','11-01-2023');
+	insert into HoaDon Values ('HD69', 'NV07','KH50','10-07-2023','10-07-2023');
+	insert into HoaDon Values ('HD70', 'NV08','KH51','10-11-2023','10-11-2023');
+
+	insert into HoaDon Values ('HD71', 'NV01','KH45','22-01-2023','23-01-2023');
+	insert into HoaDon Values ('HD72', 'NV02','KH37','10-11-2023','10-11-2023');
+	insert into HoaDon Values ('HD73', 'NV06','KH42','13-06-2023','18-06-2023');
+	insert into HoaDon Values ('HD74', 'NV10','KH11','18-12-2023','19-12-2023');
+	insert into HoaDon Values ('HD75', 'NV04','KH43','12-05-2023','12-05-2023');
+	insert into HoaDon Values ('HD76', 'NV10','KH45','10-04-2023','12-04-2023');
+	insert into HoaDon Values ('HD77', 'NV08','KH51','23-02-2023','23-02-2023');
+	insert into HoaDon Values ('HD78', 'NV09','KH47','10-08-2023','11-08-2023');
+	insert into HoaDon Values ('HD79', 'NV07','KH50','10-07-2023','10-07-2023');
+
+
+		insert into HoaDon Values ('HD80', 'NV01','KH04','22-02-2023','23-02-2023');
+	insert into HoaDon Values ('HD81', 'NV01','KH04','22-09-2023','23-09-2023');
+	insert into HoaDon Values ('HD82', 'NV02','KH37','04-03-2023','04-03-2023');
+	insert into HoaDon Values ('HD83', 'NV06','KH31','13-06-2023','18-06-2023');
+	insert into HoaDon Values ('HD84', 'NV03','KH32','18-12-2023','19-12-2023');
+	insert into HoaDon Values ('HD85', 'NV01','KH44','12-05-2023','12-05-2023');
+	insert into HoaDon Values ('HD86', 'NV05','KH45','10-03-2023','12-03-2023');
+	insert into HoaDon Values ('HD87', 'NV08','KH46','23-02-2023','23-02-2023');
+	insert into HoaDon Values ('HD88', 'NV10','KH47','10-01-2023','11-01-2023');
+	insert into HoaDon Values ('HD89', 'NV07','KH40','10-07-2023','10-07-2023');
+	insert into HoaDon Values ('HD90', 'NV08','KH48','10-11-2023','10-11-2023');
+
+	insert into HoaDon Values ('HD91', 'NV01','KH16','22-08-2023','23-08-2023');
+	insert into HoaDon Values ('HD92', 'NV05','KH04','04-09-2023','04-09-2023');
+	insert into HoaDon Values ('HD93', 'NV06','KH08','13-11-2023','18-11-2023');
+	insert into HoaDon Values ('HD94', 'NV09','KH32','18-12-2023','19-12-2023');
+	insert into HoaDon Values ('HD95', 'NV01','KH44','12-05-2023','12-05-2023');
+	insert into HoaDon Values ('HD96', 'NV09','KH06','10-03-2023','12-03-2023');
+	insert into HoaDon Values ('HD97', 'NV08','KH44','23-02-2023','23-02-2023');
+	insert into HoaDon Values ('HD98', 'NV10','KH47','10-10-2023','11-10-2023');
+	insert into HoaDon Values ('HD99', 'NV07','KH40','10-07-2023','10-07-2023');
+	insert into HoaDon Values ('HD100', 'NV08','KH48','10-11-2023','10-11-2023');
 
 	set dateformat dmy
 	--Chi Tiet Hoa Don
@@ -275,6 +388,16 @@ use QLBHDT
 	insert into ChiTietHoaDon Values ('HD13', 'SP27',1);
 	insert into ChiTietHoaDon Values ('HD31', 'SP04',1);
 
+	insert into ChiTietHoaDon Values ('HD01', 'SP02',2);
+	insert into ChiTietHoaDon Values ('HD01', 'SP01',1);
+	insert into ChiTietHoaDon Values ('HD02', 'SP05',1);
+	insert into ChiTietHoaDon Values ('HD03', 'SP07',1);
+	insert into ChiTietHoaDon Values ('HD03', 'SP09',1);
+	insert into ChiTietHoaDon Values ('HD03', 'SP10',1);
+	insert into ChiTietHoaDon Values ('HD03', 'SP11',1);
+	insert into ChiTietHoaDon Values ('HD04', 'SP03',1);
+	insert into ChiTietHoaDon Values ('HD05', 'SP30',1);
+	insert into ChiTietHoaDon Values ('HD02', 'SP01',1);
 	set dateformat dmy
 	SELECT * FROM NhaCungCap
 	SELECT * FROM  LoaiHang
@@ -295,3 +418,87 @@ SELECT  MaKH, COUNT(*) AS SoLanMua
 FROM HoaDon
 GROUP BY MaKH
 ORDER BY SoLanMua DESC;
+
+
+
+insert into ChiTietHoaDon Values ('HD20', 'SP11',1);
+ insert into ChiTietHoaDon Values ('HD21', 'SP12',1);
+ insert into ChiTietHoaDon Values ('HD22', 'SP13',1);
+ insert into ChiTietHoaDon Values ('HD23', 'SP11',1);
+ insert into ChiTietHoaDon Values ('HD24', 'SP01',1);
+ insert into ChiTietHoaDon Values ('HD25', 'SP131',1);
+ insert into ChiTietHoaDon Values ('HD26', 'SP08',1);
+ insert into ChiTietHoaDon Values ('HD27', 'SP08',1);
+ insert into ChiTietHoaDon Values ('HD28', 'SP09',1);
+ insert into ChiTietHoaDon Values ('HD29', 'SP30',1);
+ insert into ChiTietHoaDon Values ('HD30', 'SP23',1);
+ insert into ChiTietHoaDon Values ('HD31', 'SP27',1);
+ insert into ChiTietHoaDon Values ('HD32', 'SP24',1);
+ insert into ChiTietHoaDon Values ('HD33', 'SP25',1);
+ insert into ChiTietHoaDon Values ('HD34', 'SP23',1);
+ insert into ChiTietHoaDon Values ('HD35', 'SP31',1);
+ insert into ChiTietHoaDon Values ('HD36', 'SP02',1);
+ insert into ChiTietHoaDon Values ('HD37', 'SP06',1);
+ insert into ChiTietHoaDon Values ('HD38', 'SP05',1);
+ insert into ChiTietHoaDon Values ('HD39', 'SP09',1);
+ insert into ChiTietHoaDon Values ('HD40', 'SP10',1);
+ insert into ChiTietHoaDon Values ('HD41', 'SP30',1);
+ insert into ChiTietHoaDon Values ('HD42', 'SP16',1);
+ insert into ChiTietHoaDon Values ('HD43', 'SP17',1);
+ insert into ChiTietHoaDon Values ('HD44', 'SP15',1);
+ insert into ChiTietHoaDon Values ('HD45', 'SP14',1);
+ insert into ChiTietHoaDon Values ('HD46', 'SP13',1);
+ insert into ChiTietHoaDon Values ('HD47', 'SP25',1);
+ insert into ChiTietHoaDon Values ('HD48', 'SP29',1);
+ insert into ChiTietHoaDon Values ('HD49', 'SP28',1);
+ insert into ChiTietHoaDon Values ('HD50', 'SP26',1);
+ insert into ChiTietHoaDon Values ('HD51', 'SP23',1);
+ insert into ChiTietHoaDon Values ('HD52', 'SP21',1);
+ insert into ChiTietHoaDon Values ('HD53', 'SP20',1);
+ insert into ChiTietHoaDon Values ('HD54', 'SP11',1);
+ insert into ChiTietHoaDon Values ('HD55', 'SP12',1);
+ insert into ChiTietHoaDon Values ('HD56', 'SP13',1);
+ insert into ChiTietHoaDon Values ('HD57', 'SP14',1);
+ insert into ChiTietHoaDon Values ('HD58', 'SP14',1);
+ insert into ChiTietHoaDon Values ('HD59', 'SP16',1);
+ insert into ChiTietHoaDon Values ('HD60', 'SP17',1);
+ insert into ChiTietHoaDon Values ('HD61', 'SP18',1);
+ insert into ChiTietHoaDon Values ('HD62', 'SP19',1);
+ insert into ChiTietHoaDon Values ('HD63', 'SP20',1);
+ insert into ChiTietHoaDon Values ('HD64', 'SP03',1);
+ insert into ChiTietHoaDon Values ('HD65', 'SP04',1);
+ insert into ChiTietHoaDon Values ('HD66', 'SP05',1);
+ insert into ChiTietHoaDon Values ('HD67', 'SP06',1);
+ insert into ChiTietHoaDon Values ('HD68', 'SP07',1);
+ insert into ChiTietHoaDon Values ('HD69', 'SP31',1);
+ insert into ChiTietHoaDon Values ('HD70', 'SP09',1);
+ insert into ChiTietHoaDon Values ('HD71', 'SP08',1);
+ insert into ChiTietHoaDon Values ('HD72', 'SP12',1);
+ insert into ChiTietHoaDon Values ('HD73', 'SP13',1);
+ insert into ChiTietHoaDon Values ('HD74', 'SP14',1);
+ insert into ChiTietHoaDon Values ('HD75', 'SP15',1);
+ insert into ChiTietHoaDon Values ('HD76', 'SP16',1);
+ insert into ChiTietHoaDon Values ('HD77', 'SP17',1);
+ insert into ChiTietHoaDon Values ('HD78', 'SP18',1);
+ insert into ChiTietHoaDon Values ('HD79', 'SP19',1);
+ insert into ChiTietHoaDon Values ('HD80', 'SP20',1);
+ insert into ChiTietHoaDon Values ('HD81', 'SP22',1);
+ insert into ChiTietHoaDon Values ('HD82', 'SP23',1);
+ insert into ChiTietHoaDon Values ('HD83', 'SP24',1);
+ insert into ChiTietHoaDon Values ('HD84', 'SP25',1);
+ insert into ChiTietHoaDon Values ('HD85', 'SP26',1);
+ insert into ChiTietHoaDon Values ('HD86', 'SP27',1);
+ insert into ChiTietHoaDon Values ('HD87', 'SP28',1);
+ insert into ChiTietHoaDon Values ('HD88', 'SP29',1);
+ insert into ChiTietHoaDon Values ('HD89', 'SP30',1);
+ insert into ChiTietHoaDon Values ('HD90', 'SP31',1);
+ insert into ChiTietHoaDon Values ('HD91', 'SP32',1);
+ insert into ChiTietHoaDon Values ('HD92', 'SP33',1);
+ insert into ChiTietHoaDon Values ('HD93', 'SP34',1);
+ insert into ChiTietHoaDon Values ('HD94', 'SP35',1);
+ insert into ChiTietHoaDon Values ('HD95', 'SP36',1);
+ insert into ChiTietHoaDon Values ('HD96', 'SP37',1);
+ insert into ChiTietHoaDon Values ('HD97', 'SP38',1);
+ insert into ChiTietHoaDon Values ('HD98', 'SP39',1);
+ insert into ChiTietHoaDon Values ('HD99', 'SP40',1);
+ insert into ChiTietHoaDon Values ('HD100', 'SP41',1);
