@@ -7,19 +7,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-
 using System.Windows.Forms;
-using static System.Windows.Forms.VisualStyles.VisualStyleElement;
-using ToolTip = System.Windows.Forms.ToolTip;
+
 
 namespace LeGiaBao21._1UDPM_QLBHDT
 {
     public partial class Form1 : Form
     {
         public string LoggedInUser { get; set; }
-        public bool ToolStripDropDown { get; private set; }
-
-        private ToolTip toolTip;
+      
        
         public Form1()
         {
