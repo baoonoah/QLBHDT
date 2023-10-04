@@ -114,7 +114,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
 
             // Lưu các thay đổi vào cơ sở dữ liệu
             db.SubmitChanges();
-
+            MessageBox.Show("Sửa thành công người dùng " + username);
             // Refresh dữ liệu trên DataGridView
             LoadData();
 
@@ -153,6 +153,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
                 db.SubmitChanges();
             }
             // Refresh dữ liệu trên DataGridView
+            MessageBox.Show("Xóa thành công người dùng " + userToDelete.Username);
             LoadData();
 
             // Xóa nội dung các TextBox

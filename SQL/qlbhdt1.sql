@@ -100,9 +100,9 @@ use QLBHDT
 
 	--User--
 	insert into Users Values ( 'admin','admin@gmail.com','admin123',getdate());
-	insert into Users Values ( 'user1','user1@gmail.com','user123',getdate());
-	insert into Users Values ( 'user2','user2@gmail.com','user123',getdate());
-	insert into Users Values ( 'user3','user3@gmail.com','user123',getdate());
+	insert into Users Values ( 'user1','user1@gmail.com','123',getdate());
+	insert into Users Values ( 'user2','user2@gmail.com','123',getdate());
+	insert into Users Values ( 'user3','user3@gmail.com','123',getdate());
 	set dateformat dmy
 	
 

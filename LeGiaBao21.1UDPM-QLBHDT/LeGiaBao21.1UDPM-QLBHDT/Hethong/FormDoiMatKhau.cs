@@ -18,8 +18,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
         
         }
         QLBHDTDataContext db = new QLBHDTDataContext();
-        public string LoggedInUser { get; set; }
-
         private void FormDoiMatKhau_Load(object sender, EventArgs e)
         {
             ClearTxt();
@@ -40,12 +38,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
         }
             private void BtnXacNhan_Click(object sender, EventArgs e)
         {
-            MessageBox.Show(LoggedInUser);
-         
-        
             if (dkienrong())
             {
-                txtUsername.Text = LoggedInUser;
                 string username = txtUsername.Text; 
                 string password = txtPass.Text;
                 string newPassword = txtPassNew.Text;
@@ -88,8 +82,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
            
             if (dkienrongxoa())
             {
-                string txtUsername = LoggedInUser;
-                string username = txtUsername; 
+                string username = txtUsername.Text; 
                 string password = txtPass.Text; 
 
                 // Tìm người dùng trong cơ sở dữ liệu dựa trên tên người dùng

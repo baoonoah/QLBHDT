@@ -36,7 +36,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT
                 // Người dùng chưa đăng nhập
 
                 cậpNhậtDữLiệuToolStripMenuItem.Enabled = false;
-                đổiMậtKhẩuToolStripMenuItem.Enabled = false;
                 tìmKiếmToolStripMenuItem.Enabled = false;
                 thốngKêBáoCáoToolStripMenuItem.Enabled = false;
                 thôngTinToolStripMenuItem.Enabled = false;
@@ -46,7 +45,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT
             {
                 // Người dùng đã đăng nhập
                 cậpNhậtDữLiệuToolStripMenuItem.Enabled = true;
-                đổiMậtKhẩuToolStripMenuItem.Enabled = true;
                 tìmKiếmToolStripMenuItem.Enabled = true;
                 thốngKêBáoCáoToolStripMenuItem.Enabled = true;
                 thôngTinToolStripMenuItem.Enabled = true;

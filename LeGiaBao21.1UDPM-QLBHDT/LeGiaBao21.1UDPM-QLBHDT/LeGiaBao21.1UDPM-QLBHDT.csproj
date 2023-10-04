@@ -126,6 +126,48 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>QLBHDT.dbml</DependentUpon>
     </Compile>
+    <Compile Include="Timkiem\FormTimKiemCTHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timkiem\FormTimKiemCTHD.Designer.cs">
+      <DependentUpon>FormTimKiemCTHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Timkiem\FormTimKiemHD.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timkiem\FormTimKiemHD.Designer.cs">
+      <DependentUpon>FormTimKiemHD.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Timkiem\FormTimKiemKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timkiem\FormTimKiemKH.Designer.cs">
+      <DependentUpon>FormTimKiemKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Timkiem\FormTimKiemLH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timkiem\FormTimKiemLH.Designer.cs">
+      <DependentUpon>FormTimKiemLH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Timkiem\FormTimKiemNCC.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timkiem\FormTimKiemNCC.Designer.cs">
+      <DependentUpon>FormTimKiemNCC.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Timkiem\FormTimKiemNV.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timkiem\FormTimKiemNV.Designer.cs">
+      <DependentUpon>FormTimKiemNV.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Timkiem\FormTimKiemSP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Timkiem\FormTimKiemSP.Designer.cs">
+      <DependentUpon>FormTimKiemSP.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Capnhatdulieu\FormChiTietHoaDon.resx">
       <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -171,6 +213,9 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Timkiem\FormTimKiemNV.resx">
+      <DependentUpon>FormTimKiemNV.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -195,9 +240,6 @@
   <ItemGroup>
     <Folder Include="icons\" />
     <Folder Include="imgs\" />
-    <Folder Include="Thongkebaocao\" />
-    <Folder Include="Thongtin\" />
-    <Folder Include="Timkiem\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
