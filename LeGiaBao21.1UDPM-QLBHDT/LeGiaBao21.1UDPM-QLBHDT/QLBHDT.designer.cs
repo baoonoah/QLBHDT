@@ -57,7 +57,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT
     #endregion
 		
 		public QLBHDTDataContext() : 
-				base(global::LeGiaBao21._1UDPM_QLBHDT.Properties.Settings.Default.QLBHDTConnectionString, mappingSource)
+				base(global::LeGiaBao21._1UDPM_QLBHDT.Properties.Settings.Default.QLBHDTConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}

@@ -27,49 +27,136 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
         private void resetTxt()
         {
             cbMaNV.SelectedIndex = -1;
-            txtHoLot.ResetText();
-            txtTen.ResetText();
+            txtHoTen.ResetText();
             txtDiaChi.ResetText();
             txtDienThoai.ResetText();
             cbMaNV.Enabled = true;
-            txtTen.Enabled = true;
-            txtHoLot.Enabled = true;
+            txtHoTen.Enabled = true;
             txtDiaChi.Enabled = true;
             txtDienThoai.Enabled = true;
+            dgvNhanVien.DataSource = null;
+            
         }
      
         private void BtnTim_Click(object sender, EventArgs e)
         {
+            //tim ma nv
             if (dkienTimMaNV())
             {
-               
-                dgvNhanVien.DataSource = from nv in db.NhanViens
-                                         where nv.MaNV == cbMaNV.SelectedItem.ToString()
-                                         select new
-                                         {
-                                             nv.MaNV,
-                                             nv.HoLot,
-                                             nv.Ten,
-                                             nv.NgaySinh,
-                                             nv.DiaChi,
-                                             nv.DienThoai
-                                         };
+                string searchText = cbMaNV.Text;
+
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    dgvNhanVien.DataSource = from nv in db.NhanViens
+                                             where nv.MaNV == cbMaNV.SelectedItem.ToString()
+                                             select new
+                                             {
+                                                 nv.MaNV,
+                                                 nv.HoLot,
+                                                 nv.Ten,
+                                                 nv.NgaySinh,
+                                                 nv.DiaChi,
+                                                 nv.DienThoai
+                                             };
+                }
+                else
+                {
+                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
+                    dgvNhanVien.DataSource = null;
+                }
             }
+            //tim dia chi
             if (dkienTimDC())
             {
-                dgvNhanVien.DataSource = from nv in db.NhanViens
-                                         where nv.DiaChi == txtDiaChi.Text
-                                         select new
-                                         {
-                                             nv.MaNV,
-                                             nv.HoLot,
-                                             nv.Ten,
-                                             nv.NgaySinh,
-                                             nv.DiaChi,
-                                             nv.DienThoai
-                                         };
+                string searchText = txtDiaChi.Text;
+
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    dgvNhanVien.DataSource = from nv in db.NhanViens
+                                             where nv.DiaChi == txtDiaChi.Text
+                                             select new
+                                             {
+                                                 nv.MaNV,
+                                                 nv.HoLot,
+                                                 nv.Ten,
+                                                 nv.NgaySinh,
+                                                 nv.DiaChi,
+                                                 nv.DienThoai
+                                             };
+                } 
+            else
+            {
+                // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
+                dgvNhanVien.DataSource = null;
             }
-            
+                
+            }
+            //tim ho ten
+            if (dkienTimHoTen())
+            {
+
+                string searchText = txtHoTen.Text.Trim(); //xoa khoang trang
+
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    string[] keywords = searchText.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+
+                    var tknv = from nv in db.NhanViens
+                                select nv;
+
+                    // kiem tra tung tu khoa tim kiem
+                    foreach (var keyword in keywords)
+                    {
+                        //dkien tim kiem
+                        // su dung contains kiem tra xem chuoi co chua tu khoa nao giong khong
+                        tknv = tknv.Where(nv => (nv.HoLot + " " + nv.Ten).Contains(keyword));
+                    }
+
+                    
+                    dgvNhanVien.DataSource = tknv.Select(nv => new
+                    {
+                        nv.MaNV,
+                        nv.HoLot,
+                        nv.Ten,
+                        nv.NgaySinh,
+                        nv.DiaChi,
+                        nv.DienThoai
+                    }).ToList();
+                }
+                else
+                {
+                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
+                    dgvNhanVien.DataSource = null;
+                }
+
+            }
+            //tim sdt
+            if (dkienTimSDT())
+            {
+                string searchText = txtDienThoai.Text;
+
+                if (!string.IsNullOrEmpty(searchText))
+                {
+                    dgvNhanVien.DataSource = from nv in db.NhanViens
+                                             where nv.DienThoai == txtDienThoai.Text
+                                             select new
+                                             {
+                                                 nv.MaNV,
+                                                 nv.HoLot,
+                                                 nv.Ten,
+                                                 nv.NgaySinh,
+                                                 nv.DiaChi,
+                                                 nv.DienThoai
+                                             };
+                }
+                else
+                {
+                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
+                    dgvNhanVien.DataSource = null;
+                }
+
+            }
+
         }
         private void BtnNhapMoi_Click(object sender, EventArgs e)
         {
@@ -85,15 +172,13 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
         {
             if (dkienTimMaNV())
             {
-                txtTen.Enabled = false;
-                txtHoLot.Enabled = false;
+                txtHoTen.Enabled = false;
                 txtDiaChi.Enabled = false;
                 txtDienThoai.Enabled = false;
             }
             else
             {
-                txtTen.Enabled =true;
-                txtHoLot.Enabled = true;
+                txtHoTen.Enabled = true;
                 txtDiaChi.Enabled = true;
                 txtDienThoai.Enabled = true;
             }
@@ -104,39 +189,93 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
             if (dkienTimDC())
             {
                 cbMaNV.Enabled = false;
-                txtTen.Enabled = false;
-                txtHoLot.Enabled = false;
+                txtHoTen.Enabled = false;
                 txtDienThoai.Enabled = false;
             }
             else
             {
                 cbMaNV.Enabled = true;
-                txtTen.Enabled = true;
-                txtHoLot.Enabled = true;
+                txtHoTen.Enabled = true;
                 txtDienThoai.Enabled = true;
+            }
+        }
+        private void txtHoTen_TextChanged(object sender, EventArgs e)
+        {
+            if (dkienTimHoTen())
+            {
+                cbMaNV.Enabled = false;
+                txtDiaChi.Enabled = false;
+                txtDienThoai.Enabled = false;
+            }
+            else
+            {
+                cbMaNV.Enabled = true;
+                txtDienThoai.Enabled = true;
+                txtDiaChi.Enabled = true;
+            }
+        }
+        private void txtDienThoai_TextChanged(object sender, EventArgs e)
+        {
+
+            if (dkienTimSDT())
+            {
+                cbMaNV.Enabled = false;
+                txtHoTen.Enabled=false;
+                txtDiaChi.Enabled = false;
+                
+            }
+            else
+            {
+                cbMaNV.Enabled = true;
+                txtHoTen.Enabled = true;
+                txtDiaChi.Enabled = true;
             }
         }
         private bool dkienTimMaNV()
         {
             string manv = cbMaNV.Text;
-            string ho = txtHoLot.Text;
-            string ten = txtTen.Text;
+            string hoten = txtHoTen.Text;
             string diachi = txtDiaChi.Text;
             string sdt = txtDienThoai.Text;
 
             return !string.IsNullOrEmpty(manv) &&
-                string.IsNullOrEmpty(ho) && string.IsNullOrEmpty(ten) && string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt);
+                string.IsNullOrEmpty(hoten)  && string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt);
         }
         private bool dkienTimDC()
         {
             string manv = cbMaNV.Text;
-            string ho = txtHoLot.Text;
-            string ten = txtTen.Text;
+            string hoten = txtHoTen.Text;
             string diachi = txtDiaChi.Text;
             string sdt = txtDienThoai.Text;
 
             return string.IsNullOrEmpty(manv) &&
-                string.IsNullOrEmpty(ho) && string.IsNullOrEmpty(ten) && !string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt);
+                string.IsNullOrEmpty(hoten)  && !string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt);
         }
+        private bool dkienTimHoTen()
+        {
+            string manv = cbMaNV.Text;
+            string hoten = txtHoTen.Text;
+            string diachi = txtDiaChi.Text;
+            string sdt = txtDienThoai.Text;
+
+            return string.IsNullOrEmpty(manv) &&
+                !string.IsNullOrEmpty(hoten) && string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt);
+        }
+        private bool dkienTimSDT()
+        {
+            string manv = cbMaNV.Text;
+            string hoten = txtHoTen.Text;
+            string diachi = txtDiaChi.Text;
+            string sdt = txtDienThoai.Text;
+
+            return string.IsNullOrEmpty(manv) &&
+                string.IsNullOrEmpty(hoten) && string.IsNullOrEmpty(diachi) && !string.IsNullOrEmpty(sdt);
+        }
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+     
     }
 }
