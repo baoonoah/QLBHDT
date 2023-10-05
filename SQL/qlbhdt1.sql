@@ -171,6 +171,16 @@ use QLBHDT
 	insert into SanPham Values ('SP40','OPPO Find X2 Pro 5G','LH03','CT03', N'Cái',17700000, 17900000,50);
 	insert into SanPham Values ('SP41','Samsung Galaxy A24','LH02','CT02', N'Cái',3800000, 4000000,50);
 
+	insert into SanPham Values ('SP42','Samsung Galaxy Z Fold4 5G 256GB','LH02','CT02', N'Cái',23000000, 24500000,50);
+	insert into SanPham Values ('SP43','IPhone 15 Pro 256GB','LH01','CT01', N'Cái',27000000,28000000,50);
+	insert into SanPham Values ('SP44','IPhone 15 Pro 512GB','LH01','CT01', N'Cái',33000000,35000000,50);
+	insert into SanPham Values ('SP45','IPhone 15 Pro 1TB','LH01','CT01', N'Cái',30000000,40000000,50);
+	insert into SanPham Values ('SP46','OPPO A72s','LH03','CT03', N'Cái',4700000, 5000000,50);
+	insert into SanPham Values ('SP47','OPPO A36','LH03','CT03', N'Cái',3700000, 4100000,50);
+	insert into SanPham Values ('SP48','OPPO A52','LH03','CT03', N'Cái',5300000, 5700000,50);
+	insert into SanPham Values ('SP49','OPPO Reno10 5G','LH03','CT03', N'Cái',12700000, 12900000,50);
+	insert into SanPham Values ('SP50','OPPO Find X2 Pro 5G','LH03','CT03', N'Cái',17700000, 17900000,50);
+
 	--Khach Hang--
 	insert into KhachHang Values ('KH01', N'Nguyễn Quốc An',N'Cần Thơ','0123456789','nguyenquocan300503@gmail.com');
 	insert into KhachHang Values ('KH02', N'Huỳnh Phú Lộc',N'Cần Thơ','0135643589','huynhquloc@gmail.com');

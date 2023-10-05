@@ -179,5 +179,12 @@ namespace LeGiaBao21._1UDPM_QLBHDT
                 lbhienthi.Text = "Xin chào " + LoggedInUser + "!";
             }
         }
+
+        private void TìmKiếmNhânViênToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new Timkiem.FormTimKiemNV();
+            frm.Text = "Tìm Kiếm Nhân Viên";
+            frm.ShowDialog();
+        }
     }
 }

@@ -84,8 +84,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 tb.MaNV = txtMaNV.Text;
                 tb.HoLot = txtHoLot.Text;
                 tb.Ten = txtTen.Text;
-                tb.DiaChi = txtDiaChi.Text;
                 tb.NgaySinh = DateTime.Parse(dtpNgaySinh.Text.ToString());
+                tb.DiaChi = txtDiaChi.Text;
                 long dienThoai;
                 if (long.TryParse(txtDienThoai.Text, out dienThoai) && txtDienThoai.Text.Length == 10)
                 {
@@ -130,6 +130,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                   select table).Single();
             tb.HoLot = txtHoLot.Text;
             tb.Ten = txtTen.Text;
+            tb.NgaySinh = DateTime.Parse(dtpNgaySinh.Text.ToString());
+            tb.DiaChi = txtDiaChi.Text;
                 long dienThoai;
                 if (long.TryParse(txtDienThoai.Text, out dienThoai) && txtDienThoai.Text.Length == 10)
                 {
