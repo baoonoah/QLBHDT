@@ -17,7 +17,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Timkiem.FormTimKiemNV());
+            Application.Run(new baocaoKH.FormReportKH());
         }
     }
 }

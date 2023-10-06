@@ -7,7 +7,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
 namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
 {
     public partial class FormTimKiemNV : Form
@@ -30,14 +29,15 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
             txtHoTen.ResetText();
             txtDiaChi.ResetText();
             txtDienThoai.ResetText();
+            dtpNgaySinh.ResetText();
             cbMaNV.Enabled = true;
             txtHoTen.Enabled = true;
             txtDiaChi.Enabled = true;
             txtDienThoai.Enabled = true;
-            dgvNhanVien.DataSource = null;
-            
+            dtpNgaySinh.Enabled = true;
+
         }
-     
+
         private void BtnTim_Click(object sender, EventArgs e)
         {
             //tim ma nv
@@ -83,13 +83,13 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                                                  nv.DiaChi,
                                                  nv.DienThoai
                                              };
-                } 
-            else
-            {
-                // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
-                dgvNhanVien.DataSource = null;
-            }
-                
+                }
+                else
+                {
+                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
+                    dgvNhanVien.DataSource = null;
+                }
+
             }
             //tim ho ten
             if (dkienTimHoTen())
@@ -102,7 +102,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                     string[] keywords = searchText.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
 
                     var tknv = from nv in db.NhanViens
-                                select nv;
+                               select nv;
 
                     // kiem tra tung tu khoa tim kiem
                     foreach (var keyword in keywords)
@@ -112,7 +112,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                         tknv = tknv.Where(nv => (nv.HoLot + " " + nv.Ten).Contains(keyword));
                     }
 
-                    
+
                     dgvNhanVien.DataSource = tknv.Select(nv => new
                     {
                         nv.MaNV,
@@ -157,6 +157,25 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
 
             }
 
+            //tim ngay sinh
+            if (dkienTimNgaySinh())
+            {
+
+               
+                    dgvNhanVien.DataSource = from nv in db.NhanViens
+                                             where nv.NgaySinh == DateTime.Parse(dtpNgaySinh.Text.ToString())
+                select new
+                                             {
+                                                 nv.MaNV,
+                                                 nv.HoLot,
+                                                 nv.Ten,
+                                                 nv.NgaySinh,
+                                                 nv.DiaChi,
+                                                 nv.DienThoai
+                                             };
+               
+            }
+
         }
         private void BtnNhapMoi_Click(object sender, EventArgs e)
         {
@@ -175,12 +194,14 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 txtHoTen.Enabled = false;
                 txtDiaChi.Enabled = false;
                 txtDienThoai.Enabled = false;
+                dtpNgaySinh.Enabled = false;
             }
             else
             {
                 txtHoTen.Enabled = true;
                 txtDiaChi.Enabled = true;
                 txtDienThoai.Enabled = true;
+                dtpNgaySinh.Enabled = true;
             }
         }
 
@@ -191,12 +212,14 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 cbMaNV.Enabled = false;
                 txtHoTen.Enabled = false;
                 txtDienThoai.Enabled = false;
+                dtpNgaySinh.Enabled = false;
             }
             else
             {
                 cbMaNV.Enabled = true;
                 txtHoTen.Enabled = true;
                 txtDienThoai.Enabled = true;
+                dtpNgaySinh.Enabled = true;
             }
         }
         private void txtHoTen_TextChanged(object sender, EventArgs e)
@@ -206,12 +229,14 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 cbMaNV.Enabled = false;
                 txtDiaChi.Enabled = false;
                 txtDienThoai.Enabled = false;
+                dtpNgaySinh.Enabled = false;
             }
             else
             {
                 cbMaNV.Enabled = true;
                 txtDienThoai.Enabled = true;
                 txtDiaChi.Enabled = true;
+                dtpNgaySinh.Enabled = true;
             }
         }
         private void txtDienThoai_TextChanged(object sender, EventArgs e)
@@ -220,24 +245,43 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
             if (dkienTimSDT())
             {
                 cbMaNV.Enabled = false;
-                txtHoTen.Enabled=false;
+                txtHoTen.Enabled = false;
                 txtDiaChi.Enabled = false;
-                
+                dtpNgaySinh.Enabled = false;
+
             }
             else
             {
                 cbMaNV.Enabled = true;
                 txtHoTen.Enabled = true;
                 txtDiaChi.Enabled = true;
+                dtpNgaySinh.Enabled = true;
             }
         }
-        private bool dkienTimMaNV()
+        private void dtpNgaySinh_ValueChanged(object sender, EventArgs e)
+        {
+
+            if (dkienTimNgaySinh())
+            {
+                cbMaNV.Enabled = false;
+                txtHoTen.Enabled = false;
+                txtDiaChi.Enabled = false;
+                txtDienThoai.Enabled=false;
+            }
+            else
+            {
+                cbMaNV.Enabled = true;
+                txtHoTen.Enabled = true;
+                txtDiaChi.Enabled = true;
+                txtDienThoai.Enabled = true;
+            }
+        } 
+private bool dkienTimMaNV()
         {
             string manv = cbMaNV.Text;
             string hoten = txtHoTen.Text;
             string diachi = txtDiaChi.Text;
             string sdt = txtDienThoai.Text;
-
             return !string.IsNullOrEmpty(manv) &&
                 string.IsNullOrEmpty(hoten)  && string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt);
         }
@@ -271,11 +315,27 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
             return string.IsNullOrEmpty(manv) &&
                 string.IsNullOrEmpty(hoten) && string.IsNullOrEmpty(diachi) && !string.IsNullOrEmpty(sdt);
         }
+        private bool dkienTimNgaySinh()
+        {
+            string manv = cbMaNV.Text;
+            string hoten = txtHoTen.Text;
+            string diachi = txtDiaChi.Text;
+            string sdt = txtDienThoai.Text;
+
+            return string.IsNullOrEmpty(manv) &&
+                string.IsNullOrEmpty(hoten) && string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt) && !string.IsNullOrEmpty(dtpNgaySinh.Value.ToShortDateString());
+        }
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
         }
 
-     
+        private void btnHienThi_Click(object sender, EventArgs e)
+        {
+            dgvNhanVien.DataSource = from nv in db.NhanViens
+                                     select nv;
+        }
+
     }
 }
+

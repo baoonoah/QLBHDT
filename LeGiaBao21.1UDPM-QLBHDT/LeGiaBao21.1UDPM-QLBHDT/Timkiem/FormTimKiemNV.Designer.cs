@@ -42,14 +42,15 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.dgvNhanVien = new System.Windows.Forms.DataGridView();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.cbMaNV = new System.Windows.Forms.ComboBox();
             this.MaNV = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.HoLot = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Ten = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.NgaySinh = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DiaChi = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.DienThoai = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.cbMaNV = new System.Windows.Forms.ComboBox();
+            this.btnHienThi = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvNhanVien)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -60,7 +61,7 @@
             this.btnThoat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(716, 494);
+            this.btnThoat.Location = new System.Drawing.Point(902, 501);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(155, 62);
@@ -75,7 +76,7 @@
             this.btnTim.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnTim.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.Image")));
             this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(531, 494);
+            this.btnTim.Location = new System.Drawing.Point(717, 501);
             this.btnTim.Margin = new System.Windows.Forms.Padding(4);
             this.btnTim.Name = "btnTim";
             this.btnTim.Size = new System.Drawing.Size(155, 62);
@@ -90,7 +91,7 @@
             this.btnNhapMoi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnNhapMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapMoi.Image")));
             this.btnNhapMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapMoi.Location = new System.Drawing.Point(355, 494);
+            this.btnNhapMoi.Location = new System.Drawing.Point(541, 501);
             this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapMoi.Name = "btnNhapMoi";
             this.btnNhapMoi.Size = new System.Drawing.Size(155, 62);
@@ -106,6 +107,7 @@
             this.dtpNgaySinh.Name = "dtpNgaySinh";
             this.dtpNgaySinh.Size = new System.Drawing.Size(265, 22);
             this.dtpNgaySinh.TabIndex = 7;
+            this.dtpNgaySinh.ValueChanged += new System.EventHandler(this.dtpNgaySinh_ValueChanged);
             // 
             // txtDiaChi
             // 
@@ -207,36 +209,6 @@
             this.dgvNhanVien.Size = new System.Drawing.Size(896, 185);
             this.dgvNhanVien.TabIndex = 24;
             // 
-            // panel1
-            // 
-            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.panel1.Controls.Add(this.cbMaNV);
-            this.panel1.Controls.Add(this.dtpNgaySinh);
-            this.panel1.Controls.Add(this.txtDiaChi);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.txtDienThoai);
-            this.panel1.Controls.Add(this.txtHoTen);
-            this.panel1.Controls.Add(this.label6);
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label2);
-            this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(163, 246);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(896, 208);
-            this.panel1.TabIndex = 23;
-            // 
-            // cbMaNV
-            // 
-            this.cbMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMaNV.FormattingEnabled = true;
-            this.cbMaNV.Location = new System.Drawing.Point(151, 42);
-            this.cbMaNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.cbMaNV.Name = "cbMaNV";
-            this.cbMaNV.Size = new System.Drawing.Size(213, 24);
-            this.cbMaNV.TabIndex = 13;
-            this.cbMaNV.SelectedIndexChanged += new System.EventHandler(this.CbMaNV_SelectedIndexChanged);
-            // 
             // MaNV
             // 
             this.MaNV.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
@@ -285,11 +257,54 @@
             this.DienThoai.MinimumWidth = 6;
             this.DienThoai.Name = "DienThoai";
             // 
+            // panel1
+            // 
+            this.panel1.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.panel1.Controls.Add(this.cbMaNV);
+            this.panel1.Controls.Add(this.dtpNgaySinh);
+            this.panel1.Controls.Add(this.txtDiaChi);
+            this.panel1.Controls.Add(this.label4);
+            this.panel1.Controls.Add(this.txtDienThoai);
+            this.panel1.Controls.Add(this.txtHoTen);
+            this.panel1.Controls.Add(this.label6);
+            this.panel1.Controls.Add(this.label5);
+            this.panel1.Controls.Add(this.label2);
+            this.panel1.Controls.Add(this.label1);
+            this.panel1.Location = new System.Drawing.Point(163, 246);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(896, 208);
+            this.panel1.TabIndex = 23;
+            // 
+            // cbMaNV
+            // 
+            this.cbMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMaNV.FormattingEnabled = true;
+            this.cbMaNV.Location = new System.Drawing.Point(151, 42);
+            this.cbMaNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbMaNV.Name = "cbMaNV";
+            this.cbMaNV.Size = new System.Drawing.Size(213, 24);
+            this.cbMaNV.TabIndex = 13;
+            this.cbMaNV.SelectedIndexChanged += new System.EventHandler(this.CbMaNV_SelectedIndexChanged);
+            // 
+            // btnHienThi
+            // 
+            this.btnHienThi.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnHienThi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnHienThi.Location = new System.Drawing.Point(339, 501);
+            this.btnHienThi.Name = "btnHienThi";
+            this.btnHienThi.Size = new System.Drawing.Size(155, 62);
+            this.btnHienThi.TabIndex = 30;
+            this.btnHienThi.Text = "Hiển Thị";
+            this.btnHienThi.UseVisualStyleBackColor = false;
+            this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
+            // 
             // FormTimKiemNV
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1267, 617);
+            this.Controls.Add(this.btnHienThi);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnTim);
             this.Controls.Add(this.btnNhapMoi);
@@ -329,5 +344,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn NgaySinh;
         private System.Windows.Forms.DataGridViewTextBoxColumn DiaChi;
         private System.Windows.Forms.DataGridViewTextBoxColumn DienThoai;
+        private System.Windows.Forms.Button btnHienThi;
     }
 }

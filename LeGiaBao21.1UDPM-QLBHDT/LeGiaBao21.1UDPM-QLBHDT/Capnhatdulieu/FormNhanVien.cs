@@ -39,7 +39,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         {
             LoadData();
             resetTxt();
-        }
+        }     
 
         private void FormNhanVien_Click(object sender, EventArgs e)
         {
