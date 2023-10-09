@@ -30,9 +30,9 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
-            this.dataSetKH = new LeGiaBao21._1UDPM_QLBHDT.baocaoKH.DataSetKH();
             this.dataSetKHBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataSetKH = new LeGiaBao21._1UDPM_QLBHDT.baocaoKH.DataSetKH();
+            this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
             this.KhachHangBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.khachHangBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.khachHangTableAdapter = new LeGiaBao21._1UDPM_QLBHDT.baocaoKH.DataSetKHTableAdapters.KhachHangTableAdapter();
@@ -40,38 +40,40 @@
             this.dataSetKHBindingSource1 = new System.Windows.Forms.BindingSource(this.components);
             this.dataSetKHBindingSource2 = new System.Windows.Forms.BindingSource(this.components);
             this.khachHangBindingSource3 = new System.Windows.Forms.BindingSource(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetKH)).BeginInit();
+            this.khachHangBindingSource4 = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.dataSetKHBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetKH)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.KhachHangBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetKHBindingSource1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetKHBindingSource2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource3)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource4)).BeginInit();
             this.SuspendLayout();
             // 
-            // reportViewer1
+            // dataSetKHBindingSource
             // 
-            reportDataSource1.Name = "DataSetKH";
-            reportDataSource1.Value = this.dataSetKHBindingSource;
-            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
-            this.reportViewer1.LocalReport.ReportEmbeddedResource = "LeGiaBao21._1UDPM_QLBHDT.baocaoKH.ReportKH.rdlc";
-            this.reportViewer1.Location = new System.Drawing.Point(63, 20);
-            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
-            this.reportViewer1.Name = "reportViewer1";
-            this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(444, 261);
-            this.reportViewer1.TabIndex = 0;
+            this.dataSetKHBindingSource.DataSource = this.dataSetKH;
+            this.dataSetKHBindingSource.Position = 0;
             // 
             // dataSetKH
             // 
             this.dataSetKH.DataSetName = "DataSetKH";
             this.dataSetKH.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
-            // dataSetKHBindingSource
+            // reportViewer1
             // 
-            this.dataSetKHBindingSource.DataSource = this.dataSetKH;
-            this.dataSetKHBindingSource.Position = 0;
+            reportDataSource1.Name = "DataSetKH";
+            reportDataSource1.Value = this.khachHangBindingSource4;
+            this.reportViewer1.LocalReport.DataSources.Add(reportDataSource1);
+            this.reportViewer1.LocalReport.ReportEmbeddedResource = "LeGiaBao21._1UDPM_QLBHDT.baocaoKH.ReportKH.rdlc";
+            this.reportViewer1.Location = new System.Drawing.Point(63, 20);
+            this.reportViewer1.Margin = new System.Windows.Forms.Padding(2);
+            this.reportViewer1.Name = "reportViewer1";
+            this.reportViewer1.ServerReport.BearerToken = null;
+            this.reportViewer1.Size = new System.Drawing.Size(444, 261);
+            this.reportViewer1.TabIndex = 0;
             // 
             // KhachHangBindingSource
             // 
@@ -107,24 +109,30 @@
             this.khachHangBindingSource3.DataMember = "KhachHang";
             this.khachHangBindingSource3.DataSource = this.dataSetKHBindingSource1;
             // 
+            // khachHangBindingSource4
+            // 
+            this.khachHangBindingSource4.DataMember = "KhachHang";
+            this.khachHangBindingSource4.DataSource = this.dataSetKHBindingSource;
+            // 
             // FormReportKH
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(600, 366);
             this.Controls.Add(this.reportViewer1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "FormReportKH";
             this.Text = "FormReportKH";
             this.Load += new System.EventHandler(this.FormReportKH_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.dataSetKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetKHBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dataSetKH)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.KhachHangBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetKHBindingSource1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSetKHBindingSource2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource3)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.khachHangBindingSource4)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -141,5 +149,6 @@
         private System.Windows.Forms.BindingSource dataSetKHBindingSource1;
         private System.Windows.Forms.BindingSource dataSetKHBindingSource2;
         private System.Windows.Forms.BindingSource khachHangBindingSource3;
+        private System.Windows.Forms.BindingSource khachHangBindingSource4;
     }
 }

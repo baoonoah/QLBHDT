@@ -62,7 +62,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             //dieu kien 
             if (dkienrong())
             {
-                MessageBox.Show("Nhập thiếu thông tin!", "Thông báo");
+                MessageBox.Show(dkienthieutt(), "Thông báo");
                 return;
             }
             if (txtMaNV.Text.Length > 20)
@@ -112,7 +112,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         {
             if (dkienrong())
             {
-                MessageBox.Show("Nhập thiếu thông tin", "Thông báo");
+                MessageBox.Show(dkienthieutt(), "Thông báo");
                 return;
             }
             try
@@ -242,16 +242,14 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             string.IsNullOrEmpty(txtDienThoai.Text);
         }
         //ham kiem tra cac dieu kien khac rong
-        private bool dkienkhacrong()
+        private string dkienthieutt()
         {
-            return !string.IsNullOrEmpty(txtMaNV.Text) &&
-             !string.IsNullOrEmpty(txtHoLot.Text) &&
-             !string.IsNullOrEmpty(txtTen.Text) &&
-             !string.IsNullOrEmpty(txtDiaChi.Text)&&
-             !string.IsNullOrEmpty(txtDienThoai.Text);
-        }
-       
 
+            return string.IsNullOrEmpty(txtMaNV.Text) ? "Thiếu mã nhân viên!" :
+              string.IsNullOrEmpty(txtHoLot.Text) ? "Thiếu Họ!" :
+              string.IsNullOrEmpty(txtTen.Text)  ? "Thiếu tên nhân viên!" :
+              string.IsNullOrEmpty(txtDiaChi.Text) ? "Thiếu địa chỉ!":"Thiếu điện thoại!";
+        }
 
         private void checkMaNV_CheckedChanged(object sender, EventArgs e)
         {

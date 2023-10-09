@@ -97,6 +97,7 @@ D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\bin\Debug\zh-C
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21.1UDPM-QLBHDT.csproj.CopyComplete
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.baocaoKH.FormReportKH.resources
+<<<<<<< HEAD
 D:\21.1UDPM-LeGiaBao\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\bin\Debug\SqlServerTypes\x64\msvcr120.dll
 D:\21.1UDPM-LeGiaBao\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\bin\Debug\SqlServerTypes\x64\SqlServerSpatial140.dll
 D:\21.1UDPM-LeGiaBao\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\bin\Debug\SqlServerTypes\x86\msvcr120.dll
@@ -159,3 +160,11 @@ D:\21.1UDPM-LeGiaBao\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\
 D:\21.1UDPM-LeGiaBao\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\RdlCompile.cache
 D:\21.1UDPM-LeGiaBao\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\RdlCompile.compiled
 D:\21.1UDPM-LeGiaBao\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21.1UDPM-QLBHDT.csproj.CopyComplete
+=======
+D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Timkiem.FormTimKiemKH.resources
+D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Timkiem.FormTimKiemLH.resources
+D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Timkiem.FormTimKiemNCC.resources
+>>>>>>> 244bfa83d0768342ad3093cf9703045b868bfb28
+D:\21.1UDPM-LeGiaBao\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Timkiem.FormTimKiemKH.resources
+D:\21.1UDPM-LeGiaBao\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Timkiem.FormTimKiemLH.resources
+D:\21.1UDPM-LeGiaBao\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Timkiem.FormTimKiemNCC.resources

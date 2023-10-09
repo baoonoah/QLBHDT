@@ -247,6 +247,15 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Timkiem\FormTimKiemKH.resx">
+      <DependentUpon>FormTimKiemKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Timkiem\FormTimKiemLH.resx">
+      <DependentUpon>FormTimKiemLH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Timkiem\FormTimKiemNCC.resx">
+      <DependentUpon>FormTimKiemNCC.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Timkiem\FormTimKiemNV.resx">
       <DependentUpon>FormTimKiemNV.cs</DependentUpon>
     </EmbeddedResource>
