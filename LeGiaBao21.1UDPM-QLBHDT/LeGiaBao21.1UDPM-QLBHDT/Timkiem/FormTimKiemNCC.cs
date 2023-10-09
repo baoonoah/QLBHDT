@@ -16,5 +16,45 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
         {
             InitializeComponent();
         }
+
+     
+
+        private void btnTim_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNhapMoi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnHienThi_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+
+        }
+        private void cbMaCongTy_SelectedIndexChanged(object sender, EventArgs e)
+        {
+
+        }
+        private void txtTenCongTy_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDienThoai_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtDiaChi_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

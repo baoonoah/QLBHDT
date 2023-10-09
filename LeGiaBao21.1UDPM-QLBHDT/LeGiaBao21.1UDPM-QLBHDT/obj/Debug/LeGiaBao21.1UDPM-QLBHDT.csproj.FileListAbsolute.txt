@@ -97,3 +97,6 @@ D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\bin\Debug\zh-C
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21.1UDPM-QLBHDT.csproj.CopyComplete
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.baocaoKH.FormReportKH.resources
+D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Timkiem.FormTimKiemKH.resources
+D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Timkiem.FormTimKiemLH.resources
+D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Timkiem.FormTimKiemNCC.resources
