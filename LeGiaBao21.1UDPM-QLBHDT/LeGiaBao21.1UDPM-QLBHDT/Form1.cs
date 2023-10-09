@@ -38,7 +38,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT
                 cậpNhậtDữLiệuToolStripMenuItem.Enabled = false;
                 tìmKiếmToolStripMenuItem.Enabled = false;
                 thốngKêBáoCáoToolStripMenuItem.Enabled = false;
-                thôngTinToolStripMenuItem.Enabled = false;
 
             }
             else
@@ -47,7 +46,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT
                 cậpNhậtDữLiệuToolStripMenuItem.Enabled = true;
                 tìmKiếmToolStripMenuItem.Enabled = true;
                 thốngKêBáoCáoToolStripMenuItem.Enabled = true;
-                thôngTinToolStripMenuItem.Enabled = true;
             }
         }
 
@@ -185,6 +183,33 @@ namespace LeGiaBao21._1UDPM_QLBHDT
             Form frm = new Timkiem.FormTimKiemNV();
             frm.Text = "Tìm Kiếm Nhân Viên";
             frm.ShowDialog();
+        }
+
+        private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string filePath = "D:\\CSDLnC#\\QLBHDT\\baocao\\MauBaoCao.docx";
+
+            try
+            {
+                System.Diagnostics.Process.Start(filePath);
+            }
+            catch (Exception)
+            {
+                MessageBox.Show("Không thể mở tệp tin Word. " );
+            }
+        }
+
+        private void tácGiảToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            string filePath = "https:///github.com/baoonoah/About";
+            try
+            {
+                System.Diagnostics.Process.Start(filePath);
+            }
+            catch (Exception )
+            {
+                MessageBox.Show("Liên kết bị lỗi!");
+            }
         }
     }
 }

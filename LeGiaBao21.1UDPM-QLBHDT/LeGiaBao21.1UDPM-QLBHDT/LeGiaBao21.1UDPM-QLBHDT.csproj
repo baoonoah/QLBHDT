@@ -65,6 +65,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="baocaoKH\DataSetKH.cs">
+      <DependentUpon>DataSetKH.xsd</DependentUpon>
+    </Compile>
     <Compile Include="baocaoKH\DataSetKH.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -295,6 +298,7 @@
   <ItemGroup>
     <Folder Include="icons\" />
     <Folder Include="imgs\" />
+    <Folder Include="Thongtin\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

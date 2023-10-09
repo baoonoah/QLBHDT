@@ -57,7 +57,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT
     #endregion
 		
 		public QLBHDTDataContext() : 
-				base(global::LeGiaBao21._1UDPM_QLBHDT.Properties.Settings.Default.QLBHDTConnectionString2, mappingSource)
+				base(global::LeGiaBao21._1UDPM_QLBHDT.Properties.Settings.Default.QLBHDTConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
@@ -357,7 +357,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT
 		
 		private string _Password;
 		
-		private System.Nullable<System.DateTime> _ThoiGianTao;
+		private System.DateTime _ThoiGianTao;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -371,7 +371,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT
     partial void OnEmailChanged();
     partial void OnPasswordChanging(string value);
     partial void OnPasswordChanged();
-    partial void OnThoiGianTaoChanging(System.Nullable<System.DateTime> value);
+    partial void OnThoiGianTaoChanging(System.DateTime value);
     partial void OnThoiGianTaoChanged();
     #endregion
 		
@@ -460,8 +460,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianTao", DbType="DateTime")]
-		public System.Nullable<System.DateTime> ThoiGianTao
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_ThoiGianTao", DbType="DateTime NOT NULL")]
+		public System.DateTime ThoiGianTao
 		{
 			get
 			{

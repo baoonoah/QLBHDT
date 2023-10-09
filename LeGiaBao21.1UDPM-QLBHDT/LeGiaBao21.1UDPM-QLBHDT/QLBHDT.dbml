@@ -1,5 +1,5 @@
 ﻿<?xml version="1.0" encoding="utf-8"?><Database Name="QLBHDT" Class="QLBHDTDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
-  <Connection Mode="AppSettings" ConnectionString="Data Source=MAY18;Initial Catalog=QLBHDT;Integrated Security=True" SettingsObjectName="LeGiaBao21._1UDPM_QLBHDT.Properties.Settings" SettingsPropertyName="QLBHDTConnectionString2" Provider="System.Data.SqlClient" />
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-O9SMJSLO\SQLEXPRESS;Initial Catalog=QLBHDT;Integrated Security=True" SettingsObjectName="LeGiaBao21._1UDPM_QLBHDT.Properties.Settings" SettingsPropertyName="QLBHDTConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.ChiTietHoaDon" Member="ChiTietHoaDons">
     <Type Name="ChiTietHoaDon">
       <Column Name="MaHD" Type="System.String" DbType="NVarChar(20) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
@@ -15,7 +15,7 @@
       <Column Name="Username" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Email" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
       <Column Name="Password" Type="System.String" DbType="VarChar(255) NOT NULL" CanBeNull="false" />
-      <Column Name="ThoiGianTao" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="ThoiGianTao" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
     </Type>
   </Table>
   <Table Name="dbo.HoaDon" Member="HoaDons">
