@@ -72,17 +72,27 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
 
                 if (!string.IsNullOrEmpty(searchText))
                 {
-                    dgvNhanVien.DataSource = from nv in db.NhanViens
-                                             where nv.DiaChi == txtDiaChi.Text
-                                             select new
-                                             {
-                                                 nv.MaNV,
-                                                 nv.HoLot,
-                                                 nv.Ten,
-                                                 nv.NgaySinh,
-                                                 nv.DiaChi,
-                                                 nv.DienThoai
-                                             };
+                    string[] keys = searchText.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    var nhanvien = from nv in db.NhanViens
+                                    select nv;
+
+                    // kiem tra tung tu khoa tim kiem
+                    foreach (var key in keys)
+                    {
+                        //dkien tim kiem
+                        // su dung contains kiem tra xem chuoi co chua tu khoa nao giong khong
+                        nhanvien = nhanvien.Where(kh => (kh.DiaChi).Contains(key));
+                    }
+
+                    dgvNhanVien.DataSource = nhanvien.Select(nv => new
+                    {
+                        nv.MaNV,
+                        nv.HoLot,
+                        nv.Ten,
+                        nv.NgaySinh,
+                        nv.DiaChi,
+                        nv.DienThoai
+                    }).ToList();
                 }
                 else
                 {
@@ -175,6 +185,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                                              };
                
             }
+        
 
         }
         private void BtnNhapMoi_Click(object sender, EventArgs e)

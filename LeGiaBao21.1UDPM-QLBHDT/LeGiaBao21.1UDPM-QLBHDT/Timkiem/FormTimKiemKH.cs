@@ -46,18 +46,29 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
             if (dkienTimTenKH())
             {
                 string searchText = txtTenKH.Text;
+
                 if (!string.IsNullOrEmpty(searchText))
                 {
-                    dgvKhachHang.DataSource = from kh in db.KhachHangs
-                                              where kh.TenKH == txtTenKH.Text.ToString()
-                                              select new
-                                              {
-                                                  kh.MaKH,
-                                                  kh.TenKH,
-                                                  kh.DiaChi,
-                                                  kh.DienThoai,
-                                                  kh.Email
-                                              };
+                    string[] keys = searchText.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    var khachhang = from kh in db.KhachHangs
+                              select kh;
+
+                    // kiem tra tung tu khoa tim kiem
+                    foreach (var key in keys)
+                    {
+                        //dkien tim kiem
+                        // su dung contains kiem tra xem chuoi co chua tu khoa nao giong khong
+                        khachhang = khachhang.Where(kh => (kh.TenKH).Contains(key));
+                    }
+
+                    dgvKhachHang.DataSource = khachhang.Select(kh => new
+                    {
+                        kh.MaKH,
+                        kh.TenKH,
+                        kh.DiaChi,
+                        kh.DienThoai,
+                        kh.Email
+                    }).ToList();
                 }
                 else
                 {

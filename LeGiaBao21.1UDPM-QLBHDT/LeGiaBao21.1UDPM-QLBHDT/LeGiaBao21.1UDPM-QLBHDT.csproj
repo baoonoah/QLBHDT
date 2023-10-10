@@ -250,6 +250,12 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Timkiem\FormTimKiemCTHD.resx">
+      <DependentUpon>FormTimKiemCTHD.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Timkiem\FormTimKiemHD.resx">
+      <DependentUpon>FormTimKiemHD.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Timkiem\FormTimKiemKH.resx">
       <DependentUpon>FormTimKiemKH.cs</DependentUpon>
     </EmbeddedResource>
@@ -261,6 +267,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Timkiem\FormTimKiemNV.resx">
       <DependentUpon>FormTimKiemNV.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Timkiem\FormTimKiemSP.resx">
+      <DependentUpon>FormTimKiemSP.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="baocaoKH\DataSetKH.xsc">
       <DependentUpon>DataSetKH.xsd</DependentUpon>

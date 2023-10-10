@@ -211,5 +211,53 @@ namespace LeGiaBao21._1UDPM_QLBHDT
                 MessageBox.Show("Liên kết bị lỗi!");
             }
         }
+
+        private void tìmKiếmKháchHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form frm = new Timkiem.FormTimKiemKH();
+            frm.Text = "Tìm Kiếm Khách Hàng";
+            frm.ShowDialog();
+        }
+
+        private void tìmKiếmNhàCungCấpToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form frm = new Timkiem.FormTimKiemNCC();
+            frm.Text = "Tìm Kiếm Nhà Cung Cấp";
+            frm.ShowDialog();
+        }
+
+        private void tìmKiếmLoạiHàngToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form frm = new Timkiem.FormTimKiemLH();
+            frm.Text = "Tìm Kiếm Loại Hàng";
+            frm.ShowDialog();
+        }
+
+        private void tìmKiếmSảnPhẩmToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form frm = new Timkiem.FormTimKiemSP();
+            frm.Text = "Tìm Kiếm Sản Phẩm";
+            frm.ShowDialog();
+        }
+
+        private void tìmKiếmHóaĐơnToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form frm = new Timkiem.FormTimKiemHD();
+            frm.Text = "Tìm Kiếm Hóa Đơn";
+            frm.ShowDialog();
+        }
+
+        private void tìmKiếmCTHDToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            Form frm = new Timkiem.FormTimKiemCTHD();
+            frm.Text = "Tìm Kiếm Chi Tiết Hóa Đơn";
+            frm.ShowDialog();
+        }
     }
 }

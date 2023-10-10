@@ -144,7 +144,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         }//end them
         private void btnSua_Click(object sender, EventArgs e)
         {
-            // Kiểm tra nếu có thông tin rỗng
             if (dkienrong())
             {
                 MessageBox.Show("Vui lòng nhập đầy đủ thông tin!", "Thông báo");
@@ -153,10 +152,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
             try
             {
-                // Tìm sản phẩm cần sửa
                 var sanPham = db.SanPhams.FirstOrDefault(sp => sp.MaSP == txtMaSP.Text);
-
-                // Kiểm tra nếu không tìm thấy sản phẩm
                 if (sanPham == null)
                 {
                     MessageBox.Show("Không tìm thấy sản phẩm có mã: " + txtMaSP.Text, "Thông báo");
@@ -200,9 +196,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                     MessageBox.Show("Số lượng không hợp lệ!", "Thông báo");
                     return;
                 }
-                // Lưu các thay đổi vào cơ sở dữ liệu
                 db.SubmitChanges();
-                    // Tải lại dữ liệu
                     LoadData();
                     MessageBox.Show("Đã sửa thành công sản phẩm: " + sanPham.MaSP, "Thông báo");
                     resetTxt();

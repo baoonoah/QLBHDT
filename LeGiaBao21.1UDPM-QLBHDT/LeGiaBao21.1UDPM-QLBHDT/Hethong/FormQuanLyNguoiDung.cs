@@ -57,23 +57,18 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
                 MessageBox.Show("Tên người dùng đã tồn tại.");
                 return;
             }
-            // Tạo một đối tượng User mới
             User user = new User();
                 user.Username = txtUsername.Text;
                 user.Email = txtEmail.Text;
                 user.Password = txtPassword.Text;
                 user.ThoiGianTao = DateTime.Now;
-
-
                 // Thêm người dùng mới vào cơ sở dữ liệu
                 db.Users.InsertOnSubmit(user);
                 db.SubmitChanges();
                 MessageBox.Show("Thêm thành công người dùng "+ txtUsername.Text+"!");
                 // Refresh dữ liệu trên DataGridView
                 LoadData();
-                // Xóa nội dung các TextBox
                 ClearTxt();
-          
         }
 
         private void FormQuanLyNguoiDung_Load(object sender, EventArgs e)
@@ -127,14 +122,12 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
             // Kiểm tra nếu không có hàng nào được chọn trên DataGridView
             if (dgvQuanLy.SelectedRows.Count == 0)
             {
-                MessageBox.Show("Vui lòng chọn một người dùng để xóa.");
+                MessageBox.Show("Vui lòng chọn id người dùng để xóa.");
                 return;
             }
 
-            // Lấy ID của người dùng được chọn
             int selectedUserId = Convert.ToInt32(dgvQuanLy.SelectedRows[0].Cells["Id"].Value);
 
-            // Tìm người dùng trong cơ sở dữ liệu 
             User userToDelete = db.Users.FirstOrDefault(u => u.Id == selectedUserId);
             if (userToDelete == null)
             {
@@ -142,8 +135,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
                 return;
             }
 
-            // Xóa người dùng khỏi cơ sở dữ liệu
-              
             DialogResult traloi;
             traloi = MessageBox.Show("Bạn có muốn xóa người dùng "+ userToDelete.Username+" không?", "Trả lời",
                 MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
@@ -151,12 +142,10 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
             {
                 db.Users.DeleteOnSubmit(userToDelete);
                 db.SubmitChanges();
+                LoadData();
+                MessageBox.Show("Xóa thành công người dùng " + userToDelete.Username);
+               
             }
-            // Refresh dữ liệu trên DataGridView
-            MessageBox.Show("Xóa thành công người dùng " + userToDelete.Username);
-            LoadData();
-
-            // Xóa nội dung các TextBox
             ClearTxt();
         }
 
@@ -178,7 +167,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
             }
             catch (Exception)
             {
-                MessageBox.Show("Chỉ được phép chọn 1 nhân viên!");
+                MessageBox.Show("Chỉ được phép chọn 1 người dùng!");
             }
         }
 
