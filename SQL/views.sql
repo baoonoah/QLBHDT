@@ -39,7 +39,18 @@ SELECT
 FROM HoaDon HD, ChiTietHoaDon CTHD, SanPham SP
 WHERE HD.MaHD = CTHD.MaHD and  CTHD.MaSP = SP.MaSP
 GROUP BY DATEPART(YEAR, HD.NgayLapHD)
-
+-- doanh thu khachhang
+CREATE VIEW DoanhThuKhachHang
+AS
+SELECT 
+       KH.MaKH,KH.TenKH,
+       SUM(CTHD.SoLuong * SP.GiaBan) AS DoanhThu
+FROM HoaDon HD, ChiTietHoaDon CTHD, KhachHang KH, SanPham SP
+WHERE HD.MaHD = CTHD.MaHD and HD.MaKH = KH.MaKH and CTHD.MaSP = SP.MaSP
+GROUP BY  KH.MaKH,KH.TenKH
+Having SUM(CTHD.SoLuong * SP.GiaBan) >= 100000000
+select * from HoaDon where MaKH = 'KH01'
+select * from SanPham ChiTietHoaDon where MaHD = 'HD31'
 --ton kho
 CREATE VIEW SanPhamBanRavaTonKHo
 AS
