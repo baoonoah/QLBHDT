@@ -61,10 +61,10 @@
             this.btnThoat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(902, 501);
+            this.btnThoat.Location = new System.Drawing.Point(892, 501);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(155, 62);
+            this.btnThoat.Size = new System.Drawing.Size(165, 62);
             this.btnThoat.TabIndex = 29;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -76,10 +76,10 @@
             this.btnTim.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnTim.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.Image")));
             this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(717, 501);
+            this.btnTim.Location = new System.Drawing.Point(707, 501);
             this.btnTim.Margin = new System.Windows.Forms.Padding(4);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(155, 62);
+            this.btnTim.Size = new System.Drawing.Size(162, 62);
             this.btnTim.TabIndex = 26;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
@@ -91,10 +91,10 @@
             this.btnNhapMoi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnNhapMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapMoi.Image")));
             this.btnNhapMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapMoi.Location = new System.Drawing.Point(541, 501);
+            this.btnNhapMoi.Location = new System.Drawing.Point(531, 501);
             this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapMoi.Name = "btnNhapMoi";
-            this.btnNhapMoi.Size = new System.Drawing.Size(155, 62);
+            this.btnNhapMoi.Size = new System.Drawing.Size(165, 62);
             this.btnNhapMoi.TabIndex = 25;
             this.btnNhapMoi.Text = "Làm sạch";
             this.btnNhapMoi.UseVisualStyleBackColor = false;
@@ -291,9 +291,12 @@
             // 
             this.btnHienThi.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnHienThi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnHienThi.Location = new System.Drawing.Point(339, 501);
+            this.btnHienThi.ForeColor = System.Drawing.SystemColors.ControlText;
+            this.btnHienThi.Image = ((System.Drawing.Image)(resources.GetObject("btnHienThi.Image")));
+            this.btnHienThi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHienThi.Location = new System.Drawing.Point(329, 501);
             this.btnHienThi.Name = "btnHienThi";
-            this.btnHienThi.Size = new System.Drawing.Size(155, 62);
+            this.btnHienThi.Size = new System.Drawing.Size(165, 62);
             this.btnHienThi.TabIndex = 30;
             this.btnHienThi.Text = "Hiển Thị";
             this.btnHienThi.UseVisualStyleBackColor = false;
