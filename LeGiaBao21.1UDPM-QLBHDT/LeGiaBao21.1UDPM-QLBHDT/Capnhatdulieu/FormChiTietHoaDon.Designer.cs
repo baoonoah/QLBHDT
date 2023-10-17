@@ -41,10 +41,10 @@
             this.btnNhapMoi = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.dgvChiTietHoaDon = new System.Windows.Forms.DataGridView();
-            this.btnSua = new System.Windows.Forms.Button();
             this.MaHD = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.MaSP = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnSua = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvChiTietHoaDon)).BeginInit();
             this.SuspendLayout();
@@ -54,7 +54,7 @@
             this.cbMaSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaSP.FormattingEnabled = true;
             this.cbMaSP.Location = new System.Drawing.Point(164, 89);
-            this.cbMaSP.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbMaSP.Margin = new System.Windows.Forms.Padding(4);
             this.cbMaSP.Name = "cbMaSP";
             this.cbMaSP.Size = new System.Drawing.Size(213, 24);
             this.cbMaSP.TabIndex = 13;
@@ -80,7 +80,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(285, 226);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(484, 208);
             this.panel1.TabIndex = 37;
@@ -88,7 +88,7 @@
             // txtSoLuong
             // 
             this.txtSoLuong.Location = new System.Drawing.Point(164, 148);
-            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(213, 22);
             this.txtSoLuong.TabIndex = 14;
@@ -98,7 +98,7 @@
             this.cbMaHD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaHD.FormattingEnabled = true;
             this.cbMaHD.Location = new System.Drawing.Point(164, 42);
-            this.cbMaHD.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.cbMaHD.Margin = new System.Windows.Forms.Padding(4);
             this.cbMaHD.Name = "cbMaHD";
             this.cbMaHD.Size = new System.Drawing.Size(213, 24);
             this.cbMaHD.TabIndex = 13;
@@ -131,10 +131,10 @@
             this.btnThoat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(861, 482);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Location = new System.Drawing.Point(857, 464);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(155, 38);
+            this.btnThoat.Size = new System.Drawing.Size(173, 52);
             this.btnThoat.TabIndex = 43;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -146,10 +146,10 @@
             this.btnThem.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnThem.Image = ((System.Drawing.Image)(resources.GetObject("btnThem.Image")));
             this.btnThem.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThem.Location = new System.Drawing.Point(259, 482);
-            this.btnThem.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThem.Location = new System.Drawing.Point(251, 464);
+            this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
-            this.btnThem.Size = new System.Drawing.Size(155, 38);
+            this.btnThem.Size = new System.Drawing.Size(173, 52);
             this.btnThem.TabIndex = 40;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
@@ -161,10 +161,10 @@
             this.btnNhapMoi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnNhapMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapMoi.Image")));
             this.btnNhapMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapMoi.Location = new System.Drawing.Point(51, 482);
-            this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNhapMoi.Location = new System.Drawing.Point(49, 464);
+            this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapMoi.Name = "btnNhapMoi";
-            this.btnNhapMoi.Size = new System.Drawing.Size(155, 38);
+            this.btnNhapMoi.Size = new System.Drawing.Size(173, 52);
             this.btnNhapMoi.TabIndex = 39;
             this.btnNhapMoi.Text = "Nhập mới";
             this.btnNhapMoi.UseVisualStyleBackColor = false;
@@ -176,10 +176,10 @@
             this.btnXoa.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnXoa.Image = ((System.Drawing.Image)(resources.GetObject("btnXoa.Image")));
             this.btnXoa.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoa.Location = new System.Drawing.Point(680, 482);
-            this.btnXoa.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnXoa.Location = new System.Drawing.Point(655, 464);
+            this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
-            this.btnXoa.Size = new System.Drawing.Size(155, 38);
+            this.btnXoa.Size = new System.Drawing.Size(173, 52);
             this.btnXoa.TabIndex = 42;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
@@ -193,28 +193,13 @@
             this.MaHD,
             this.MaSP,
             this.SoLuong});
-            this.dgvChiTietHoaDon.Location = new System.Drawing.Point(75, 34);
-            this.dgvChiTietHoaDon.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvChiTietHoaDon.Location = new System.Drawing.Point(79, 34);
+            this.dgvChiTietHoaDon.Margin = new System.Windows.Forms.Padding(4);
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.RowHeadersWidth = 51;
             this.dgvChiTietHoaDon.Size = new System.Drawing.Size(896, 185);
             this.dgvChiTietHoaDon.TabIndex = 38;
             this.dgvChiTietHoaDon.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvChiTietHoaDon_CellMouseClick);
-            // 
-            // btnSua
-            // 
-            this.btnSua.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
-            this.btnSua.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
-            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSua.Location = new System.Drawing.Point(469, 482);
-            this.btnSua.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.btnSua.Name = "btnSua";
-            this.btnSua.Size = new System.Drawing.Size(155, 38);
-            this.btnSua.TabIndex = 41;
-            this.btnSua.Text = "Sửa";
-            this.btnSua.UseVisualStyleBackColor = false;
-            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
             // 
             // MaHD
             // 
@@ -240,6 +225,21 @@
             this.SoLuong.MinimumWidth = 6;
             this.SoLuong.Name = "SoLuong";
             // 
+            // btnSua
+            // 
+            this.btnSua.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
+            this.btnSua.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnSua.Image = ((System.Drawing.Image)(resources.GetObject("btnSua.Image")));
+            this.btnSua.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSua.Location = new System.Drawing.Point(453, 464);
+            this.btnSua.Margin = new System.Windows.Forms.Padding(4);
+            this.btnSua.Name = "btnSua";
+            this.btnSua.Size = new System.Drawing.Size(173, 52);
+            this.btnSua.TabIndex = 41;
+            this.btnSua.Text = "Sửa";
+            this.btnSua.UseVisualStyleBackColor = false;
+            this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
+            // 
             // FormChiTietHoaDon
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -252,7 +252,7 @@
             this.Controls.Add(this.btnXoa);
             this.Controls.Add(this.dgvChiTietHoaDon);
             this.Controls.Add(this.btnSua);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FormChiTietHoaDon";
             this.Text = "FormChiTietHoaDon";
             this.Load += new System.EventHandler(this.FormChiTietHoaDon_Load);

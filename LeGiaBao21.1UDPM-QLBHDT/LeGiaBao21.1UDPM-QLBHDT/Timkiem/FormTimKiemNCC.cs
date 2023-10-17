@@ -39,7 +39,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvNhaCungCap.DataSource = null;
                 }
             }
@@ -50,15 +49,25 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
 
                 if (!string.IsNullOrEmpty(searchText))
                 {
-                    dgvNhaCungCap.DataSource = from ct in db.NhaCungCaps
-                                               where ct.TenCongTy == txtTenCongTy.Text.ToString()
-                                               select new
-                                               {
-                                                   ct.MaCongTy,
-                                                   ct.TenCongTy,
-                                                   ct.DiaChi,
-                                                   ct.DienThoai,
-                                               };
+                    string[] keys = searchText.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    var nhacungcap = from ncc in db.NhaCungCaps
+                                   select ncc;
+
+                    // kiem tra tung tu khoa tim kiem
+                    foreach (var key in keys)
+                    {
+                        //dkien tim kiem
+                        // su dung contains kiem tra xem chuoi co chua tu khoa nao giong khong
+                        nhacungcap = nhacungcap.Where(ncc => (ncc.TenCongTy).Contains(key));
+                    }
+
+                    dgvNhaCungCap.DataSource = nhacungcap.Select(ncc => new
+                    {
+                        ncc.MaCongTy,
+                        ncc.TenCongTy,
+                        ncc.DiaChi,
+                        ncc.DienThoai,
+                    }).ToList();
                 }
                 else
                 {
@@ -97,7 +106,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvNhaCungCap.DataSource = null;
                 }
             }
@@ -120,7 +128,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvNhaCungCap.DataSource = null;
                 }
             }

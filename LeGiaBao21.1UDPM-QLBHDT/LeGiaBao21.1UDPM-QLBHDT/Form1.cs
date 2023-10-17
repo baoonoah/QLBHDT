@@ -33,19 +33,16 @@ namespace LeGiaBao21._1UDPM_QLBHDT
             // Kiểm tra xem người dùng đã đăng nhập chưa
             if (string.IsNullOrEmpty(LoggedInUser))
             {
-                // Người dùng chưa đăng nhập
-
-                cậpNhậtDữLiệuToolStripMenuItem.Enabled = false;
-                tìmKiếmToolStripMenuItem.Enabled = false;
-                thốngKêBáoCáoToolStripMenuItem.Enabled = false;
+                cậpNhậtDữLiệuToolStripMenuItem.Visible = false;
+                tìmKiếmToolStripMenuItem.Visible = false;
+                thốngKêBáoCáoToolStripMenuItem.Visible = false;
 
             }
             else
             {
-                // Người dùng đã đăng nhập
-                cậpNhậtDữLiệuToolStripMenuItem.Enabled = true;
-                tìmKiếmToolStripMenuItem.Enabled = true;
-                thốngKêBáoCáoToolStripMenuItem.Enabled = true;
+                cậpNhậtDữLiệuToolStripMenuItem.Visible = true;
+                tìmKiếmToolStripMenuItem.Visible = true;
+                thốngKêBáoCáoToolStripMenuItem.Visible = true;
             }
         }
 
@@ -54,12 +51,12 @@ namespace LeGiaBao21._1UDPM_QLBHDT
             FormDangNhap frm = new Hethong.FormDangNhap();
             frm.Text = "Đăng Nhập";
             frm.ShowDialog();
-            this.Hide();
             if (!string.IsNullOrEmpty(frm.LoggedInUser))
             {
                 LoggedInUser = frm.LoggedInUser;
                 
             }
+            this.Hide();
         }
       
         private void ĐổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -187,7 +184,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT
 
         private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            string filePath = "D:\\CSDLnC#\\QLBHDT\\baocao\\MauBaoCao.docx";
+            //đường dẫn file báo cáo
+            string filePath = "D:\\CSDLnC#\\QLBHDT\\baocao\\LeGiaBao-21.1UDPM-BaoCao.docx";
 
             try
             {
@@ -259,5 +257,50 @@ namespace LeGiaBao21._1UDPM_QLBHDT
             frm.Text = "Tìm Kiếm Chi Tiết Hóa Đơn";
             frm.ShowDialog();
         }
+
+
+
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            Form frm = new Hethong.FormDangNhap();
+            frm.Text = "Đăng Nhập";
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn muốn đăng xuất phải không?", "Trả lời",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+                this.Hide();
+            frm.ShowDialog();
+        }
+
+        private void doanhThuToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+            Form frm = new Baocao.FormBaoCaoDoanhThu();
+            frm.Text = "Doanh Thu";
+            frm.ShowDialog();
+        }
+
+        private void sảnPhẩmToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form frm = new Baocao.FormBaoCaoSanPham();
+            frm.Text = "Sản Phẩm";
+            frm.ShowDialog();
+        }
+
+        private void kỷLụcToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+            Form frm = new Baocao.FormKyLuc();
+            frm.Text = "Kỷ Lục";
+            frm.ShowDialog();
+        }
+
+        private void lợiNhuậnToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+            Form frm = new Baocao.FormLoiNhuan();
+            frm.Text = "Lợi Nhuận";
+            frm.ShowDialog();
+        }
     }
 }
+

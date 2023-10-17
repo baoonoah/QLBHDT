@@ -55,7 +55,6 @@ D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\bin\Debug\zh-C
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\bin\Debug\zh-CHT\Microsoft.ReportViewer.WinForms.resources.dll
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21.1UDPM-QLBHDT.csproj.AssemblyReference.cache
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21.1UDPM-QLBHDT.csproj.SuggestedBindingRedirects.cache
-D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.baocaoKH.FormReportKH.resources
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu.FormChiTietHoaDon.resources
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu.FormHoaDon.resources
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu.FormKhachHang.resources
@@ -81,3 +80,8 @@ D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGi
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Timkiem.FormTimKiemCTHD.resources
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Timkiem.FormTimKiemSP.resources
 D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Timkiem.FormTimKiemHD.resources
+D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Baocao.FormBaoCaoDoanhThu.resources
+D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Baocao.FormBaoCaoSanPham.resources
+D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Baocao.FormKyLuc.resources
+D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Baocao.FormLoiNhuan.resources
+D:\CSDLnC#\QLBHDT\LeGiaBao21.1UDPM-QLBHDT\LeGiaBao21.1UDPM-QLBHDT\obj\Debug\LeGiaBao21._1UDPM_QLBHDT.Baocao.FormDoanhThuKHtheoMaKH.resources

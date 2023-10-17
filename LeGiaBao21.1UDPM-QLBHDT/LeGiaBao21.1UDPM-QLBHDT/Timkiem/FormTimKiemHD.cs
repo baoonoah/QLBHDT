@@ -77,7 +77,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvHoaDon.DataSource = null;
                 }
             }
@@ -101,7 +100,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvHoaDon.DataSource = null;
                 }
             }
@@ -125,7 +123,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvHoaDon.DataSource = null;
                 }
             }

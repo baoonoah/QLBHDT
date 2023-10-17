@@ -79,7 +79,16 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 tb.MaCongTy = txtMaCongTy.Text;
                 tb.TenCongTy = txtTenCongTy.Text;
                 tb.DiaChi = txtDiaChi.Text;
-                tb.DienThoai = txtDienThoai.Text;
+                decimal dienThoai;
+                if (decimal.TryParse(txtDienThoai.Text, out dienThoai) && txtDienThoai.Text.Length == 10)
+                {
+                    tb.DienThoai = dienThoai.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại không hợp lệ!", "Thông báo");
+                    return;
+                }
                 db.NhaCungCaps.InsertOnSubmit(tb);
 
                 /* cach 2
@@ -125,7 +134,16 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                       select table).Single();
                 tb.TenCongTy = txtTenCongTy.Text;
                 tb.DiaChi = txtDiaChi.Text;
-                tb.DienThoai = txtDienThoai.Text;
+                decimal dienThoai;
+                if (decimal.TryParse(txtDienThoai.Text, out dienThoai) && txtDienThoai.Text.Length == 10)
+                {
+                    tb.DienThoai = dienThoai.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Số điện thoại không hợp lệ!", "Thông báo");
+                    return;
+                }
                 txtMaCongTy.Enabled = true;
                 db.SubmitChanges();
                 LoadData();

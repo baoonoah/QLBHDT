@@ -43,7 +43,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvSanPham.DataSource = null;
                 }
             }
@@ -70,7 +69,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvSanPham.DataSource = null;
                 }
             }
@@ -97,7 +95,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvSanPham.DataSource = null;
                 }
             }
@@ -134,7 +131,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvSanPham.DataSource = null;
                 }
             }
@@ -161,7 +157,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvSanPham.DataSource = null;
                 }
             }
@@ -170,9 +165,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
             if (dkienTimSoLuong())
             {
                 string searchText = txtSoLuong.Text;
-
-                try
-                {
 
                     if (!string.IsNullOrEmpty(searchText))
                     {
@@ -192,15 +184,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                     }
                     else
                     {
-                        // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                         dgvSanPham.DataSource = null;
                     }
-                }
-
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Lỗi: " + ex);
-                }
             }
             //
             if (dkienTimGiaNhap())
@@ -228,7 +213,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                     }
                     else
                     {
-                        // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                         dgvSanPham.DataSource = null;
                     }
                 }
@@ -264,7 +248,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                     }
                     else
                     {
-                        // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                         dgvSanPham.DataSource = null;
                     }
                 }

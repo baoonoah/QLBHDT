@@ -96,7 +96,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
                     // Lưu các thay đổi vào cơ sở dữ liệu
                     db.SubmitChanges();
 
-                    MessageBox.Show("Xóa tài khoản thành công!");
+                    MessageBox.Show("Xóa thành công người dùng "+username+ "!");
                     ClearTxt(); // Xóa nội dung trong các ô văn bản
                 }
                 else
@@ -109,7 +109,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
 
         private void BtnThoat_Click(object sender, EventArgs e)
         {
-
+            this.Close();
         }
         private bool dkienrongxoa()
         {
@@ -149,6 +149,26 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
                 return false;
             }
             return true;
+        }
+
+        private void txtPassReNew_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPassNew_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtPass_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
         }
     }
 }

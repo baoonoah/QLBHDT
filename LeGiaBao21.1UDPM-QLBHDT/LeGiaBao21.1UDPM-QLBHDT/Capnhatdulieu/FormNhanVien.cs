@@ -29,7 +29,10 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                                          table.Ten,
                                          table.NgaySinh,
                                          table.DiaChi,
-                                         table.DienThoai
+                                         table.DienThoai,
+                                         table.LuongCoBan,
+                                         table.NgayVaoLam
+
                                      };
            
 
@@ -59,6 +62,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
         private void BtnThem_Click(object sender, EventArgs e)
         {
+            QLBHDTDataContext db = new QLBHDTDataContext();
             //dieu kien 
             if (dkienrong())
             {
@@ -95,7 +99,18 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 {
                     MessageBox.Show("Số điện thoại không hợp lệ!", "Thông báo");
                     return;
-                } 
+                }
+                long luongcoban;
+                if (long.TryParse(txtLuongCB.Text, out luongcoban) && txtLuongCB.Text.Length <= 10)
+                {
+                    tb.LuongCoBan = luongcoban;
+                }
+                else
+                {
+                    MessageBox.Show("Lương cơ bản không hợp lệ!", "Thông báo");
+                    return;
+                }
+                tb.NgayVaoLam = DateTime.Parse(dtpNgayVaoLam.Text.ToString());
                 db.NhanViens.InsertOnSubmit(tb);
                 db.SubmitChanges();
                 LoadData();
@@ -110,6 +125,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
         private void BtnSua_Click(object sender, EventArgs e)
         {
+            QLBHDTDataContext db = new QLBHDTDataContext();
             if (dkienrong())
             {
                 MessageBox.Show(dkienthieutt(), "Thông báo");
@@ -132,8 +148,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             tb.Ten = txtTen.Text;
             tb.NgaySinh = DateTime.Parse(dtpNgaySinh.Text.ToString());
             tb.DiaChi = txtDiaChi.Text;
-                long dienThoai;
-                if (long.TryParse(txtDienThoai.Text, out dienThoai) && txtDienThoai.Text.Length == 10)
+                decimal dienThoai;
+                if (decimal.TryParse(txtDienThoai.Text, out dienThoai) && txtDienThoai.Text.Length == 10)
                 {
                     tb.DienThoai = dienThoai.ToString();
                 }
@@ -142,8 +158,19 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                     MessageBox.Show("Số điện thoại không hợp lệ!", "Thông báo");
                     return;
                 }
+                long luongcoban;
+                if (long.TryParse(txtLuongCB.Text, out luongcoban) && txtLuongCB.Text.Length <= 10)
+                {
+                    tb.LuongCoBan = luongcoban;
+                }
+                else
+                {
+                    MessageBox.Show("Lương cơ bản không hợp lệ!", "Thông báo");
+                    return;
+                }
                 tb.NgaySinh = DateTime.Parse(dtpNgaySinh.Text.ToString());
-            db.SubmitChanges();
+                tb.NgayVaoLam = DateTime.Parse(dtpNgayVaoLam.Text.ToString());
+                db.SubmitChanges();
             LoadData();
              MessageBox.Show("Đã sửa thành công nhân viên: " + tb.MaNV, "Thông báo");
              resetTxt();
@@ -156,7 +183,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             }
         }//end function sua
 
-   
         private void BtnXoa_Click(object sender, EventArgs e)
         {
             QLBHDTDataContext db = new QLBHDTDataContext();
@@ -183,7 +209,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 db.NhanViens.DeleteOnSubmit(nhanVien);
                 db.SubmitChanges();
                 LoadData();
-                MessageBox.Show("Đã xóa thành công khách hàng: " + nhanVien.MaNV, "Thông báo");
+                MessageBox.Show("Đã xóa thành công nhân viên: " + nhanVien.MaNV, "Thông báo");
                 resetTxt();
                 checkMaNV.Checked = true;
             }//end try
@@ -211,6 +237,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 dtpNgaySinh.Text = row.Cells[3].Value.ToString();
                 txtDiaChi.Text = row.Cells[4].Value.ToString();
                 txtDienThoai.Text = row.Cells[5].Value.ToString();
+                txtLuongCB.Text = row.Cells[6].Value.ToString();
+                dtpNgayVaoLam.Text = row.Cells[7].Value.ToString();
                 checkMaNV.Checked = false;
             }
             catch (Exception)
@@ -227,6 +255,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             dtpNgaySinh.ResetText();
             txtDiaChi.ResetText();
             txtDienThoai.ResetText();
+            dtpNgayVaoLam.ResetText();
+            txtLuongCB.ResetText();
 
         }
         /*cac ham dieu kien*/
@@ -239,7 +269,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             string.IsNullOrEmpty(txtHoLot.Text) ||
             string.IsNullOrEmpty(txtTen.Text) ||
             string.IsNullOrEmpty(txtDiaChi.Text)||
-            string.IsNullOrEmpty(txtDienThoai.Text);
+            string.IsNullOrEmpty(txtDienThoai.Text) ||
+            string.IsNullOrEmpty(txtLuongCB.Text);
         }
         //ham kiem tra cac dieu kien khac rong
         private string dkienthieutt()
@@ -248,7 +279,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             return string.IsNullOrEmpty(txtMaNV.Text) ? "Thiếu mã nhân viên!" :
               string.IsNullOrEmpty(txtHoLot.Text) ? "Thiếu Họ!" :
               string.IsNullOrEmpty(txtTen.Text)  ? "Thiếu tên nhân viên!" :
-              string.IsNullOrEmpty(txtDiaChi.Text) ? "Thiếu địa chỉ!":"Thiếu điện thoại!";
+              string.IsNullOrEmpty(txtDiaChi.Text) ? "Thiếu địa chỉ!" :
+              string.IsNullOrEmpty(txtLuongCB.Text) ? "Thiếu lương cơ bản!" : "Thiếu điện thoại!";
         }
 
         private void checkMaNV_CheckedChanged(object sender, EventArgs e)

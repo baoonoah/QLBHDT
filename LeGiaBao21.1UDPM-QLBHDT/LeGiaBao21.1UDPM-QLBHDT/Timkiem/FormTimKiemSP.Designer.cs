@@ -39,6 +39,7 @@
             this.GiaBan = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.SoLuong = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.cbMaSP = new System.Windows.Forms.ComboBox();
             this.txtDonViTinh = new System.Windows.Forms.TextBox();
             this.txtSoLuong = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
@@ -58,7 +59,6 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnTim = new System.Windows.Forms.Button();
             this.btnNhapMoi = new System.Windows.Forms.Button();
-            this.cbMaSP = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvSanPham)).BeginInit();
             this.panel1.SuspendLayout();
             this.SuspendLayout();
@@ -171,6 +171,16 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(943, 284);
             this.panel1.TabIndex = 25;
+            // 
+            // cbMaSP
+            // 
+            this.cbMaSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.cbMaSP.FormattingEnabled = true;
+            this.cbMaSP.Location = new System.Drawing.Point(153, 37);
+            this.cbMaSP.Name = "cbMaSP";
+            this.cbMaSP.Size = new System.Drawing.Size(213, 24);
+            this.cbMaSP.TabIndex = 18;
+            this.cbMaSP.SelectedIndexChanged += new System.EventHandler(this.cbMaSP_SelectedIndexChanged);
             // 
             // txtDonViTinh
             // 
@@ -331,12 +341,14 @@
             // 
             this.btnHienThi.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnHienThi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnHienThi.Location = new System.Drawing.Point(341, 624);
+            this.btnHienThi.Image = ((System.Drawing.Image)(resources.GetObject("btnHienThi.Image")));
+            this.btnHienThi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHienThi.Location = new System.Drawing.Point(273, 602);
             this.btnHienThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHienThi.Name = "btnHienThi";
-            this.btnHienThi.Size = new System.Drawing.Size(155, 62);
+            this.btnHienThi.Size = new System.Drawing.Size(196, 62);
             this.btnHienThi.TabIndex = 63;
-            this.btnHienThi.Text = "Hiển Thị";
+            this.btnHienThi.Text = "Hiển thị";
             this.btnHienThi.UseVisualStyleBackColor = false;
             this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
             // 
@@ -346,10 +358,10 @@
             this.btnThoat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(902, 624);
+            this.btnThoat.Location = new System.Drawing.Point(927, 602);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(155, 62);
+            this.btnThoat.Size = new System.Drawing.Size(196, 62);
             this.btnThoat.TabIndex = 62;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -361,10 +373,10 @@
             this.btnTim.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnTim.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.Image")));
             this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(714, 624);
+            this.btnTim.Location = new System.Drawing.Point(709, 602);
             this.btnTim.Margin = new System.Windows.Forms.Padding(4);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(155, 62);
+            this.btnTim.Size = new System.Drawing.Size(196, 62);
             this.btnTim.TabIndex = 61;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
@@ -376,24 +388,14 @@
             this.btnNhapMoi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnNhapMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapMoi.Image")));
             this.btnNhapMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapMoi.Location = new System.Drawing.Point(528, 624);
+            this.btnNhapMoi.Location = new System.Drawing.Point(491, 602);
             this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapMoi.Name = "btnNhapMoi";
-            this.btnNhapMoi.Size = new System.Drawing.Size(155, 62);
+            this.btnNhapMoi.Size = new System.Drawing.Size(196, 62);
             this.btnNhapMoi.TabIndex = 60;
             this.btnNhapMoi.Text = "Làm sạch";
             this.btnNhapMoi.UseVisualStyleBackColor = false;
             this.btnNhapMoi.Click += new System.EventHandler(this.btnNhapMoi_Click);
-            // 
-            // cbMaSP
-            // 
-            this.cbMaSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
-            this.cbMaSP.FormattingEnabled = true;
-            this.cbMaSP.Location = new System.Drawing.Point(153, 37);
-            this.cbMaSP.Name = "cbMaSP";
-            this.cbMaSP.Size = new System.Drawing.Size(213, 24);
-            this.cbMaSP.TabIndex = 18;
-            this.cbMaSP.SelectedIndexChanged += new System.EventHandler(this.cbMaSP_SelectedIndexChanged);
             // 
             // FormTimKiemSP
             // 

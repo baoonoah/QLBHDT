@@ -19,28 +19,24 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
         public FormDangNhap()
         {
             InitializeComponent();
-        }
 
+        }
         private void FormDangNhap_Load(object sender, EventArgs e)
         {
-            
-        }
 
+        }
+        private int countDangNhapThatBai = 4;
         private void btnDangNhap_Click(object sender, EventArgs e)
         {
-            // Lấy tên đăng nhập và mật khẩu từ hộp văn bản
             string username = txtUser.Text;
             string password = txtPass.Text;
-           
 
-            // Kiểm tra xem có trường nào để trống không
             if (txtUser.Text == "" || txtPass.Text == "")
             {
                 MessageBox.Show(dkien());
                 return;
             }
 
-            // Tạo kết nối với cơ sở dữ liệu
             SqlConnection conn = new SqlConnection(connectionString);
             string query = "SELECT * FROM Users WHERE Username = @Username AND Password = @Password";
             SqlCommand command = new SqlCommand(query, conn);
@@ -67,7 +63,15 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
             }
             else
             {
+                countDangNhapThatBai--;
+                lbTimer.Text = "Bạn còn " + countDangNhapThatBai + " lần thử lại!";
                 MessageBox.Show("Tên người dùng hoặc mật khẩu không chính xác!");
+                if (countDangNhapThatBai <= 0)
+                {
+                    // Đã nhập sai 3 lần, thoát chương trình
+                    Application.Exit();
+                }
+             
             }
           
         }
@@ -85,5 +89,24 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
                 string.IsNullOrEmpty(txtUser.Text) && !string.IsNullOrEmpty(txtPass.Text) ? "Vui lòng nhập tên đăng nhập!" : "Vui lòng nhập mật khẩu!";
         }
 
+        private void txtPass_Validating(object sender, CancelEventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+            Form frm = new Hethong.FormDangKy();
+            frm.Text = "Đăng Ký";
+            frm.ShowDialog();
+        }
+    
+
+        private void FormDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+        {
+        }
+        private void FormDangNhap_GiveFeedback(object sender, GiveFeedbackEventArgs e)
+        {
+        }
     }
 }

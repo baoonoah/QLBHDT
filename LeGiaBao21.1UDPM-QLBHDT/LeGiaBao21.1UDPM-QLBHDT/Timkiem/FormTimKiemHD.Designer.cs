@@ -107,7 +107,7 @@
             this.dtpNgayLapHD.Location = new System.Drawing.Point(246, 194);
             this.dtpNgayLapHD.Margin = new System.Windows.Forms.Padding(4);
             this.dtpNgayLapHD.Name = "dtpNgayLapHD";
-            this.dtpNgayLapHD.Size = new System.Drawing.Size(265, 22);
+            this.dtpNgayLapHD.Size = new System.Drawing.Size(213, 22);
             this.dtpNgayLapHD.TabIndex = 12;
             this.dtpNgayLapHD.ValueChanged += new System.EventHandler(this.dtpNgayLapHD_ValueChanged);
             // 
@@ -216,12 +216,14 @@
             // 
             this.btnHienThi.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnHienThi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
+            this.btnHienThi.Image = ((System.Drawing.Image)(resources.GetObject("btnHienThi.Image")));
+            this.btnHienThi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnHienThi.Location = new System.Drawing.Point(292, 540);
             this.btnHienThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHienThi.Name = "btnHienThi";
-            this.btnHienThi.Size = new System.Drawing.Size(155, 62);
+            this.btnHienThi.Size = new System.Drawing.Size(196, 62);
             this.btnHienThi.TabIndex = 63;
-            this.btnHienThi.Text = "Hiển Thị";
+            this.btnHienThi.Text = "Hiển thị";
             this.btnHienThi.UseVisualStyleBackColor = false;
             this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
             // 
@@ -231,10 +233,10 @@
             this.btnThoat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(853, 540);
+            this.btnThoat.Location = new System.Drawing.Point(907, 540);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(155, 62);
+            this.btnThoat.Size = new System.Drawing.Size(196, 62);
             this.btnThoat.TabIndex = 62;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -246,10 +248,10 @@
             this.btnTim.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnTim.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.Image")));
             this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(665, 540);
+            this.btnTim.Location = new System.Drawing.Point(702, 540);
             this.btnTim.Margin = new System.Windows.Forms.Padding(4);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(155, 62);
+            this.btnTim.Size = new System.Drawing.Size(196, 62);
             this.btnTim.TabIndex = 61;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
@@ -261,10 +263,10 @@
             this.btnNhapMoi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnNhapMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapMoi.Image")));
             this.btnNhapMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapMoi.Location = new System.Drawing.Point(479, 540);
+            this.btnNhapMoi.Location = new System.Drawing.Point(497, 540);
             this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapMoi.Name = "btnNhapMoi";
-            this.btnNhapMoi.Size = new System.Drawing.Size(155, 62);
+            this.btnNhapMoi.Size = new System.Drawing.Size(196, 62);
             this.btnNhapMoi.TabIndex = 60;
             this.btnNhapMoi.Text = "Làm sạch";
             this.btnNhapMoi.UseVisualStyleBackColor = false;

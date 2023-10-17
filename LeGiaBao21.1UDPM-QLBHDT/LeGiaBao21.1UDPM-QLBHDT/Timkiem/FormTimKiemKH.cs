@@ -38,7 +38,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvKhachHang.DataSource = null;
                 }
             }
@@ -53,11 +52,9 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                     var khachhang = from kh in db.KhachHangs
                               select kh;
 
-                    // kiem tra tung tu khoa tim kiem
                     foreach (var key in keys)
                     {
                         //dkien tim kiem
-                        // su dung contains kiem tra xem chuoi co chua tu khoa nao giong khong
                         khachhang = khachhang.Where(kh => (kh.TenKH).Contains(key));
                     }
 
@@ -72,7 +69,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvKhachHang.DataSource = null;
                 }
             }
@@ -130,7 +126,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvKhachHang.DataSource = null;
                 }
             }
@@ -153,7 +148,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvKhachHang.DataSource = null;
                 }
             }
@@ -176,7 +170,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvKhachHang.DataSource = null;
                 }
             }

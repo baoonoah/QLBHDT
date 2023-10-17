@@ -22,6 +22,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
 
             cbMaNV.DataSource = from nv in db.NhanViens select nv.MaNV;
             cbMaNV.SelectedIndex = -1;
+       
+
         }
         private void resetTxt()
         {
@@ -30,11 +32,16 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
             txtDiaChi.ResetText();
             txtDienThoai.ResetText();
             dtpNgaySinh.ResetText();
+            dtpNgayVaoLam.ResetText();
             cbMaNV.Enabled = true;
             txtHoTen.Enabled = true;
             txtDiaChi.Enabled = true;
             txtDienThoai.Enabled = true;
             dtpNgaySinh.Enabled = true;
+            txtLuongCB.Enabled = true;
+            dtpNgayVaoLam.Enabled = true;
+            checkNgaySinh.Checked = false;
+            checkNgayVaoLam.Checked = false;
 
         }
 
@@ -56,12 +63,13 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                                                  nv.Ten,
                                                  nv.NgaySinh,
                                                  nv.DiaChi,
-                                                 nv.DienThoai
+                                                 nv.DienThoai,
+                                                 nv.LuongCoBan,
+                                                 nv.NgayVaoLam
                                              };
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvNhanVien.DataSource = null;
                 }
             }
@@ -91,12 +99,13 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                         nv.Ten,
                         nv.NgaySinh,
                         nv.DiaChi,
-                        nv.DienThoai
+                        nv.DienThoai,
+                        nv.LuongCoBan,
+                        nv.NgayVaoLam
                     }).ToList();
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvNhanVien.DataSource = null;
                 }
 
@@ -130,12 +139,13 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                         nv.Ten,
                         nv.NgaySinh,
                         nv.DiaChi,
-                        nv.DienThoai
+                        nv.DienThoai,
+                        nv.LuongCoBan,
+                        nv.NgayVaoLam
                     }).ToList();
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvNhanVien.DataSource = null;
                 }
 
@@ -156,36 +166,87 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                                                  nv.Ten,
                                                  nv.NgaySinh,
                                                  nv.DiaChi,
-                                                 nv.DienThoai
+                                                 nv.DienThoai,
+                                                 nv.LuongCoBan,
+                                                 nv.NgayVaoLam
                                              };
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvNhanVien.DataSource = null;
                 }
 
             }
 
             //tim ngay sinh
-            if (dkienTimNgaySinh())
+            if (checkNgaySinh.Checked == true)
             {
 
+
+                dgvNhanVien.DataSource = from nv in db.NhanViens
+                                         where nv.NgaySinh == DateTime.Parse(dtpNgaySinh.Text.ToString())
+                                         select new
+                                         {
+                                             nv.MaNV,
+                                             nv.HoLot,
+                                             nv.Ten,
+                                             nv.NgaySinh,
+                                             nv.DiaChi,
+                                             nv.DienThoai,
+                                             nv.LuongCoBan,
+                                             nv.NgayVaoLam
+                                         };
                
+            }
+
+            //
+            if (dkienTimLuongCB())
+            {
+                
+                string searchText = txtLuongCB.Text;
+
+                if (!string.IsNullOrEmpty(searchText))
+                {
                     dgvNhanVien.DataSource = from nv in db.NhanViens
-                                             where nv.NgaySinh == DateTime.Parse(dtpNgaySinh.Text.ToString())
-                select new
+                                             where nv.LuongCoBan == decimal.Parse(txtLuongCB.Text.ToString())
+                                             select new
                                              {
                                                  nv.MaNV,
                                                  nv.HoLot,
                                                  nv.Ten,
                                                  nv.NgaySinh,
                                                  nv.DiaChi,
-                                                 nv.DienThoai
+                                                 nv.DienThoai,
+                                                 nv.LuongCoBan,
+                                                 nv.NgayVaoLam
                                              };
-               
+
+                }
+                else
+                {
+                    dgvNhanVien.DataSource = null;
+                }
             }
-        
+            //
+            if (checkNgayVaoLam.Checked == true)
+            {
+
+
+                dgvNhanVien.DataSource = from nv in db.NhanViens
+                                         where nv.NgayVaoLam == DateTime.Parse(dtpNgayVaoLam.Text.ToString())
+                                         select new
+                                         {
+                                             nv.MaNV,
+                                             nv.HoLot,
+                                             nv.Ten,
+                                             nv.NgaySinh,
+                                             nv.DiaChi,
+                                             nv.DienThoai,
+                                             nv.LuongCoBan,
+                                             nv.NgayVaoLam
+                                         };
+
+            }
 
         }
         private void BtnNhapMoi_Click(object sender, EventArgs e)
@@ -206,6 +267,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 txtDiaChi.Enabled = false;
                 txtDienThoai.Enabled = false;
                 dtpNgaySinh.Enabled = false;
+                txtLuongCB.Enabled = false;
+                dtpNgayVaoLam.Enabled = false;
             }
             else
             {
@@ -213,6 +276,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 txtDiaChi.Enabled = true;
                 txtDienThoai.Enabled = true;
                 dtpNgaySinh.Enabled = true;
+                txtLuongCB.Enabled = true;
+                dtpNgayVaoLam.Enabled = true;
             }
         }
 
@@ -224,6 +289,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 txtHoTen.Enabled = false;
                 txtDienThoai.Enabled = false;
                 dtpNgaySinh.Enabled = false;
+                txtLuongCB.Enabled = false;
+                dtpNgayVaoLam.Enabled = false;
             }
             else
             {
@@ -231,6 +298,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 txtHoTen.Enabled = true;
                 txtDienThoai.Enabled = true;
                 dtpNgaySinh.Enabled = true;
+                txtLuongCB.Enabled = true;
+                dtpNgayVaoLam.Enabled = true;
             }
         }
         private void txtHoTen_TextChanged(object sender, EventArgs e)
@@ -241,6 +310,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 txtDiaChi.Enabled = false;
                 txtDienThoai.Enabled = false;
                 dtpNgaySinh.Enabled = false;
+                txtLuongCB.Enabled = false;
+                dtpNgayVaoLam.Enabled = false;
             }
             else
             {
@@ -248,6 +319,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 txtDienThoai.Enabled = true;
                 txtDiaChi.Enabled = true;
                 dtpNgaySinh.Enabled = true;
+                txtLuongCB.Enabled = true;
+                dtpNgayVaoLam.Enabled = true;
             }
         }
         private void txtDienThoai_TextChanged(object sender, EventArgs e)
@@ -259,7 +332,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 txtHoTen.Enabled = false;
                 txtDiaChi.Enabled = false;
                 dtpNgaySinh.Enabled = false;
-
+                txtLuongCB.Enabled = false;
+                dtpNgayVaoLam.Enabled = false;
             }
             else
             {
@@ -267,25 +341,13 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 txtHoTen.Enabled = true;
                 txtDiaChi.Enabled = true;
                 dtpNgaySinh.Enabled = true;
+                txtLuongCB.Enabled = true;
+                dtpNgayVaoLam.Enabled = true;
             }
         }
         private void dtpNgaySinh_ValueChanged(object sender, EventArgs e)
         {
 
-            if (dkienTimNgaySinh())
-            {
-                cbMaNV.Enabled = false;
-                txtHoTen.Enabled = false;
-                txtDiaChi.Enabled = false;
-                txtDienThoai.Enabled=false;
-            }
-            else
-            {
-                cbMaNV.Enabled = true;
-                txtHoTen.Enabled = true;
-                txtDiaChi.Enabled = true;
-                txtDienThoai.Enabled = true;
-            }
         } 
 private bool dkienTimMaNV()
         {
@@ -293,8 +355,9 @@ private bool dkienTimMaNV()
             string hoten = txtHoTen.Text;
             string diachi = txtDiaChi.Text;
             string sdt = txtDienThoai.Text;
+            string luongcoban = txtLuongCB.Text;
             return !string.IsNullOrEmpty(manv) &&
-                string.IsNullOrEmpty(hoten)  && string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt);
+                string.IsNullOrEmpty(hoten)  && string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt) && string.IsNullOrEmpty(luongcoban) ;
         }
         private bool dkienTimDC()
         {
@@ -302,9 +365,9 @@ private bool dkienTimMaNV()
             string hoten = txtHoTen.Text;
             string diachi = txtDiaChi.Text;
             string sdt = txtDienThoai.Text;
-
+            string luongcoban = txtLuongCB.Text;
             return string.IsNullOrEmpty(manv) &&
-                string.IsNullOrEmpty(hoten)  && !string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt);
+                string.IsNullOrEmpty(hoten)  && !string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt) && string.IsNullOrEmpty(luongcoban) ;
         }
         private bool dkienTimHoTen()
         {
@@ -312,9 +375,9 @@ private bool dkienTimMaNV()
             string hoten = txtHoTen.Text;
             string diachi = txtDiaChi.Text;
             string sdt = txtDienThoai.Text;
-
+            string luongcoban = txtLuongCB.Text;
             return string.IsNullOrEmpty(manv) &&
-                !string.IsNullOrEmpty(hoten) && string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt);
+                !string.IsNullOrEmpty(hoten) && string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt) && string.IsNullOrEmpty(luongcoban);
         }
         private bool dkienTimSDT()
         {
@@ -322,20 +385,25 @@ private bool dkienTimMaNV()
             string hoten = txtHoTen.Text;
             string diachi = txtDiaChi.Text;
             string sdt = txtDienThoai.Text;
+            string luongcoban = txtLuongCB.Text;
 
             return string.IsNullOrEmpty(manv) &&
-                string.IsNullOrEmpty(hoten) && string.IsNullOrEmpty(diachi) && !string.IsNullOrEmpty(sdt);
+                string.IsNullOrEmpty(hoten) && string.IsNullOrEmpty(diachi) && !string.IsNullOrEmpty(sdt) && string.IsNullOrEmpty(luongcoban);
         }
-        private bool dkienTimNgaySinh()
+  
+        private bool dkienTimLuongCB()
         {
             string manv = cbMaNV.Text;
             string hoten = txtHoTen.Text;
             string diachi = txtDiaChi.Text;
             string sdt = txtDienThoai.Text;
+            string luongcoban = txtLuongCB.Text;
 
             return string.IsNullOrEmpty(manv) &&
-                string.IsNullOrEmpty(hoten) && string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt) && !string.IsNullOrEmpty(dtpNgaySinh.Value.ToShortDateString());
+                string.IsNullOrEmpty(hoten) && string.IsNullOrEmpty(diachi) && string.IsNullOrEmpty(sdt) && !string.IsNullOrEmpty(luongcoban);
         }
+      
+
         private void btnThoat_Click(object sender, EventArgs e)
         {
             this.Close();
@@ -347,6 +415,78 @@ private bool dkienTimMaNV()
                                      select nv;
         }
 
+        private void txtLuongCB_TextChanged(object sender, EventArgs e)
+        {
+            if (dkienTimLuongCB())
+            {
+                txtHoTen.Enabled = false;
+                txtDiaChi.Enabled = false;
+                txtDienThoai.Enabled = false;
+                dtpNgaySinh.Enabled = false;
+                dtpNgayVaoLam.Enabled = false;
+            }
+            else
+            {
+                txtHoTen.Enabled = true;
+                txtDiaChi.Enabled = true;
+                txtDienThoai.Enabled = true;
+                dtpNgaySinh.Enabled = true;
+                dtpNgayVaoLam.Enabled = true;
+            }
+        }
+
+        private void dateTimePicker1_ValueChanged(object sender, EventArgs e)
+        {
+          
+        }
+
+        private void checkNgaySinh_CheckedChanged(object sender, EventArgs e)
+        {
+            if(checkNgaySinh.Checked == true)
+            {
+                checkNgayVaoLam.Checked = false;
+                cbMaNV.Enabled = false;
+                txtHoTen.Enabled = false;
+                txtDiaChi.Enabled = false;
+                txtDienThoai.Enabled = false;
+                txtLuongCB.Enabled = false;
+                dtpNgayVaoLam.Enabled = false;
+            }
+            else
+            {
+                cbMaNV.Enabled = true;
+                txtHoTen.Enabled = true;
+                txtDiaChi.Enabled = true;
+                txtDienThoai.Enabled = true;
+                txtLuongCB.Enabled = true;
+                dtpNgayVaoLam.Enabled = true;
+            }
+
+        }
+
+        private void checkNgayVaoLam_CheckedChanged(object sender, EventArgs e)
+        {
+            if (checkNgayVaoLam.Checked == true)
+            {
+                checkNgaySinh.Checked = false;
+                cbMaNV.Enabled = false;
+                txtHoTen.Enabled = false;
+                txtDiaChi.Enabled = false;
+                txtDienThoai.Enabled = false;
+                txtLuongCB.Enabled = false;
+                dtpNgaySinh.Enabled = false;
+            }
+            else
+            {
+                cbMaNV.Enabled = true;
+                txtHoTen.Enabled = true;
+                txtDiaChi.Enabled = true;
+                txtDienThoai.Enabled = true;
+                txtLuongCB.Enabled = true;
+                dtpNgaySinh.Enabled = true;
+            }
+
+        }
     }
 }
 

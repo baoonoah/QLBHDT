@@ -41,7 +41,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvLoaiHang.DataSource = null;
                 }
 
@@ -54,17 +53,27 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
 
                 if (!string.IsNullOrEmpty(searchText))
                 {
-                    dgvLoaiHang.DataSource = from nv in db.LoaiHangs
-                                             where nv.TenLoaiHang == txtTenLoaiHang.Text.ToString()
-                                             select new
-                                             {
-                                                 nv.MaLoaiHang,
-                                                 nv.TenLoaiHang
-                                             };
+                    string[] keys = searchText.Split(new[] { ' ' }, StringSplitOptions.RemoveEmptyEntries);
+                    var loaihang = from ct in db.LoaiHangs
+                               select ct;
+
+                    // kiem tra tung tu khoa tim kiem
+                    foreach (var key in keys)
+                    {
+                        //dkien tim kiem
+                        // su dung contains kiem tra xem chuoi co chua tu khoa nao giong khong
+                        loaihang = loaihang.Where(lh => (lh.TenLoaiHang).Contains(key));
+                    }
+
+                    dgvLoaiHang.DataSource = loaihang.Select(lh => new
+                    {
+                        lh.MaLoaiHang,
+                        lh.TenLoaiHang
+
+                    }).ToList();
                 }
                 else
                 {
-                    // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
                     dgvLoaiHang.DataSource = null;
                 }
 

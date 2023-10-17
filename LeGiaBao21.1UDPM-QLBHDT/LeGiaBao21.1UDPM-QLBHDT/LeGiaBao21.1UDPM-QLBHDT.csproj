@@ -65,19 +65,45 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="baocaoKH\DataSetKH.cs">
-      <DependentUpon>DataSetKH.xsd</DependentUpon>
-    </Compile>
-    <Compile Include="baocaoKH\DataSetKH.Designer.cs">
+    <Compile Include="Baocao\DataSet.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetKH.xsd</DependentUpon>
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="baocaoKH\FormReportKH.cs">
+    <Compile Include="Baocao\DataSetDoanhThuKHtheoMaKH.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetDoanhThuKHtheoMaKH.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="Baocao\FormBaoCaoDoanhThu.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="baocaoKH\FormReportKH.Designer.cs">
-      <DependentUpon>FormReportKH.cs</DependentUpon>
+    <Compile Include="Baocao\FormBaoCaoDoanhThu.Designer.cs">
+      <DependentUpon>FormBaoCaoDoanhThu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Baocao\FormBaoCaoSanPham.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Baocao\FormBaoCaoSanPham.Designer.cs">
+      <DependentUpon>FormBaoCaoSanPham.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Baocao\FormDoanhThuKHtheoMaKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Baocao\FormDoanhThuKHtheoMaKH.Designer.cs">
+      <DependentUpon>FormDoanhThuKHtheoMaKH.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Baocao\FormKyLuc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Baocao\FormKyLuc.Designer.cs">
+      <DependentUpon>FormKyLuc.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Baocao\FormLoiNhuan.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Baocao\FormLoiNhuan.Designer.cs">
+      <DependentUpon>FormLoiNhuan.cs</DependentUpon>
     </Compile>
     <Compile Include="Capnhatdulieu\FormChiTietHoaDon.cs">
       <SubType>Form</SubType>
@@ -201,10 +227,35 @@
     <Compile Include="Timkiem\FormTimKiemSP.Designer.cs">
       <DependentUpon>FormTimKiemSP.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="baocaoKH\FormReportKH.resx">
-      <DependentUpon>FormReportKH.cs</DependentUpon>
+    <EmbeddedResource Include="Baocao\FormBaoCaoDoanhThu.resx">
+      <DependentUpon>FormBaoCaoDoanhThu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="baocaoKH\ReportKH.rdlc" />
+    <EmbeddedResource Include="Baocao\FormBaoCaoSanPham.resx">
+      <DependentUpon>FormBaoCaoSanPham.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Baocao\FormDoanhThuKHtheoMaKH.resx">
+      <DependentUpon>FormDoanhThuKHtheoMaKH.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Baocao\FormKyLuc.resx">
+      <DependentUpon>FormKyLuc.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Baocao\FormLoiNhuan.resx">
+      <DependentUpon>FormLoiNhuan.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Baocao\ReportDoanhThuKH.rdlc" />
+    <EmbeddedResource Include="Baocao\ReportDoanhThuKHtheoMaKH.rdlc" />
+    <EmbeddedResource Include="Baocao\ReportDoanhThuSP.rdlc" />
+    <EmbeddedResource Include="Baocao\ReportDoanhThuTheoNam.rdlc" />
+    <EmbeddedResource Include="Baocao\ReportDoanhThuTheoQui.rdlc" />
+    <EmbeddedResource Include="Baocao\ReportDoanhThuTheoNgay.rdlc" />
+    <EmbeddedResource Include="Baocao\ReportDoanhThuTheoThang.rdlc" />
+    <EmbeddedResource Include="Baocao\ReportKhachHang_vip.rdlc" />
+    <EmbeddedResource Include="Baocao\ReportLoiNhuanSP.rdlc" />
+    <EmbeddedResource Include="Baocao\ReportLoiNhuanTheoThang.rdlc" />
+    <EmbeddedResource Include="Baocao\ReportNhanVien_1_DH.rdlc" />
+    <EmbeddedResource Include="Baocao\ReportNhanVien_1_DT.rdlc" />
+    <EmbeddedResource Include="Baocao\ReportSanPhamBanRa.rdlc" />
+    <EmbeddedResource Include="Baocao\ReportSanPhamTonKho.rdlc" />
     <EmbeddedResource Include="Capnhatdulieu\FormChiTietHoaDon.resx">
       <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -249,6 +300,7 @@
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
     </Compile>
     <EmbeddedResource Include="Timkiem\FormTimKiemCTHD.resx">
       <DependentUpon>FormTimKiemCTHD.cs</DependentUpon>
@@ -271,16 +323,27 @@
     <EmbeddedResource Include="Timkiem\FormTimKiemSP.resx">
       <DependentUpon>FormTimKiemSP.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="baocaoKH\DataSetKH.xsc">
-      <DependentUpon>DataSetKH.xsd</DependentUpon>
+    <None Include="Baocao\DataSet.xsc">
+      <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
-    <None Include="baocaoKH\DataSetKH.xsd">
+    <None Include="Baocao\DataSet.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetKH.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSet.Designer.cs</LastGenOutput>
     </None>
-    <None Include="baocaoKH\DataSetKH.xss">
-      <DependentUpon>DataSetKH.xsd</DependentUpon>
+    <None Include="Baocao\DataSet.xss">
+      <DependentUpon>DataSet.xsd</DependentUpon>
+    </None>
+    <None Include="Baocao\DataSetDoanhThuKHtheoMaKH.xsc">
+      <DependentUpon>DataSetDoanhThuKHtheoMaKH.xsd</DependentUpon>
+    </None>
+    <None Include="Baocao\DataSetDoanhThuKHtheoMaKH.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetDoanhThuKHtheoMaKH.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="Baocao\DataSetDoanhThuKHtheoMaKH.xss">
+      <DependentUpon>DataSetDoanhThuKHtheoMaKH.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -306,13 +369,14 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="icons\" />
-    <Folder Include="imgs\" />
     <Folder Include="Thongtin\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />
   </ItemGroup>
   <ItemGroup>
+    <None Include="imgs\Apple-iPhone-15-Pro-lineup-hero-230912.jpg.og.jpg" />
+    <None Include="imgs\pngtree-cool-new-mobile-phone-promotion-purple-banner-image_183067.jpg" />
     <Content Include="SqlServerTypes\readme.htm" />
     <Content Include="SqlServerTypes\x64\msvcr120.dll">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

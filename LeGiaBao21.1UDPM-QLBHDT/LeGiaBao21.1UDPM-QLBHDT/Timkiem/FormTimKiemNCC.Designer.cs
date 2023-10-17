@@ -61,7 +61,7 @@
             this.DiaChi,
             this.DienThoai});
             this.dgvNhaCungCap.Location = new System.Drawing.Point(149, 34);
-            this.dgvNhaCungCap.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.dgvNhaCungCap.Margin = new System.Windows.Forms.Padding(4);
             this.dgvNhaCungCap.Name = "dgvNhaCungCap";
             this.dgvNhaCungCap.RowHeadersWidth = 51;
             this.dgvNhaCungCap.Size = new System.Drawing.Size(896, 185);
@@ -111,7 +111,7 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label1);
             this.panel1.Location = new System.Drawing.Point(149, 265);
-            this.panel1.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(896, 166);
             this.panel1.TabIndex = 25;
@@ -130,7 +130,7 @@
             // txtDiaChi
             // 
             this.txtDiaChi.Location = new System.Drawing.Point(596, 49);
-            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(213, 22);
             this.txtDiaChi.TabIndex = 9;
@@ -150,7 +150,7 @@
             // txtTenCongTy
             // 
             this.txtTenCongTy.Location = new System.Drawing.Point(164, 94);
-            this.txtTenCongTy.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtTenCongTy.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenCongTy.Name = "txtTenCongTy";
             this.txtTenCongTy.Size = new System.Drawing.Size(213, 22);
             this.txtTenCongTy.TabIndex = 5;
@@ -159,7 +159,7 @@
             // txtDienThoai
             // 
             this.txtDienThoai.Location = new System.Drawing.Point(596, 97);
-            this.txtDienThoai.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtDienThoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(213, 22);
             this.txtDienThoai.TabIndex = 11;
@@ -202,12 +202,14 @@
             // 
             this.btnHienThi.BackColor = System.Drawing.SystemColors.GradientInactiveCaption;
             this.btnHienThi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.btnHienThi.Location = new System.Drawing.Point(256, 475);
+            this.btnHienThi.Image = ((System.Drawing.Image)(resources.GetObject("btnHienThi.Image")));
+            this.btnHienThi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnHienThi.Location = new System.Drawing.Point(196, 475);
             this.btnHienThi.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnHienThi.Name = "btnHienThi";
-            this.btnHienThi.Size = new System.Drawing.Size(155, 62);
+            this.btnHienThi.Size = new System.Drawing.Size(196, 62);
             this.btnHienThi.TabIndex = 55;
-            this.btnHienThi.Text = "Hiển Thị";
+            this.btnHienThi.Text = "Hiển thị";
             this.btnHienThi.UseVisualStyleBackColor = false;
             this.btnHienThi.Click += new System.EventHandler(this.btnHienThi_Click);
             // 
@@ -217,10 +219,10 @@
             this.btnThoat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(817, 475);
-            this.btnThoat.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnThoat.Location = new System.Drawing.Point(856, 475);
+            this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(155, 62);
+            this.btnThoat.Size = new System.Drawing.Size(196, 62);
             this.btnThoat.TabIndex = 54;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
@@ -232,10 +234,10 @@
             this.btnTim.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnTim.Image = ((System.Drawing.Image)(resources.GetObject("btnTim.Image")));
             this.btnTim.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnTim.Location = new System.Drawing.Point(629, 475);
-            this.btnTim.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnTim.Location = new System.Drawing.Point(636, 475);
+            this.btnTim.Margin = new System.Windows.Forms.Padding(4);
             this.btnTim.Name = "btnTim";
-            this.btnTim.Size = new System.Drawing.Size(155, 62);
+            this.btnTim.Size = new System.Drawing.Size(196, 62);
             this.btnTim.TabIndex = 53;
             this.btnTim.Text = "Tìm";
             this.btnTim.UseVisualStyleBackColor = false;
@@ -247,10 +249,10 @@
             this.btnNhapMoi.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnNhapMoi.Image = ((System.Drawing.Image)(resources.GetObject("btnNhapMoi.Image")));
             this.btnNhapMoi.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnNhapMoi.Location = new System.Drawing.Point(443, 475);
-            this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnNhapMoi.Location = new System.Drawing.Point(416, 475);
+            this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapMoi.Name = "btnNhapMoi";
-            this.btnNhapMoi.Size = new System.Drawing.Size(155, 62);
+            this.btnNhapMoi.Size = new System.Drawing.Size(196, 62);
             this.btnNhapMoi.TabIndex = 52;
             this.btnNhapMoi.Text = "Làm sạch";
             this.btnNhapMoi.UseVisualStyleBackColor = false;
