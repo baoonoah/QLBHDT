@@ -39,6 +39,7 @@
             this.label4 = new System.Windows.Forms.Label();
             this.lbTimer = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbhienthi = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -128,6 +129,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.label4.Cursor = System.Windows.Forms.Cursors.Hand;
             this.label4.Font = new System.Drawing.Font("Arial", 10F);
             this.label4.ForeColor = System.Drawing.Color.White;
             this.label4.Location = new System.Drawing.Point(44, 237);
@@ -150,6 +152,7 @@
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.lbhienthi);
             this.groupBox1.Controls.Add(this.lbTimer);
             this.groupBox1.Controls.Add(this.label4);
             this.groupBox1.Controls.Add(this.label3);
@@ -157,14 +160,25 @@
             this.groupBox1.Controls.Add(this.txtUser);
             this.groupBox1.Controls.Add(this.label2);
             this.groupBox1.Controls.Add(this.label1);
+            this.groupBox1.Cursor = System.Windows.Forms.Cursors.Arrow;
             this.groupBox1.Font = new System.Drawing.Font("Arial", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(118, 77);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(4);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(4);
-            this.groupBox1.Size = new System.Drawing.Size(628, 286);
+            this.groupBox1.Size = new System.Drawing.Size(653, 286);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
+            // 
+            // lbhienthi
+            // 
+            this.lbhienthi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbhienthi.Image = ((System.Drawing.Image)(resources.GetObject("lbhienthi.Image")));
+            this.lbhienthi.Location = new System.Drawing.Point(562, 177);
+            this.lbhienthi.Name = "lbhienthi";
+            this.lbhienthi.Size = new System.Drawing.Size(62, 43);
+            this.lbhienthi.TabIndex = 8;
+            this.lbhienthi.Click += new System.EventHandler(this.lbhienthi_Click);
             // 
             // FormDangNhap
             // 
@@ -180,9 +194,7 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormDangNhap";
             this.Text = "Đăng Nhập";
-            this.FormClosing += new System.Windows.Forms.FormClosingEventHandler(this.FormDangNhap_FormClosing);
             this.Load += new System.EventHandler(this.FormDangNhap_Load);
-            this.GiveFeedback += new System.Windows.Forms.GiveFeedbackEventHandler(this.FormDangNhap_GiveFeedback);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
@@ -200,5 +212,6 @@
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label lbTimer;
         private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.Label lbhienthi;
     }
 }

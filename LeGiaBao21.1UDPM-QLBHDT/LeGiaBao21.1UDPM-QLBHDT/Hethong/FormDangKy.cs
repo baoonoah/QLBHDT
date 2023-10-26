@@ -72,5 +72,20 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
         {
               this.Close();
         }
+        private int CountClick = 0;
+        private void lbhienthi_Click(object sender, EventArgs e)
+        {
+            if (CountClick % 2 == 0)
+            {
+                txtPassword.PasswordChar = '\0';
+                txtPassRecomfirm.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPassword.PasswordChar = '*';
+                txtPassRecomfirm.PasswordChar = '*';
+            }
+            CountClick++;
+        }
     }
 }

@@ -56,9 +56,9 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         private void btnThem_Click(object sender, EventArgs e)
         {
             //
-            if (txtMaCongTy.Text.Length > 20)
+            if (txtMaCongTy.Text.Length > 10)
             {
-                MessageBox.Show("Mã công ty không được vượt quá 20 ký tự!", "Thông báo");
+                MessageBox.Show("Mã công ty không được vượt quá 10 ký tự!", "Thông báo");
                 return;
             }
             if (dkienrong())
@@ -90,17 +90,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                     return;
                 }
                 db.NhaCungCaps.InsertOnSubmit(tb);
-
-                /* cach 2
-                 var khachHang = new KhachHang
-                  {
-                      MaKH = txtMaKH.Text,
-                      TenKH = txtTenKH.Text,
-                      DiaChi = txtDiaChi.Text,
-                      DienThoai = txtDienThoai.Text,
-                      Email = txtEmail.Text
-                  };
-                  db.KhachHangs.InsertOnSubmit(khachHang);*/
                 db.SubmitChanges();
                 LoadData();
                 MessageBox.Show("Đã thêm thành công nhà cung cấp: " + txtMaCongTy.Text, "Thông báo");
@@ -170,12 +159,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
             try
             {
-                //khoi tao moi doi tuong tb moi
-
-                //            KhachHang tb = new KhachHang();
-                //            tb = (from table in db.KhachHangs
-                //                  where table.MaKH == txtMaKH.Text
-                //                  select table).Single();
                 var nhacungCap = db.NhaCungCaps.FirstOrDefault(ncc => ncc.MaCongTy == txtMaCongTy.Text);
                 if (nhacungCap == null)
                 {

@@ -40,7 +40,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-           
+            
             string username = txtUsername.Text;
             string password = txtPassword.Text;
             string email = txtEmail.Text;

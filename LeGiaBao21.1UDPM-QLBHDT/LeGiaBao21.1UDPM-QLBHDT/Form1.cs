@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -185,15 +186,16 @@ namespace LeGiaBao21._1UDPM_QLBHDT
         private void thôngTinToolStripMenuItem_Click(object sender, EventArgs e)
         {
             //đường dẫn file báo cáo
-            string filePath = "D:\\CSDLnC#\\QLBHDT\\baocao\\LeGiaBao-21.1UDPM-BaoCao.docx";
+            DirectoryInfo dir = new DirectoryInfo(".");
+            string dir2 = dir.FullName + "\\LeGiaBao-21.1UDPM-BaoCao.docx";
 
             try
             {
-                System.Diagnostics.Process.Start(filePath);
+                System.Diagnostics.Process.Start(dir2);
             }
             catch (Exception)
             {
-                MessageBox.Show("Không thể mở tệp tin Word. " );
+                MessageBox.Show("Không thể mở tệp tin Word." );
             }
         }
 
@@ -260,18 +262,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT
 
 
 
-        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            Form frm = new Hethong.FormDangNhap();
-            frm.Text = "Đăng Nhập";
-            DialogResult traloi;
-            traloi = MessageBox.Show("Bạn muốn đăng xuất phải không?", "Trả lời",
-                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
-            if (traloi == DialogResult.OK)
-                this.Hide();
-            frm.ShowDialog();
-        }
-
+   
         private void doanhThuToolStripMenuItem_Click_1(object sender, EventArgs e)
         {
             Form frm = new Baocao.FormBaoCaoDoanhThu();
@@ -300,6 +291,20 @@ namespace LeGiaBao21._1UDPM_QLBHDT
             Form frm = new Baocao.FormLoiNhuan();
             frm.Text = "Lợi Nhuận";
             frm.ShowDialog();
+        }
+
+        private void toolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            Form frm = new Hethong.FormDangNhap();
+            frm.Text = "Đăng Nhập";
+            DialogResult traloi;
+            traloi = MessageBox.Show("Bạn muốn đăng xuất phải không?", "Trả lời",
+                MessageBoxButtons.OKCancel, MessageBoxIcon.Question);
+            if (traloi == DialogResult.OK)
+            {
+                this.Hide();
+                frm.ShowDialog();
+            }
         }
     }
 }

@@ -57,7 +57,7 @@
             this.cbMaSP.Margin = new System.Windows.Forms.Padding(4);
             this.cbMaSP.Name = "cbMaSP";
             this.cbMaSP.Size = new System.Drawing.Size(213, 24);
-            this.cbMaSP.TabIndex = 13;
+            this.cbMaSP.TabIndex = 1;
             // 
             // label1
             // 
@@ -91,7 +91,7 @@
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(213, 22);
-            this.txtSoLuong.TabIndex = 14;
+            this.txtSoLuong.TabIndex = 2;
             // 
             // cbMaHD
             // 
@@ -101,7 +101,7 @@
             this.cbMaHD.Margin = new System.Windows.Forms.Padding(4);
             this.cbMaHD.Name = "cbMaHD";
             this.cbMaHD.Size = new System.Drawing.Size(213, 24);
-            this.cbMaHD.TabIndex = 13;
+            this.cbMaHD.TabIndex = 0;
             // 
             // label2
             // 
@@ -135,7 +135,7 @@
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(173, 52);
-            this.btnThoat.TabIndex = 43;
+            this.btnThoat.TabIndex = 7;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -150,7 +150,7 @@
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(173, 52);
-            this.btnThem.TabIndex = 40;
+            this.btnThem.TabIndex = 4;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -165,7 +165,7 @@
             this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapMoi.Name = "btnNhapMoi";
             this.btnNhapMoi.Size = new System.Drawing.Size(173, 52);
-            this.btnNhapMoi.TabIndex = 39;
+            this.btnNhapMoi.TabIndex = 3;
             this.btnNhapMoi.Text = "Nhập mới";
             this.btnNhapMoi.UseVisualStyleBackColor = false;
             this.btnNhapMoi.Click += new System.EventHandler(this.btnNhapMoi_Click);
@@ -180,7 +180,7 @@
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(173, 52);
-            this.btnXoa.TabIndex = 42;
+            this.btnXoa.TabIndex = 6;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -198,7 +198,7 @@
             this.dgvChiTietHoaDon.Name = "dgvChiTietHoaDon";
             this.dgvChiTietHoaDon.RowHeadersWidth = 51;
             this.dgvChiTietHoaDon.Size = new System.Drawing.Size(896, 185);
-            this.dgvChiTietHoaDon.TabIndex = 38;
+            this.dgvChiTietHoaDon.TabIndex = 8;
             this.dgvChiTietHoaDon.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvChiTietHoaDon_CellMouseClick);
             // 
             // MaHD
@@ -235,7 +235,7 @@
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(173, 52);
-            this.btnSua.TabIndex = 41;
+            this.btnSua.TabIndex = 5;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);

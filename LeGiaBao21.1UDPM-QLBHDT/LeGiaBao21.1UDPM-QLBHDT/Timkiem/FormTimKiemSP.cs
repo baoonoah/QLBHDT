@@ -28,7 +28,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     dgvSanPham.DataSource = from sp in db.SanPhams
-                                            where sp.MaSP == cbMaSP.SelectedItem.ToString()
+                                            where sp.MaSP == cbMaSP.Text.ToString()
                                             select new
                                             {
                                                 sp.MaSP,
@@ -54,7 +54,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     dgvSanPham.DataSource = from sp in db.SanPhams
-                                            where sp.MaCongTy == cbMaCongTy.SelectedItem.ToString()
+                                            where sp.MaCongTy == cbMaCongTy.Text.ToString()
                                             select new
                                             {
                                                 sp.MaSP,
@@ -80,7 +80,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     dgvSanPham.DataSource = from sp in db.SanPhams
-                                            where sp.MaLoaiHang == cbMaLoaiHang.SelectedItem.ToString()
+                                            where sp.MaLoaiHang == cbMaLoaiHang.Text.ToString()
                                             select new
                                             {
                                                 sp.MaSP,
@@ -449,13 +449,12 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 txtDonViTinh.Enabled = false;
             }
         }
-
         private void cbMaLoaiHang_SelectedIndexChanged(object sender, EventArgs e)
         {
             if (!dkienTimMaLH())
             {
                 
-                cbMaCongTy.Enabled = false;
+                cbMaCongTy.Enabled = true;
                 cbMaSP.Enabled = true;
                 txtTenSP.Enabled = true;
                 txtSoLuong.Enabled = true;
@@ -569,10 +568,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 txtDonViTinh.Enabled = false;
                 txtGiaNhap.Enabled = false;
             }
-
-
         }
-
         private void txtSoLuong_TextChanged(object sender, EventArgs e)
         {
             if (!dkienTimSoLuong())
@@ -594,6 +590,79 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 txtDonViTinh.Enabled = false;
                 txtGiaBan.Enabled = false;
                 txtGiaNhap.Enabled = false;
+            }
+        }
+
+        private void cbMaSP_TextChanged(object sender, EventArgs e)
+        {
+            if (!dkienTimMaSP())
+            {
+                txtTenSP.Enabled = true;
+                cbMaCongTy.Enabled = true;
+                cbMaLoaiHang.Enabled = true;
+                txtSoLuong.Enabled = true;
+                txtGiaNhap.Enabled = true;
+                txtGiaBan.Enabled = true;
+                txtDonViTinh.Enabled = true;
+            }
+            else
+            {
+                txtTenSP.Enabled = false;
+                cbMaCongTy.Enabled = false;
+                cbMaLoaiHang.Enabled = false;
+                txtSoLuong.Enabled = false;
+                txtGiaNhap.Enabled = false;
+                txtGiaBan.Enabled = false;
+                txtDonViTinh.Enabled = false;
+            }
+        }
+
+        private void cbMaLoaiHang_TextChanged(object sender, EventArgs e)
+        {
+            if (!dkienTimMaLH())
+            {
+
+                cbMaCongTy.Enabled = true;
+                cbMaSP.Enabled = true;
+                txtTenSP.Enabled = true;
+                txtSoLuong.Enabled = true;
+                txtGiaNhap.Enabled = true;
+                txtGiaBan.Enabled = true;
+                txtDonViTinh.Enabled = true;
+            }
+            else
+            {
+                cbMaSP.Enabled = false;
+                txtTenSP.Enabled = false;
+                cbMaCongTy.Enabled = false;
+                txtSoLuong.Enabled = false;
+                txtGiaNhap.Enabled = false;
+                txtGiaBan.Enabled = false;
+                txtDonViTinh.Enabled = false;
+            }
+        }
+
+        private void cbMaCongTy_TextChanged(object sender, EventArgs e)
+        {
+            if (!dkienTimMaCTY())
+            {
+                cbMaSP.Enabled = true;
+                cbMaLoaiHang.Enabled = true;
+                txtTenSP.Enabled = true;
+                txtSoLuong.Enabled = true;
+                txtGiaNhap.Enabled = true;
+                txtGiaBan.Enabled = true;
+                txtDonViTinh.Enabled = true;
+            }
+            else
+            {
+                cbMaSP.Enabled = false;
+                cbMaLoaiHang.Enabled = false;
+                txtTenSP.Enabled = false;
+                txtSoLuong.Enabled = false;
+                txtGiaNhap.Enabled = false;
+                txtGiaBan.Enabled = false;
+                txtDonViTinh.Enabled = false;
             }
         }
     }

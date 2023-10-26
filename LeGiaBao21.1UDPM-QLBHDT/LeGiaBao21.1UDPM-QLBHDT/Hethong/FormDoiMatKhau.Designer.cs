@@ -30,6 +30,8 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormDoiMatKhau));
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lbhienthi = new System.Windows.Forms.Label();
+            this.label5 = new System.Windows.Forms.Label();
             this.txtPassReNew = new System.Windows.Forms.TextBox();
             this.txtPassNew = new System.Windows.Forms.TextBox();
             this.txtPass = new System.Windows.Forms.TextBox();
@@ -41,13 +43,13 @@
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnXacNhan = new System.Windows.Forms.Button();
             this.btnXoaTK = new System.Windows.Forms.Button();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.BackColor = System.Drawing.Color.Transparent;
+            this.groupBox1.Controls.Add(this.lbhienthi);
             this.groupBox1.Controls.Add(this.label5);
             this.groupBox1.Controls.Add(this.txtPassReNew);
             this.groupBox1.Controls.Add(this.txtPassNew);
@@ -65,7 +67,27 @@
             this.groupBox1.Size = new System.Drawing.Size(666, 377);
             this.groupBox1.TabIndex = 1;
             this.groupBox1.TabStop = false;
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // lbhienthi
+            // 
+            this.lbhienthi.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.lbhienthi.Image = ((System.Drawing.Image)(resources.GetObject("lbhienthi.Image")));
+            this.lbhienthi.Location = new System.Drawing.Point(586, 299);
+            this.lbhienthi.Name = "lbhienthi";
+            this.lbhienthi.Size = new System.Drawing.Size(62, 43);
+            this.lbhienthi.TabIndex = 35;
+            this.lbhienthi.Click += new System.EventHandler(this.lbhienthi_Click);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Arial", 17F, System.Drawing.FontStyle.Bold);
+            this.label5.ForeColor = System.Drawing.Color.White;
+            this.label5.Location = new System.Drawing.Point(216, 46);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(226, 34);
+            this.label5.TabIndex = 8;
+            this.label5.Text = "ĐỔI MẬT KHẨU";
             // 
             // txtPassReNew
             // 
@@ -74,8 +96,7 @@
             this.txtPassReNew.Name = "txtPassReNew";
             this.txtPassReNew.PasswordChar = '*';
             this.txtPassReNew.Size = new System.Drawing.Size(292, 35);
-            this.txtPassReNew.TabIndex = 7;
-            this.txtPassReNew.TextChanged += new System.EventHandler(this.txtPassReNew_TextChanged);
+            this.txtPassReNew.TabIndex = 4;
             // 
             // txtPassNew
             // 
@@ -84,8 +105,7 @@
             this.txtPassNew.Name = "txtPassNew";
             this.txtPassNew.PasswordChar = '*';
             this.txtPassNew.Size = new System.Drawing.Size(292, 35);
-            this.txtPassNew.TabIndex = 5;
-            this.txtPassNew.TextChanged += new System.EventHandler(this.txtPassNew_TextChanged);
+            this.txtPassNew.TabIndex = 3;
             // 
             // txtPass
             // 
@@ -94,8 +114,7 @@
             this.txtPass.Name = "txtPass";
             this.txtPass.PasswordChar = '*';
             this.txtPass.Size = new System.Drawing.Size(292, 35);
-            this.txtPass.TabIndex = 3;
-            this.txtPass.TextChanged += new System.EventHandler(this.txtPass_TextChanged);
+            this.txtPass.TabIndex = 2;
             // 
             // txtUsername
             // 
@@ -110,7 +129,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label4.ForeColor = System.Drawing.Color.White;
-            this.label4.Location = new System.Drawing.Point(66, 303);
+            this.label4.Location = new System.Drawing.Point(40, 303);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(179, 24);
@@ -122,7 +141,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label3.ForeColor = System.Drawing.Color.White;
-            this.label3.Location = new System.Drawing.Point(66, 244);
+            this.label3.Location = new System.Drawing.Point(40, 244);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(139, 24);
@@ -134,7 +153,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label2.ForeColor = System.Drawing.Color.White;
-            this.label2.Location = new System.Drawing.Point(66, 185);
+            this.label2.Location = new System.Drawing.Point(40, 185);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 24);
@@ -146,7 +165,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 12F, System.Drawing.FontStyle.Bold);
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(66, 126);
+            this.label1.Location = new System.Drawing.Point(40, 126);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(156, 24);
@@ -159,11 +178,11 @@
             this.btnThoat.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnThoat.Image = ((System.Drawing.Image)(resources.GetObject("btnThoat.Image")));
             this.btnThoat.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnThoat.Location = new System.Drawing.Point(583, 454);
+            this.btnThoat.Location = new System.Drawing.Point(592, 453);
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(195, 52);
-            this.btnThoat.TabIndex = 9;
+            this.btnThoat.TabIndex = 7;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.BtnThoat_Click);
@@ -174,11 +193,11 @@
             this.btnXacNhan.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnXacNhan.Image = ((System.Drawing.Image)(resources.GetObject("btnXacNhan.Image")));
             this.btnXacNhan.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXacNhan.Location = new System.Drawing.Point(161, 454);
+            this.btnXacNhan.Location = new System.Drawing.Point(170, 453);
             this.btnXacNhan.Margin = new System.Windows.Forms.Padding(4);
             this.btnXacNhan.Name = "btnXacNhan";
             this.btnXacNhan.Size = new System.Drawing.Size(195, 52);
-            this.btnXacNhan.TabIndex = 8;
+            this.btnXacNhan.TabIndex = 5;
             this.btnXacNhan.Text = "Xác nhận";
             this.btnXacNhan.UseVisualStyleBackColor = false;
             this.btnXacNhan.Click += new System.EventHandler(this.BtnXacNhan_Click);
@@ -189,25 +208,14 @@
             this.btnXoaTK.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
             this.btnXoaTK.Image = ((System.Drawing.Image)(resources.GetObject("btnXoaTK.Image")));
             this.btnXoaTK.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnXoaTK.Location = new System.Drawing.Point(364, 454);
+            this.btnXoaTK.Location = new System.Drawing.Point(373, 453);
             this.btnXoaTK.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoaTK.Name = "btnXoaTK";
             this.btnXoaTK.Size = new System.Drawing.Size(211, 52);
-            this.btnXoaTK.TabIndex = 8;
+            this.btnXoaTK.TabIndex = 6;
             this.btnXoaTK.Text = "Xóa tài khoản";
             this.btnXoaTK.UseVisualStyleBackColor = false;
             this.btnXoaTK.Click += new System.EventHandler(this.BtnXoaTK_Click);
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Arial", 17F, System.Drawing.FontStyle.Bold);
-            this.label5.ForeColor = System.Drawing.Color.White;
-            this.label5.Location = new System.Drawing.Point(216, 46);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(226, 34);
-            this.label5.TabIndex = 8;
-            this.label5.Text = "ĐỔI MẬT KHẨU";
             // 
             // FormDoiMatKhau
             // 
@@ -245,5 +253,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnXoaTK;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label lbhienthi;
     }
 }

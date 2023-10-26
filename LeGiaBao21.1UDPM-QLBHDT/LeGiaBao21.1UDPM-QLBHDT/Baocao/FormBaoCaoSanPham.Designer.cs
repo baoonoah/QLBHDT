@@ -33,30 +33,30 @@
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource2 = new Microsoft.Reporting.WinForms.ReportDataSource();
             this.tabControl1 = new System.Windows.Forms.TabControl();
             this.tabPage1 = new System.Windows.Forms.TabPage();
-            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.reportViewer1 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.tabPage2 = new System.Windows.Forms.TabPage();
             this.reportViewer2 = new Microsoft.Reporting.WinForms.ReportViewer();
+            this.sanPhamBanRaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataSet = new LeGiaBao21._1UDPM_QLBHDT.Baocao.DataSet();
             this.sanPhamTonKhoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sanPhamTonKhoTableAdapter = new LeGiaBao21._1UDPM_QLBHDT.Baocao.DataSetTableAdapters.SanPhamTonKhoTableAdapter();
-            this.sanPhamBanRaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.sanPhamBanRaTableAdapter = new LeGiaBao21._1UDPM_QLBHDT.Baocao.DataSetTableAdapters.SanPhamBanRaTableAdapter();
             this.tabControl1.SuspendLayout();
             this.tabPage1.SuspendLayout();
             this.tabPage2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBanRaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamTonKhoBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBanRaBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // tabControl1
             // 
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(-1, 0);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(573, 320);
+            this.tabControl1.Size = new System.Drawing.Size(801, 449);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -65,21 +65,10 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(565, 291);
+            this.tabPage1.Size = new System.Drawing.Size(793, 420);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Bán Ra";
             this.tabPage1.UseVisualStyleBackColor = true;
-            // 
-            // tabPage2
-            // 
-            this.tabPage2.Controls.Add(this.reportViewer2);
-            this.tabPage2.Location = new System.Drawing.Point(4, 25);
-            this.tabPage2.Name = "tabPage2";
-            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(565, 291);
-            this.tabPage2.TabIndex = 1;
-            this.tabPage2.Text = "Tồn Kho";
-            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // reportViewer1
             // 
@@ -91,8 +80,19 @@
             this.reportViewer1.Location = new System.Drawing.Point(3, 3);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(559, 285);
+            this.reportViewer1.Size = new System.Drawing.Size(787, 414);
             this.reportViewer1.TabIndex = 0;
+            // 
+            // tabPage2
+            // 
+            this.tabPage2.Controls.Add(this.reportViewer2);
+            this.tabPage2.Location = new System.Drawing.Point(4, 25);
+            this.tabPage2.Name = "tabPage2";
+            this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
+            this.tabPage2.Size = new System.Drawing.Size(565, 291);
+            this.tabPage2.TabIndex = 1;
+            this.tabPage2.Text = "Tồn Kho";
+            this.tabPage2.UseVisualStyleBackColor = true;
             // 
             // reportViewer2
             // 
@@ -107,6 +107,11 @@
             this.reportViewer2.Size = new System.Drawing.Size(559, 285);
             this.reportViewer2.TabIndex = 0;
             // 
+            // sanPhamBanRaBindingSource
+            // 
+            this.sanPhamBanRaBindingSource.DataMember = "SanPhamBanRa";
+            this.sanPhamBanRaBindingSource.DataSource = this.dataSet;
+            // 
             // dataSet
             // 
             this.dataSet.DataSetName = "DataSet";
@@ -120,11 +125,6 @@
             // sanPhamTonKhoTableAdapter
             // 
             this.sanPhamTonKhoTableAdapter.ClearBeforeFill = true;
-            // 
-            // sanPhamBanRaBindingSource
-            // 
-            this.sanPhamBanRaBindingSource.DataMember = "SanPhamBanRa";
-            this.sanPhamBanRaBindingSource.DataSource = this.dataSet;
             // 
             // sanPhamBanRaTableAdapter
             // 
@@ -142,9 +142,9 @@
             this.tabControl1.ResumeLayout(false);
             this.tabPage1.ResumeLayout(false);
             this.tabPage2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBanRaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dataSet)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.sanPhamTonKhoBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.sanPhamBanRaBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

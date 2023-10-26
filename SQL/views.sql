@@ -3,11 +3,12 @@
 CREATE VIEW DoanhThuTheoNgay
 AS
 SELECT DATEPART(DAY, HD.NgayLapHD) AS Ngay,
-		
+		DATEPART(MONTH, HD.NgayLapHD) AS Thang,
+		DATEPART(YEAR, HD.NgayLapHD) AS Nam,
        SUM(CTHD.SoLuong * SP.GiaBan) AS DoanhThu
 FROM HoaDon HD, ChiTietHoaDon CTHD, SanPham SP
 WHERE HD.MaHD = CTHD.MaHD and  CTHD.MaSP = SP.MaSP
-GROUP BY DATEPART(DAY, HD.NgayLapHD)
+GROUP BY DATEPART(DAY, HD.NgayLapHD),DATEPART(MONTH, HD.NgayLapHD),DATEPART(YEAR, HD.NgayLapHD)
 
 -- doanh thu theo thang
 CREATE VIEW DoanhThuTheoThang
@@ -19,9 +20,10 @@ SELECT
 FROM HoaDon HD, ChiTietHoaDon CTHD, SanPham SP
 WHERE HD.MaHD = CTHD.MaHD and  CTHD.MaSP = SP.MaSP
 GROUP BY DATEPART(MONTH, HD.NgayLapHD),DATEPART(YEAR, HD.NgayLapHD)
+Order by DATEPART(MONTH, HD.NgayLapHD), DATEPART(YEAR, HD.NgayLapHD) 
+offset 0 rows
 
 -- doanh thu theo qui
-
 CREATE VIEW DoanhThuTheoQui
 AS
 SELECT 
@@ -31,6 +33,8 @@ SELECT
 FROM HoaDon HD, ChiTietHoaDon CTHD, SanPham SP
 WHERE HD.MaHD = CTHD.MaHD and  CTHD.MaSP = SP.MaSP
 GROUP BY DATEPART(QUARTER, HD.NgayLapHD), DATEPART(YEAR, HD.NgayLapHD)
+ORDER BY DATEPART(QUARTER, HD.NgayLapHD), DATEPART(YEAR, HD.NgayLapHD)
+offset 0 row
 -- doanh thu theo nam
 CREATE VIEW DoanhThuTheoNam
 AS
@@ -49,6 +53,8 @@ SELECT
 FROM HoaDon HD, ChiTietHoaDon CTHD, KhachHang KH, SanPham SP
 WHERE HD.MaHD = CTHD.MaHD and HD.MaKH = KH.MaKH and CTHD.MaSP = SP.MaSP
 GROUP BY  KH.MaKH,KH.TenKH
+ORDER BY KH.MaKH
+offset 0 row
 -- doanh thu sanpham
 CREATE VIEW DoanhThuSP
 AS
@@ -82,36 +88,48 @@ GROUP BY SP.MaSP, SP.TenSP,SP.SoLuong;
 --nhanvien ky luc
 CREATE VIEW NhanVien_1_DH
 AS
-SELECT top 1 NV.MaNV,NV.HoLot,NV.Ten,
+SELECT  NV.MaNV,NV.HoLot,NV.Ten,
        COUNT(HD.MaHD) AS SoDonHang
 FROM NhanVien NV, HoaDon HD, ChiTietHoaDon CTHD,SanPham SP 
 WHERE NV.MaNV = HD.MaNV
   AND HD.MaHD = CTHD.MaHD and SP.MaSP = CTHD.MaSP
 GROUP BY NV.MaNV,NV.HoLot,NV.Ten
-order by COUNT(HD.MaHD) desc
+having COUNT(HD.MaHD) >= all
+(SELECT 
+       COUNT(HD.MaHD) AS SoDonHang
+FROM NhanVien NV, HoaDon HD, ChiTietHoaDon CTHD,SanPham SP 
+WHERE NV.MaNV = HD.MaNV
+  AND HD.MaHD = CTHD.MaHD and SP.MaSP = CTHD.MaSP
+GROUP BY NV.MaNV,NV.HoLot,NV.Ten)
+
 
 CREATE VIEW NhanVien_1_DT
 AS
-SELECT top 1  NV.MaNV,NV.HoLot,NV.Ten,
-       Sum(CTHD.SoLuong * SP.GiaBan) AS DoanhThu
+SELECT  NV.MaNV,NV.HoLot,NV.Ten,
+		Sum(CTHD.SoLuong * SP.GiaBan) AS DoanhThu
 FROM NhanVien NV, HoaDon HD, ChiTietHoaDon CTHD,SanPham SP 
 WHERE NV.MaNV = HD.MaNV
   AND HD.MaHD = CTHD.MaHD and SP.MaSP = CTHD.MaSP
 GROUP BY NV.MaNV,NV.HoLot,NV.Ten
-order by  Sum(CTHD.SoLuong * SP.GiaBan)  desc
+having  Sum(CTHD.SoLuong * SP.GiaBan)>= all
+(SELECT 
+        Sum(CTHD.SoLuong * SP.GiaBan) AS DoanhThu
+FROM NhanVien NV, HoaDon HD, ChiTietHoaDon CTHD,SanPham SP 
+WHERE NV.MaNV = HD.MaNV
+  AND HD.MaHD = CTHD.MaHD and SP.MaSP = CTHD.MaSP
+GROUP BY NV.MaNV,NV.HoLot,NV.Ten)
 
 --khach hang top 1
 CREATE VIEW KhachHang_vip
 AS
-SELECT top 1 
-       KH.MaKH,KH.TenKH,
+ SELECT KH.MaKH,KH.TenKH,
        SUM(CTHD.SoLuong * SP.GiaBan) AS DoanhThu
 FROM HoaDon HD, ChiTietHoaDon CTHD, KhachHang KH, SanPham SP
 WHERE HD.MaHD = CTHD.MaHD and HD.MaKH = KH.MaKH and CTHD.MaSP = SP.MaSP
 GROUP BY  KH.MaKH,KH.TenKH
-Having SUM(CTHD.SoLuong * SP.GiaBan) >= 100000000
-order by SUM(CTHD.SoLuong * SP.GiaBan) desc
-
+Having SUM(CTHD.SoLuong * SP.GiaBan) >= 50000000
+Order by SUM(CTHD.SoLuong * SP.GiaBan)  desc
+offset 0 row
 
 --loi nhuan theo thang 
 CREATE VIEW LoiNhuanThang
@@ -123,13 +141,15 @@ SELECT
 FROM HoaDon HD, ChiTietHoaDon CTHD, SanPham SP
 WHERE HD.MaHD = CTHD.MaHD 
   AND CTHD.MaSP = SP.MaSP
-GROUP BY DATEPART(MONTH, HD.NgayLapHD), DATEPART(YEAR, HD.NgayLapHD);
+GROUP BY DATEPART(MONTH, HD.NgayLapHD), DATEPART(YEAR, HD.NgayLapHD)
+Order by DATEPART(MONTH, HD.NgayLapHD), DATEPART(YEAR, HD.NgayLapHD) 
+offset 0 rows
 
---loi nhuan sp
+--loi nhuan san pham
 create view LoiNhuanSP
 as
 select a.MaSP,a.TenSP, Sum(b.SoLuong * (a.GiaBan-a.GiaNhap)) as LoiNhuan
 from SanPham a , ChiTietHoaDon b
 where a.MaSP = b.MaSP
 group by a.MaSP,a.tensp
-----
+

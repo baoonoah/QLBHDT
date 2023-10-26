@@ -174,13 +174,13 @@
             // 
             // cbMaSP
             // 
-            this.cbMaSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaSP.FormattingEnabled = true;
             this.cbMaSP.Location = new System.Drawing.Point(153, 37);
             this.cbMaSP.Name = "cbMaSP";
             this.cbMaSP.Size = new System.Drawing.Size(213, 24);
             this.cbMaSP.TabIndex = 18;
             this.cbMaSP.SelectedIndexChanged += new System.EventHandler(this.cbMaSP_SelectedIndexChanged);
+            this.cbMaSP.TextChanged += new System.EventHandler(this.cbMaSP_TextChanged);
             // 
             // txtDonViTinh
             // 
@@ -224,7 +224,6 @@
             // 
             // cbMaCongTy
             // 
-            this.cbMaCongTy.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaCongTy.FormattingEnabled = true;
             this.cbMaCongTy.Location = new System.Drawing.Point(153, 215);
             this.cbMaCongTy.Margin = new System.Windows.Forms.Padding(4);
@@ -232,10 +231,10 @@
             this.cbMaCongTy.Size = new System.Drawing.Size(213, 24);
             this.cbMaCongTy.TabIndex = 13;
             this.cbMaCongTy.SelectedIndexChanged += new System.EventHandler(this.cbMaCongTy_SelectedIndexChanged);
+            this.cbMaCongTy.TextChanged += new System.EventHandler(this.cbMaCongTy_TextChanged);
             // 
             // cbMaLoaiHang
             // 
-            this.cbMaLoaiHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaLoaiHang.FormattingEnabled = true;
             this.cbMaLoaiHang.Location = new System.Drawing.Point(153, 154);
             this.cbMaLoaiHang.Margin = new System.Windows.Forms.Padding(4);
@@ -243,6 +242,7 @@
             this.cbMaLoaiHang.Size = new System.Drawing.Size(213, 24);
             this.cbMaLoaiHang.TabIndex = 12;
             this.cbMaLoaiHang.SelectedIndexChanged += new System.EventHandler(this.cbMaLoaiHang_SelectedIndexChanged);
+            this.cbMaLoaiHang.TextChanged += new System.EventHandler(this.cbMaLoaiHang_TextChanged);
             // 
             // txtGiaNhap
             // 

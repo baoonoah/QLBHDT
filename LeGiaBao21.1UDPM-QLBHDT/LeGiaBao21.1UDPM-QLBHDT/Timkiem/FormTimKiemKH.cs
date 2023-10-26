@@ -26,7 +26,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     dgvKhachHang.DataSource = from kh in db.KhachHangs
-                                              where kh.MaKH == cbMaKH.SelectedItem.ToString()
+                                              where kh.MaKH == cbMaKH.Text.ToString()
                                               select new
                                               {
                                                   kh.MaKH,
@@ -72,30 +72,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                     dgvKhachHang.DataSource = null;
                 }
             }
-            //
-            /*      if (dkienTimDC())
-                  {
-                      string searchText = txtDiaChi.Text;
-                      if (!string.IsNullOrEmpty(searchText))
-                      {
-                          dgvKhachHang.DataSource = from kh in db.KhachHangs
-                                                    where kh.DiaChi == txtDiaChi.Text.ToString()
-                                                    select new
-                                                    {
-                                                        kh.MaKH,
-                                                        kh.TenKH,
-                                                        kh.DiaChi,
-                                                        kh.DienThoai,
-                                                        kh.Email
-                                                    };
-                      }
-                      else
-                      {
-                          // Nếu không có từ khóa tìm kiếm, hiển thị tất cả nhân viên (hoặc không hiển thị gì cả)
-                          dgvKhachHang.DataSource = null;
-                      }
-
-                  }*/
+           
             if (dkienTimDC())
             {
 
@@ -218,7 +195,23 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 txtEmail.Enabled = true;
             }
         }
-
+        private void cbMaKH_TextChanged(object sender, EventArgs e)
+        {
+            if (dkienTimMaKH())
+            {
+                txtTenKH.Enabled = false;
+                txtDiaChi.Enabled = false;
+                txtDienThoai.Enabled = false;
+                txtEmail.Enabled = false;
+            }
+            else
+            {
+                txtTenKH.Enabled = true;
+                txtDiaChi.Enabled = true;
+                txtDienThoai.Enabled = true;
+                txtEmail.Enabled = true;
+            }
+        }
         private void txtTenKH_TextChanged(object sender, EventArgs e)
         {
             if (dkienTimTenKH())
@@ -351,5 +344,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
         {
             this.Close();
         }
+
+      
     }
 }

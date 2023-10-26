@@ -70,10 +70,10 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>DataSet.xsd</DependentUpon>
     </Compile>
-    <Compile Include="Baocao\DataSetDoanhThuKHtheoMaKH.Designer.cs">
+    <Compile Include="Baocao\DataSetTimKiem.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetDoanhThuKHtheoMaKH.xsd</DependentUpon>
+      <DependentUpon>DataSetTimKiem.xsd</DependentUpon>
     </Compile>
     <Compile Include="Baocao\FormBaoCaoDoanhThu.cs">
       <SubType>Form</SubType>
@@ -87,12 +87,6 @@
     <Compile Include="Baocao\FormBaoCaoSanPham.Designer.cs">
       <DependentUpon>FormBaoCaoSanPham.cs</DependentUpon>
     </Compile>
-    <Compile Include="Baocao\FormDoanhThuKHtheoMaKH.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Baocao\FormDoanhThuKHtheoMaKH.Designer.cs">
-      <DependentUpon>FormDoanhThuKHtheoMaKH.cs</DependentUpon>
-    </Compile>
     <Compile Include="Baocao\FormKyLuc.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -104,6 +98,12 @@
     </Compile>
     <Compile Include="Baocao\FormLoiNhuan.Designer.cs">
       <DependentUpon>FormLoiNhuan.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Baocao\FormTimKiemDTKH.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Baocao\FormTimKiemDTKH.Designer.cs">
+      <DependentUpon>FormTimKiemDTKH.cs</DependentUpon>
     </Compile>
     <Compile Include="Capnhatdulieu\FormChiTietHoaDon.cs">
       <SubType>Form</SubType>
@@ -233,17 +233,16 @@
     <EmbeddedResource Include="Baocao\FormBaoCaoSanPham.resx">
       <DependentUpon>FormBaoCaoSanPham.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Baocao\FormDoanhThuKHtheoMaKH.resx">
-      <DependentUpon>FormDoanhThuKHtheoMaKH.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Baocao\FormKyLuc.resx">
       <DependentUpon>FormKyLuc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Baocao\FormLoiNhuan.resx">
       <DependentUpon>FormLoiNhuan.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Baocao\FormTimKiemDTKH.resx">
+      <DependentUpon>FormTimKiemDTKH.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Baocao\ReportDoanhThuKH.rdlc" />
-    <EmbeddedResource Include="Baocao\ReportDoanhThuKHtheoMaKH.rdlc" />
     <EmbeddedResource Include="Baocao\ReportDoanhThuSP.rdlc" />
     <EmbeddedResource Include="Baocao\ReportDoanhThuTheoNam.rdlc" />
     <EmbeddedResource Include="Baocao\ReportDoanhThuTheoQui.rdlc" />
@@ -256,6 +255,7 @@
     <EmbeddedResource Include="Baocao\ReportNhanVien_1_DT.rdlc" />
     <EmbeddedResource Include="Baocao\ReportSanPhamBanRa.rdlc" />
     <EmbeddedResource Include="Baocao\ReportSanPhamTonKho.rdlc" />
+    <EmbeddedResource Include="Baocao\ReportTimKiemDTKH.rdlc" />
     <EmbeddedResource Include="Capnhatdulieu\FormChiTietHoaDon.resx">
       <DependentUpon>FormChiTietHoaDon.cs</DependentUpon>
     </EmbeddedResource>
@@ -334,16 +334,16 @@
     <None Include="Baocao\DataSet.xss">
       <DependentUpon>DataSet.xsd</DependentUpon>
     </None>
-    <None Include="Baocao\DataSetDoanhThuKHtheoMaKH.xsc">
-      <DependentUpon>DataSetDoanhThuKHtheoMaKH.xsd</DependentUpon>
+    <None Include="Baocao\DataSetTimKiem.xsc">
+      <DependentUpon>DataSetTimKiem.xsd</DependentUpon>
     </None>
-    <None Include="Baocao\DataSetDoanhThuKHtheoMaKH.xsd">
+    <None Include="Baocao\DataSetTimKiem.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetDoanhThuKHtheoMaKH.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetTimKiem.Designer.cs</LastGenOutput>
     </None>
-    <None Include="Baocao\DataSetDoanhThuKHtheoMaKH.xss">
-      <DependentUpon>DataSetDoanhThuKHtheoMaKH.xsd</DependentUpon>
+    <None Include="Baocao\DataSetTimKiem.xss">
+      <DependentUpon>DataSetTimKiem.xsd</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -369,7 +369,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="icons\" />
-    <Folder Include="Thongtin\" />
   </ItemGroup>
   <ItemGroup>
     <Service Include="{3259AA49-8AA1-44D3-9025-A0B520596A8C}" />

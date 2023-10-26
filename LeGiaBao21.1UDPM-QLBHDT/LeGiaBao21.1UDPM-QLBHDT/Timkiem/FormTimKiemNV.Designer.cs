@@ -311,7 +311,7 @@
             // checkNgayVaoLam
             // 
             this.checkNgayVaoLam.AutoSize = true;
-            this.checkNgayVaoLam.Location = new System.Drawing.Point(619, 194);
+            this.checkNgayVaoLam.Location = new System.Drawing.Point(619, 207);
             this.checkNgayVaoLam.Name = "checkNgayVaoLam";
             this.checkNgayVaoLam.Size = new System.Drawing.Size(142, 20);
             this.checkNgayVaoLam.TabIndex = 17;
@@ -332,7 +332,7 @@
             // 
             // dtpNgayVaoLam
             // 
-            this.dtpNgayVaoLam.Location = new System.Drawing.Point(619, 161);
+            this.dtpNgayVaoLam.Location = new System.Drawing.Point(619, 174);
             this.dtpNgayVaoLam.Name = "dtpNgayVaoLam";
             this.dtpNgayVaoLam.Size = new System.Drawing.Size(244, 22);
             this.dtpNgayVaoLam.TabIndex = 15;
@@ -348,7 +348,6 @@
             // 
             // cbMaNV
             // 
-            this.cbMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaNV.FormattingEnabled = true;
             this.cbMaNV.Location = new System.Drawing.Point(185, 44);
             this.cbMaNV.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -356,6 +355,7 @@
             this.cbMaNV.Size = new System.Drawing.Size(213, 24);
             this.cbMaNV.TabIndex = 13;
             this.cbMaNV.SelectedIndexChanged += new System.EventHandler(this.CbMaNV_SelectedIndexChanged);
+            this.cbMaNV.TextChanged += new System.EventHandler(this.cbMaNV_TextChanged);
             // 
             // label7
             // 
@@ -372,7 +372,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(459, 163);
+            this.label3.Location = new System.Drawing.Point(459, 176);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(136, 18);

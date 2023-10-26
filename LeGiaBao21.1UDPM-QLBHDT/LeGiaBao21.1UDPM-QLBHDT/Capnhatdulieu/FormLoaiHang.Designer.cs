@@ -57,7 +57,7 @@
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(173, 52);
-            this.btnThoat.TabIndex = 50;
+            this.btnThoat.TabIndex = 8;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -72,7 +72,7 @@
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(173, 52);
-            this.btnThem.TabIndex = 47;
+            this.btnThem.TabIndex = 5;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -87,7 +87,7 @@
             this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapMoi.Name = "btnNhapMoi";
             this.btnNhapMoi.Size = new System.Drawing.Size(173, 52);
-            this.btnNhapMoi.TabIndex = 46;
+            this.btnNhapMoi.TabIndex = 4;
             this.btnNhapMoi.Text = "Nhập mới";
             this.btnNhapMoi.UseVisualStyleBackColor = false;
             this.btnNhapMoi.Click += new System.EventHandler(this.btnNhapMoi_Click);
@@ -102,7 +102,7 @@
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(173, 52);
-            this.btnXoa.TabIndex = 49;
+            this.btnXoa.TabIndex = 7;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
@@ -119,8 +119,7 @@
             this.dgvLoaiHang.Name = "dgvLoaiHang";
             this.dgvLoaiHang.RowHeadersWidth = 51;
             this.dgvLoaiHang.Size = new System.Drawing.Size(587, 163);
-            this.dgvLoaiHang.TabIndex = 45;
-            this.dgvLoaiHang.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvLoaiHang_CellContentClick);
+            this.dgvLoaiHang.TabIndex = 9;
             this.dgvLoaiHang.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvLoaiHang_CellMouseClick);
             // 
             // MaLoaiHang
@@ -149,7 +148,7 @@
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(173, 52);
-            this.btnSua.TabIndex = 48;
+            this.btnSua.TabIndex = 6;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -181,10 +180,10 @@
             this.checkMaLoaiHang.AutoSize = true;
             this.checkMaLoaiHang.Checked = true;
             this.checkMaLoaiHang.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkMaLoaiHang.Location = new System.Drawing.Point(410, 44);
+            this.checkMaLoaiHang.Location = new System.Drawing.Point(431, 44);
             this.checkMaLoaiHang.Name = "checkMaLoaiHang";
             this.checkMaLoaiHang.Size = new System.Drawing.Size(115, 20);
-            this.checkMaLoaiHang.TabIndex = 14;
+            this.checkMaLoaiHang.TabIndex = 3;
             this.checkMaLoaiHang.Text = "Nhập thủ công";
             this.checkMaLoaiHang.UseVisualStyleBackColor = true;
             this.checkMaLoaiHang.CheckedChanged += new System.EventHandler(this.checkMaLoaiHang_CheckedChanged);
@@ -205,23 +204,23 @@
             // 
             // txtTenLoaiHang
             // 
-            this.txtTenLoaiHang.Location = new System.Drawing.Point(142, 96);
+            this.txtTenLoaiHang.Location = new System.Drawing.Point(163, 96);
             this.txtTenLoaiHang.Name = "txtTenLoaiHang";
             this.txtTenLoaiHang.Size = new System.Drawing.Size(237, 22);
-            this.txtTenLoaiHang.TabIndex = 15;
+            this.txtTenLoaiHang.TabIndex = 2;
             // 
             // txtMaLoaiHang
             // 
-            this.txtMaLoaiHang.Location = new System.Drawing.Point(142, 42);
+            this.txtMaLoaiHang.Location = new System.Drawing.Point(163, 42);
             this.txtMaLoaiHang.Name = "txtMaLoaiHang";
             this.txtMaLoaiHang.Size = new System.Drawing.Size(237, 22);
-            this.txtMaLoaiHang.TabIndex = 15;
+            this.txtMaLoaiHang.TabIndex = 1;
             // 
             // FormLoaiHang
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(816, 393);
+            this.ClientSize = new System.Drawing.Size(816, 406);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnThem);

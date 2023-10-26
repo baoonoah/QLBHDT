@@ -34,6 +34,16 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                                       };
 
         }
+        private void resetTxt()
+        {
+            txtMaKH.ResetText();
+            txtTenKH.ResetText();
+            txtDiaChi.ResetText();
+            txtDienThoai.ResetText();
+            txtEmail.ResetText();
+            txtMaKH.Focus();
+
+        }
         private void FormKhachHang_Click(object sender, EventArgs e)
         {
             LoadData();
@@ -47,9 +57,9 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         private void BtnThem_Click(object sender, EventArgs e)
         {
             //
-            if (txtMaKH.Text.Length > 20)
+            if (txtMaKH.Text.Length > 10)
             {
-                MessageBox.Show("Mã khách hàng không được vượt quá 20 ký tự!", "Thông báo");
+                MessageBox.Show("Mã khách hàng không được vượt quá 10 ký tự!", "Thông báo");
                 return;
             }
             if (dkienrong())
@@ -83,17 +93,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 }
                 tb.Email = txtEmail.Text;
                 db.KhachHangs.InsertOnSubmit(tb);
-
-                /* cach 2
-                 var khachHang = new KhachHang
-                  {
-                      MaKH = txtMaKH.Text,
-                      TenKH = txtTenKH.Text,
-                      DiaChi = txtDiaChi.Text,
-                      DienThoai = txtDienThoai.Text,
-                      Email = txtEmail.Text
-                  };
-                  db.KhachHangs.InsertOnSubmit(khachHang);*/
                 db.SubmitChanges();
                 LoadData();
                 MessageBox.Show("Đã thêm thành công khách hàng: " + txtMaKH.Text, "Thông báo");
@@ -163,12 +162,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
             try
             {
-                //khoi tao moi doi tuong tb moi
-
-                //            KhachHang tb = new KhachHang();
-                //            tb = (from table in db.KhachHangs
-                //                  where table.MaKH == txtMaKH.Text
-                //                  select table).Single();
                 var khachHang = db.KhachHangs.FirstOrDefault(kh => kh.MaKH == txtMaKH.Text);
                 if (khachHang == null)
                 {
@@ -233,15 +226,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         }
 
         //ham reset textbox
-        private void resetTxt()
-        {
-            txtMaKH.ResetText();
-            txtTenKH.ResetText();
-            txtDiaChi.ResetText();
-            txtDienThoai.ResetText();
-            txtEmail.ResetText();
-
-        }
+     
         /*cac ham dieu kien*/
         //lenh cmt ctrl k - ctrl c
         private string dkienthieutt()
@@ -274,26 +259,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 string.IsNullOrEmpty(txtTenKH.Text) ||
                 string.IsNullOrEmpty(txtDiaChi.Text) ||
                 string.IsNullOrEmpty(txtDienThoai.Text);
-        }
-        //ham kiem tra cac dieu kien khac rong
-        //private bool dkienkhacrong()
-        //{
-        //    return !string.IsNullOrEmpty(txtMaKH.Text) &&
-        //    !string.IsNullOrEmpty(txtTenKH.Text) &&
-        //    !string.IsNullOrEmpty(txtDiaChi.Text) &&
-        //    !string.IsNullOrEmpty(txtDienThoai.Text);
-        //}
-        private void DgvKhachHang_DoubleClick(object sender, EventArgs e)
-        {
-
-        }
-
-        private void DgvKhachHang_MouseClick(object sender, MouseEventArgs e)
-        {
-        }
-        private void DgvKhachHang_Click(object sender, EventArgs e)
-        {
-
         }
     }
 

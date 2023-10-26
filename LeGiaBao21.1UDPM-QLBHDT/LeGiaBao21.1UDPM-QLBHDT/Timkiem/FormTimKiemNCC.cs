@@ -28,7 +28,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     dgvNhaCungCap.DataSource = from ct in db.NhaCungCaps
-                                               where ct.MaCongTy == cbMaCongTy.SelectedItem.ToString()
+                                               where ct.MaCongTy == cbMaCongTy.Text.ToString()
                                               select new
                                               {
                                                   ct.MaCongTy,
@@ -269,6 +269,22 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
           
             return string.IsNullOrEmpty(macty) &&
                 string.IsNullOrEmpty(hoten) && string.IsNullOrEmpty(diachi) && !string.IsNullOrEmpty(sdt);
+        }
+
+        private void cbMaCongTy_TextChanged(object sender, EventArgs e)
+        {
+            if (dkienTimMaCTY())
+            {
+                txtTenCongTy.Enabled = false;
+                txtDiaChi.Enabled = false;
+                txtDienThoai.Enabled = false;
+            }
+            else
+            {
+                txtTenCongTy.Enabled = true;
+                txtDiaChi.Enabled = true;
+                txtDienThoai.Enabled = true;
+            }
         }
     }
 }

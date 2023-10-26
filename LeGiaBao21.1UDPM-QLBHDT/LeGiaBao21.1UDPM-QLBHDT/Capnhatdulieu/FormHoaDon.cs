@@ -60,9 +60,9 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         private void BtnThem_Click(object sender, EventArgs e)
         {
 
-            if (txtMaHD.Text.Length > 20)
+            if (txtMaHD.Text.Length > 10)
             {
-                MessageBox.Show("Mã hóa đơn không được vượt quá 20 ký tự!", "Thông báo");
+                MessageBox.Show("Mã hóa đơn không được vượt quá 10 ký tự!", "Thông báo");
                 return;
             }
             if (string.IsNullOrEmpty(txtMaHD.Text))
@@ -80,7 +80,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 var hoaDon = db.HoaDons.FirstOrDefault(hd => hd.MaHD == txtMaHD.Text);
                 if (hoaDon != null)
                 {
-                    MessageBox.Show("Mã sản phẩm đã tồn tại!", "Thông báo");
+                    MessageBox.Show("Mã hóa đơn đã tồn tại!", "Thông báo");
                     return;
                 }
                 HoaDon newHD = new HoaDon();
@@ -140,7 +140,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 checkMaHD.Checked = true;
             }
         }
-
         private void BtnXoa_Click(object sender, EventArgs e)
         {
             QLBHDTDataContext db = new QLBHDTDataContext();
@@ -171,7 +170,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 MessageBox.Show("Lỗi khi xóa dữ liệu: " + ex.Message, "Thông báo");
             }
         }
-
         private void DgvHoaDon_CellMouseClick(object sender, DataGridViewCellMouseEventArgs e)
         {
             try
@@ -205,10 +203,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             {
                 txtMaHD.Enabled = false;
             }
-
-
         }
-
         private bool checknullcbb()
         {
             return string.IsNullOrEmpty(cbMaNV.Text) || string.IsNullOrEmpty(cbMaNV.Text);
@@ -218,15 +213,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         {
             return string.IsNullOrEmpty(cbMaNV.Text) && string.IsNullOrEmpty(cbMaKH.Text) ? "Vui lòng chọn mã nhân viên và mã khách hàng!" :
                 string.IsNullOrEmpty(cbMaNV.Text) && !string.IsNullOrEmpty(cbMaKH.Text) ? " Vui lòng chọn mã nhân viên!" : " Vui lòng chọn mã khách hàng!";
-
-        }
-        private void Panel1_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void DgvHoaDon_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
 
         }
     }

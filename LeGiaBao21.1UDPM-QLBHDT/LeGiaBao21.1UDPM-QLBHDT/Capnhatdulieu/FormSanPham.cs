@@ -34,27 +34,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                                           table.GiaBan,
                                         table.SoLuong
                                     };
-            ////load du lieu tu LoaiHang vao comboBox
-            //var loaiHangData = from lh in db.LoaiHangs
-            //                   select new
-            //                   {
-            //                       lh.MaLoaiHang,
-            //                       lh.TenLoaiHang
-            //                   };
-            //cbMaLoaiHang.DataSource = loaiHangData.ToList();
-            //cbMaLoaiHang.DisplayMember = "MaLoaiHang";
-            //cbMaLoaiHang.ValueMember = "MaLoaiHang";
-
-            // //load du lieu tu NhaCungCap vao comboBox
-            //var nhaCungCapData = from ncc in db.NhaCungCaps
-            //                     select new
-            //                     {
-            //                         ncc.MaCongTy,
-            //                         ncc.TenCongTy
-            //                     };
-            //cbMaCongTy.DataSource = nhaCungCapData.ToList();
-            //cbMaCongTy.DisplayMember = "MaCongTy";
-            //cbMaCongTy.ValueMember = "MaCongTy";
             cbMaLoaiHang.DataSource = from lh in db.LoaiHangs select lh.MaLoaiHang;
             cbMaCongTy.DataSource = from ncc in db.NhaCungCaps select ncc.MaCongTy;
         }
@@ -66,9 +45,9 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         }
         private void btnThem_Click(object sender, EventArgs e)
         {
-            if (txtMaSP.Text.Length > 20)
+            if (txtMaSP.Text.Length > 10)
             {
-                MessageBox.Show("Mã sản phẩm không được vượt quá 20 ký tự!", "Thông báo");
+                MessageBox.Show("Mã sản phẩm không được vượt quá 10 ký tự!", "Thông báo");
                 return;
             }
             if (dkienrong())

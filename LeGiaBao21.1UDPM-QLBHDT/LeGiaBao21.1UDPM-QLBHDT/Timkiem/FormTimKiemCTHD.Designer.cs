@@ -74,7 +74,6 @@
             // 
             // cbMaHD
             // 
-            this.cbMaHD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaHD.FormattingEnabled = true;
             this.cbMaHD.Location = new System.Drawing.Point(164, 42);
             this.cbMaHD.Margin = new System.Windows.Forms.Padding(4);
@@ -82,10 +81,10 @@
             this.cbMaHD.Size = new System.Drawing.Size(213, 24);
             this.cbMaHD.TabIndex = 13;
             this.cbMaHD.SelectedIndexChanged += new System.EventHandler(this.cbMaHD_SelectedIndexChanged);
+            this.cbMaHD.TextChanged += new System.EventHandler(this.cbMaHD_TextChanged);
             // 
             // cbMaSP
             // 
-            this.cbMaSP.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaSP.FormattingEnabled = true;
             this.cbMaSP.Location = new System.Drawing.Point(164, 95);
             this.cbMaSP.Margin = new System.Windows.Forms.Padding(4);
@@ -93,6 +92,7 @@
             this.cbMaSP.Size = new System.Drawing.Size(213, 24);
             this.cbMaSP.TabIndex = 13;
             this.cbMaSP.SelectedIndexChanged += new System.EventHandler(this.cbMaSP_SelectedIndexChanged);
+            this.cbMaSP.TextChanged += new System.EventHandler(this.cbMaSP_TextChanged);
             // 
             // label2
             // 

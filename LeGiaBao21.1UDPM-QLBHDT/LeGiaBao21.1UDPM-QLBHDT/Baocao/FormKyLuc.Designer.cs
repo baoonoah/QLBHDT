@@ -85,10 +85,10 @@
             this.tabControl1.Controls.Add(this.tabPage1);
             this.tabControl1.Controls.Add(this.tabPage2);
             this.tabControl1.Controls.Add(this.tabPage3);
-            this.tabControl1.Location = new System.Drawing.Point(12, 12);
+            this.tabControl1.Location = new System.Drawing.Point(-2, -1);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(677, 388);
+            this.tabControl1.Size = new System.Drawing.Size(801, 451);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -97,7 +97,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(583, 270);
+            this.tabPage1.Size = new System.Drawing.Size(793, 422);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Nhân Viên Kỷ Lục Hóa Đơn";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -112,7 +112,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(3, 3);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(577, 264);
+            this.reportViewer1.Size = new System.Drawing.Size(787, 416);
             this.reportViewer1.TabIndex = 0;
             // 
             // tabPage2
@@ -121,7 +121,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(583, 270);
+            this.tabPage2.Size = new System.Drawing.Size(669, 359);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Nhân Viên Kỷ Lục Doanh Thu";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -136,7 +136,7 @@
             this.reportViewer2.Location = new System.Drawing.Point(3, 3);
             this.reportViewer2.Name = "reportViewer2";
             this.reportViewer2.ServerReport.BearerToken = null;
-            this.reportViewer2.Size = new System.Drawing.Size(577, 264);
+            this.reportViewer2.Size = new System.Drawing.Size(663, 353);
             this.reportViewer2.TabIndex = 0;
             // 
             // tabPage3

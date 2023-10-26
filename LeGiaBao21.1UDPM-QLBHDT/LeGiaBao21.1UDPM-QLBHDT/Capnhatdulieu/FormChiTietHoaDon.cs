@@ -55,10 +55,10 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
         {
 
                 if (dkiennull())
-            {
+                {
                 MessageBox.Show(messnull(), "Thông báo");
                 return;
-            }
+                }
             var CTHD = db.ChiTietHoaDons.FirstOrDefault(hd => hd.MaHD == cbMaHD.Text && hd.MaSP == cbMaSP.Text);
 
             if (CTHD != null)
@@ -83,7 +83,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 }
                 db.ChiTietHoaDons.InsertOnSubmit(newCTHD);
                 db.SubmitChanges();
-                MessageBox.Show("Đã thêm thành công CTHD: " + cbMaHD.Text, "Thông báo");
+                MessageBox.Show("Đã thêm thành công CTHD: " + cbMaHD.Text, "Thông báo");  
                 LoadData();
                 resetTxt();
             }
@@ -141,8 +141,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                     return;
                 }
                 db.SubmitChanges();
-                MessageBox.Show("Đã sửa thành công chi tiết hóa đơn: " + cthd.MaHD, "Thông báo");
                 LoadData();
+                MessageBox.Show("Đã sửa thành công chi tiết hóa đơn có mã hóa đơn: " + cthd.MaHD, "Thông báo");
                 resetTxt();
           
             }
@@ -171,7 +171,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 db.ChiTietHoaDons.DeleteOnSubmit(cthd);
                 db.SubmitChanges();
                 LoadData();
-                MessageBox.Show("Đã xóa thành công chi tiết hóa đơn có mã hóa đơn " + cthd.MaHD+ "và mã sản phẩm: "+cthd.MaSP, "Thông báo");
+                MessageBox.Show("Đã xóa thành công chi tiết hóa đơn có mã hóa đơn " + cthd.MaHD+ " và mã sản phẩm: "+cthd.MaSP, "Thông báo");
                 resetTxt();
                 cbMaHD.Enabled = true;
                 cbMaSP.Enabled = true;

@@ -44,7 +44,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     dgvChiTietHoaDon.DataSource = from ct in db.ChiTietHoaDons
-                                               where ct.MaHD == cbMaHD.SelectedItem.ToString()
+                                               where ct.MaHD == cbMaHD.Text.ToString()
                                                select new
                                                {
                                                    ct.MaHD,
@@ -65,7 +65,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                     if (!string.IsNullOrEmpty(searchText))
                     {
                         dgvChiTietHoaDon.DataSource = from ct in db.ChiTietHoaDons
-                                                      where ct.MaSP == cbMaSP.SelectedItem.ToString()
+                                                      where ct.MaSP == cbMaSP.Text.ToString()
                                                       select new
                                                       {
                                                           ct.MaHD,
@@ -197,6 +197,32 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 string.IsNullOrEmpty(masp) && !string.IsNullOrEmpty(soluong);
         }
 
-       
+        private void cbMaSP_TextChanged(object sender, EventArgs e)
+        {
+            if (dkienTimMaSP())
+            {
+                cbMaHD.Enabled = false;
+                txtSoLuong.Enabled = false;
+            }
+            else
+            {
+                cbMaHD.Enabled = true;
+                txtSoLuong.Enabled = true;
+            }
+        }
+
+        private void cbMaHD_TextChanged(object sender, EventArgs e)
+        {
+            if (dkienTimMaHD())
+            {
+                cbMaSP.Enabled = false;
+                txtSoLuong.Enabled = false;
+            }
+            else
+            {
+                cbMaSP.Enabled = true;
+                txtSoLuong.Enabled = true;
+            }
+        }
     }
 }

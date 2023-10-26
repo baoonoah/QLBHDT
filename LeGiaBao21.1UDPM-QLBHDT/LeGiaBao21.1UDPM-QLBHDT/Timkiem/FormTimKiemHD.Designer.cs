@@ -71,7 +71,6 @@
             // 
             // cbMaKH
             // 
-            this.cbMaKH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaKH.FormattingEnabled = true;
             this.cbMaKH.Location = new System.Drawing.Point(246, 144);
             this.cbMaKH.Margin = new System.Windows.Forms.Padding(4);
@@ -79,10 +78,10 @@
             this.cbMaKH.Size = new System.Drawing.Size(213, 24);
             this.cbMaKH.TabIndex = 13;
             this.cbMaKH.SelectedIndexChanged += new System.EventHandler(this.cbMaKH_SelectedIndexChanged);
+            this.cbMaKH.TextChanged += new System.EventHandler(this.cbMaKH_TextChanged);
             // 
             // cbMaHD
             // 
-            this.cbMaHD.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaHD.FormattingEnabled = true;
             this.cbMaHD.Location = new System.Drawing.Point(246, 44);
             this.cbMaHD.Margin = new System.Windows.Forms.Padding(4);
@@ -90,10 +89,10 @@
             this.cbMaHD.Size = new System.Drawing.Size(213, 24);
             this.cbMaHD.TabIndex = 13;
             this.cbMaHD.SelectedIndexChanged += new System.EventHandler(this.cbMaHD_SelectedIndexChanged);
+            this.cbMaHD.TextChanged += new System.EventHandler(this.cbMaHD_TextChanged);
             // 
             // cbMaNV
             // 
-            this.cbMaNV.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaNV.FormattingEnabled = true;
             this.cbMaNV.Location = new System.Drawing.Point(246, 94);
             this.cbMaNV.Margin = new System.Windows.Forms.Padding(4);
@@ -101,6 +100,7 @@
             this.cbMaNV.Size = new System.Drawing.Size(213, 24);
             this.cbMaNV.TabIndex = 13;
             this.cbMaNV.SelectedIndexChanged += new System.EventHandler(this.cbMaNV_SelectedIndexChanged);
+            this.cbMaNV.TextChanged += new System.EventHandler(this.cbMaNV_TextChanged);
             // 
             // dtpNgayLapHD
             // 
@@ -154,6 +154,7 @@
             this.label1.Size = new System.Drawing.Size(85, 18);
             this.label1.TabIndex = 0;
             this.label1.Text = "Tìm Mã HĐ";
+            this.label1.Click += new System.EventHandler(this.label1_Click);
             // 
             // dgvHoaDon
             // 

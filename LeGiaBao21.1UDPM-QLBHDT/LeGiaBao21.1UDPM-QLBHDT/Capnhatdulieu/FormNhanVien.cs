@@ -69,9 +69,9 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
                 MessageBox.Show(dkienthieutt(), "Thông báo");
                 return;
             }
-            if (txtMaNV.Text.Length > 20)
+            if (txtMaNV.Text.Length > 10)
             {
-                MessageBox.Show("Mã nhân viên không được vượt quá 20 ký tự!", "Thông báo");
+                MessageBox.Show("Mã nhân viên không được vượt quá 10 ký tự!", "Thông báo");
                 return;
             }
             try
@@ -194,11 +194,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
             try
             {
-                //khoi tao moi doi tuong tb moi
-                //    NhanVien tb = new NhanVien();
-                //tb = (from table in db.NhanViens
-                //      where table.MaNV == txtMaNV.Text
-                //      select table).Single();
+              
                 var nhanVien = db.NhanViens.FirstOrDefault(nv => nv.MaNV == txtMaNV.Text);
                 if (nhanVien == null)
                 {
@@ -260,8 +256,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
 
         }
         /*cac ham dieu kien*/
-        //lenh cmt ctrl k - ctrl c
-        
         //ham kiem tra cac dieu kien rong
         private bool dkienrong()
         {
@@ -272,7 +266,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             string.IsNullOrEmpty(txtDienThoai.Text) ||
             string.IsNullOrEmpty(txtLuongCB.Text);
         }
-        //ham kiem tra cac dieu kien khac rong
         private string dkienthieutt()
         {
 
@@ -282,7 +275,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
               string.IsNullOrEmpty(txtDiaChi.Text) ? "Thiếu địa chỉ!" :
               string.IsNullOrEmpty(txtLuongCB.Text) ? "Thiếu lương cơ bản!" : "Thiếu điện thoại!";
         }
-
         private void checkMaNV_CheckedChanged(object sender, EventArgs e)
         {
             if (checkMaNV.Checked)
@@ -293,10 +285,6 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             {
                 txtMaNV.Enabled = false;
             }
-        }
-        private void DgvNhanVien_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
         }
 
     }

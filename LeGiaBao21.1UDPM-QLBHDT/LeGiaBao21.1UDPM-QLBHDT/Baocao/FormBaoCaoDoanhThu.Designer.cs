@@ -139,10 +139,10 @@
             this.tabControl1.Controls.Add(this.tabPage4);
             this.tabControl1.Controls.Add(this.tabPage5);
             this.tabControl1.Controls.Add(this.tabPage6);
-            this.tabControl1.Location = new System.Drawing.Point(44, 30);
+            this.tabControl1.Location = new System.Drawing.Point(0, 3);
             this.tabControl1.Name = "tabControl1";
             this.tabControl1.SelectedIndex = 0;
-            this.tabControl1.Size = new System.Drawing.Size(539, 492);
+            this.tabControl1.Size = new System.Drawing.Size(961, 544);
             this.tabControl1.TabIndex = 0;
             // 
             // tabPage1
@@ -151,7 +151,7 @@
             this.tabPage1.Location = new System.Drawing.Point(4, 25);
             this.tabPage1.Name = "tabPage1";
             this.tabPage1.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage1.Size = new System.Drawing.Size(531, 463);
+            this.tabPage1.Size = new System.Drawing.Size(721, 463);
             this.tabPage1.TabIndex = 0;
             this.tabPage1.Text = "Ngày";
             this.tabPage1.UseVisualStyleBackColor = true;
@@ -166,7 +166,7 @@
             this.reportViewer1.Location = new System.Drawing.Point(3, 3);
             this.reportViewer1.Name = "reportViewer1";
             this.reportViewer1.ServerReport.BearerToken = null;
-            this.reportViewer1.Size = new System.Drawing.Size(525, 457);
+            this.reportViewer1.Size = new System.Drawing.Size(715, 457);
             this.reportViewer1.TabIndex = 0;
             // 
             // tabPage2
@@ -175,7 +175,7 @@
             this.tabPage2.Location = new System.Drawing.Point(4, 25);
             this.tabPage2.Name = "tabPage2";
             this.tabPage2.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage2.Size = new System.Drawing.Size(896, 463);
+            this.tabPage2.Size = new System.Drawing.Size(953, 515);
             this.tabPage2.TabIndex = 1;
             this.tabPage2.Text = "Tháng";
             this.tabPage2.UseVisualStyleBackColor = true;
@@ -190,7 +190,7 @@
             this.reportViewer2.Location = new System.Drawing.Point(3, 3);
             this.reportViewer2.Name = "reportViewer2";
             this.reportViewer2.ServerReport.BearerToken = null;
-            this.reportViewer2.Size = new System.Drawing.Size(890, 457);
+            this.reportViewer2.Size = new System.Drawing.Size(947, 509);
             this.reportViewer2.TabIndex = 0;
             this.reportViewer2.Load += new System.EventHandler(this.reportViewer2_Load);
             // 
@@ -200,7 +200,7 @@
             this.tabPage3.Location = new System.Drawing.Point(4, 25);
             this.tabPage3.Name = "tabPage3";
             this.tabPage3.Padding = new System.Windows.Forms.Padding(3);
-            this.tabPage3.Size = new System.Drawing.Size(896, 463);
+            this.tabPage3.Size = new System.Drawing.Size(616, 463);
             this.tabPage3.TabIndex = 2;
             this.tabPage3.Text = "Quí";
             this.tabPage3.UseVisualStyleBackColor = true;
@@ -215,7 +215,7 @@
             this.reportViewer3.Location = new System.Drawing.Point(3, 3);
             this.reportViewer3.Name = "reportViewer3";
             this.reportViewer3.ServerReport.BearerToken = null;
-            this.reportViewer3.Size = new System.Drawing.Size(890, 457);
+            this.reportViewer3.Size = new System.Drawing.Size(610, 457);
             this.reportViewer3.TabIndex = 0;
             // 
             // tabPage4
@@ -223,7 +223,7 @@
             this.tabPage4.Controls.Add(this.reportViewer4);
             this.tabPage4.Location = new System.Drawing.Point(4, 25);
             this.tabPage4.Name = "tabPage4";
-            this.tabPage4.Size = new System.Drawing.Size(896, 463);
+            this.tabPage4.Size = new System.Drawing.Size(616, 463);
             this.tabPage4.TabIndex = 3;
             this.tabPage4.Text = "Năm";
             this.tabPage4.UseVisualStyleBackColor = true;
@@ -238,7 +238,7 @@
             this.reportViewer4.Location = new System.Drawing.Point(0, 0);
             this.reportViewer4.Name = "reportViewer4";
             this.reportViewer4.ServerReport.BearerToken = null;
-            this.reportViewer4.Size = new System.Drawing.Size(896, 463);
+            this.reportViewer4.Size = new System.Drawing.Size(616, 463);
             this.reportViewer4.TabIndex = 0;
             // 
             // tabPage5
@@ -246,7 +246,7 @@
             this.tabPage5.Controls.Add(this.reportViewer5);
             this.tabPage5.Location = new System.Drawing.Point(4, 25);
             this.tabPage5.Name = "tabPage5";
-            this.tabPage5.Size = new System.Drawing.Size(896, 463);
+            this.tabPage5.Size = new System.Drawing.Size(616, 463);
             this.tabPage5.TabIndex = 4;
             this.tabPage5.Text = "Sản Phẩm";
             this.tabPage5.UseVisualStyleBackColor = true;
@@ -261,7 +261,7 @@
             this.reportViewer5.Location = new System.Drawing.Point(0, 0);
             this.reportViewer5.Name = "reportViewer5";
             this.reportViewer5.ServerReport.BearerToken = null;
-            this.reportViewer5.Size = new System.Drawing.Size(896, 463);
+            this.reportViewer5.Size = new System.Drawing.Size(616, 463);
             this.reportViewer5.TabIndex = 0;
             // 
             // tabPage6
@@ -269,7 +269,7 @@
             this.tabPage6.Controls.Add(this.reportViewer6);
             this.tabPage6.Location = new System.Drawing.Point(4, 25);
             this.tabPage6.Name = "tabPage6";
-            this.tabPage6.Size = new System.Drawing.Size(896, 463);
+            this.tabPage6.Size = new System.Drawing.Size(616, 463);
             this.tabPage6.TabIndex = 5;
             this.tabPage6.Text = "Khách Hàng";
             this.tabPage6.UseVisualStyleBackColor = true;
@@ -284,7 +284,7 @@
             this.reportViewer6.Location = new System.Drawing.Point(0, 0);
             this.reportViewer6.Name = "reportViewer6";
             this.reportViewer6.ServerReport.BearerToken = null;
-            this.reportViewer6.Size = new System.Drawing.Size(896, 463);
+            this.reportViewer6.Size = new System.Drawing.Size(616, 463);
             this.reportViewer6.TabIndex = 0;
             // 
             // doanhThuTheoNgayTableAdapter
@@ -340,6 +340,9 @@
             // doanhThuKhachHangTableAdapter
             // 
             this.doanhThuKhachHangTableAdapter.ClearBeforeFill = true;
+            // 
+            // doanhThuKhachHangTableAdapter1
+            // 
             // 
             // FormBaoCaoDoanhThu
             // 

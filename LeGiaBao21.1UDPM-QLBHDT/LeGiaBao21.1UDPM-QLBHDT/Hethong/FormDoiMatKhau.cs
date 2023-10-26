@@ -102,6 +102,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
                 else
                 {
                     MessageBox.Show("Tên người dùng hoặc mật khẩu không chính xác!");
+                    return;
                 }
             }
           
@@ -150,25 +151,22 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
             }
             return true;
         }
-
-        private void txtPassReNew_TextChanged(object sender, EventArgs e)
+        private int CountClick = 0;
+        private void lbhienthi_Click(object sender, EventArgs e)
         {
-
-        }
-
-        private void txtPassNew_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtPass_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
+            if (CountClick % 2 == 0)
+            {
+                txtPass.PasswordChar = '\0';
+                txtPassNew.PasswordChar = '\0';
+                txtPassReNew.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPass.PasswordChar = '*';
+                txtPassNew.PasswordChar = '*';
+                txtPassReNew.PasswordChar = '*';
+            }
+            CountClick++;
         }
     }
 }

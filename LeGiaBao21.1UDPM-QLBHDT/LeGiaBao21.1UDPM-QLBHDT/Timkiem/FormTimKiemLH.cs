@@ -32,7 +32,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     dgvLoaiHang.DataSource = from nv in db.LoaiHangs
-                                             where nv.MaLoaiHang == cbMaLoaiHang.SelectedValue.ToString()
+                                             where nv.MaLoaiHang == cbMaLoaiHang.Text.ToString()
                                              select new
                                              {
                                                  nv.MaLoaiHang,
@@ -136,5 +136,16 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
             return string.IsNullOrEmpty(cbMaLoaiHang.Text) && !string.IsNullOrEmpty(txtTenLoaiHang.Text);
         }
 
+        private void cbMaLoaiHang_TextChanged(object sender, EventArgs e)
+        {
+            if (dkienTimMaLH())
+            {
+                txtTenLoaiHang.Enabled = false;
+            }
+            else
+            {
+                txtTenLoaiHang.Enabled = true;
+            }
+        }
     }
 }

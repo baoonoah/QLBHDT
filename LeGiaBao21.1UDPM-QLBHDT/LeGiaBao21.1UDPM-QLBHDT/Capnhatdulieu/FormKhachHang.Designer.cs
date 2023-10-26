@@ -66,7 +66,7 @@
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(173, 52);
-            this.btnThoat.TabIndex = 17;
+            this.btnThoat.TabIndex = 10;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.BtnThoat_Click);
@@ -81,7 +81,7 @@
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(173, 52);
-            this.btnSua.TabIndex = 13;
+            this.btnSua.TabIndex = 8;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.BtnSua_Click);
@@ -96,7 +96,7 @@
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(173, 52);
-            this.btnThem.TabIndex = 12;
+            this.btnThem.TabIndex = 7;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.BtnThem_Click);
@@ -111,7 +111,7 @@
             this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapMoi.Name = "btnNhapMoi";
             this.btnNhapMoi.Size = new System.Drawing.Size(173, 52);
-            this.btnNhapMoi.TabIndex = 11;
+            this.btnNhapMoi.TabIndex = 6;
             this.btnNhapMoi.Text = "Nhập mới";
             this.btnNhapMoi.UseVisualStyleBackColor = false;
             this.btnNhapMoi.Click += new System.EventHandler(this.BtnNhapMoi_Click);
@@ -126,7 +126,7 @@
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(173, 52);
-            this.btnXoa.TabIndex = 16;
+            this.btnXoa.TabIndex = 9;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.BtnXoa_Click);
@@ -146,11 +146,8 @@
             this.dgvKhachHang.Name = "dgvKhachHang";
             this.dgvKhachHang.RowHeadersWidth = 51;
             this.dgvKhachHang.Size = new System.Drawing.Size(896, 229);
-            this.dgvKhachHang.TabIndex = 10;
+            this.dgvKhachHang.TabIndex = 11;
             this.dgvKhachHang.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.DgvKhachHang_CellMouseClick);
-            this.dgvKhachHang.Click += new System.EventHandler(this.DgvKhachHang_Click);
-            this.dgvKhachHang.DoubleClick += new System.EventHandler(this.DgvKhachHang_DoubleClick);
-            this.dgvKhachHang.MouseClick += new System.Windows.Forms.MouseEventHandler(this.DgvKhachHang_MouseClick);
             // 
             // MaKH
             // 
@@ -194,11 +191,11 @@
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(167, 135);
+            this.txtDiaChi.Location = new System.Drawing.Point(187, 137);
             this.txtDiaChi.Margin = new System.Windows.Forms.Padding(4);
             this.txtDiaChi.Name = "txtDiaChi";
             this.txtDiaChi.Size = new System.Drawing.Size(213, 22);
-            this.txtDiaChi.TabIndex = 5;
+            this.txtDiaChi.TabIndex = 2;
             // 
             // txtDienThoai
             // 
@@ -206,23 +203,23 @@
             this.txtDienThoai.Margin = new System.Windows.Forms.Padding(4);
             this.txtDienThoai.Name = "txtDienThoai";
             this.txtDienThoai.Size = new System.Drawing.Size(213, 22);
-            this.txtDienThoai.TabIndex = 9;
+            this.txtDienThoai.TabIndex = 3;
             // 
             // txtTenKH
             // 
-            this.txtTenKH.Location = new System.Drawing.Point(167, 91);
+            this.txtTenKH.Location = new System.Drawing.Point(187, 93);
             this.txtTenKH.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenKH.Name = "txtTenKH";
             this.txtTenKH.Size = new System.Drawing.Size(213, 22);
-            this.txtTenKH.TabIndex = 3;
+            this.txtTenKH.TabIndex = 1;
             // 
             // txtMaKH
             // 
-            this.txtMaKH.Location = new System.Drawing.Point(167, 42);
+            this.txtMaKH.Location = new System.Drawing.Point(187, 44);
             this.txtMaKH.Margin = new System.Windows.Forms.Padding(4);
             this.txtMaKH.Name = "txtMaKH";
             this.txtMaKH.Size = new System.Drawing.Size(213, 22);
-            this.txtMaKH.TabIndex = 1;
+            this.txtMaKH.TabIndex = 0;
             // 
             // label6
             // 
@@ -261,7 +258,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(27, 94);
+            this.label2.Location = new System.Drawing.Point(31, 94);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(126, 18);
@@ -293,10 +290,10 @@
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Location = new System.Drawing.Point(72, 262);
+            this.panel1.Location = new System.Drawing.Point(76, 262);
             this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(900, 208);
+            this.panel1.Size = new System.Drawing.Size(896, 194);
             this.panel1.TabIndex = 9;
             // 
             // checkMaKH
@@ -304,10 +301,10 @@
             this.checkMaKH.AutoSize = true;
             this.checkMaKH.Checked = true;
             this.checkMaKH.CheckState = System.Windows.Forms.CheckState.Checked;
-            this.checkMaKH.Location = new System.Drawing.Point(404, 44);
+            this.checkMaKH.Location = new System.Drawing.Point(424, 46);
             this.checkMaKH.Name = "checkMaKH";
             this.checkMaKH.Size = new System.Drawing.Size(115, 20);
-            this.checkMaKH.TabIndex = 11;
+            this.checkMaKH.TabIndex = 5;
             this.checkMaKH.Text = "Nhập thủ công";
             this.checkMaKH.UseVisualStyleBackColor = true;
             this.checkMaKH.CheckedChanged += new System.EventHandler(this.checkMaKH_CheckedChanged);
@@ -318,7 +315,7 @@
             this.txtEmail.Margin = new System.Windows.Forms.Padding(4);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(213, 22);
-            this.txtEmail.TabIndex = 10;
+            this.txtEmail.TabIndex = 4;
             // 
             // FormKhachHang
             // 

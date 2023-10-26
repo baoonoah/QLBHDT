@@ -132,13 +132,13 @@
             // 
             // cbMaKH
             // 
-            this.cbMaKH.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaKH.FormattingEnabled = true;
             this.cbMaKH.Location = new System.Drawing.Point(167, 44);
             this.cbMaKH.Name = "cbMaKH";
             this.cbMaKH.Size = new System.Drawing.Size(213, 24);
             this.cbMaKH.TabIndex = 11;
             this.cbMaKH.SelectedIndexChanged += new System.EventHandler(this.cbMaKH_SelectedIndexChanged);
+            this.cbMaKH.TextChanged += new System.EventHandler(this.cbMaKH_TextChanged);
             // 
             // txtEmail
             // 

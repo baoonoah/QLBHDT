@@ -6,6 +6,7 @@ using System.Data.SqlClient;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -54,7 +55,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
             if (count == 1)
             {
                 // Đăng nhập thành công
-                MessageBox.Show("Đăng nhập thành công " + username + "!");
+                MessageBox.Show("Đăng nhập thành công người dùng " + username + "!");
                 LoggedInUser = username;
                 this.Hide();
                 Form1 fm = new Form1();
@@ -89,24 +90,25 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Hethong
                 string.IsNullOrEmpty(txtUser.Text) && !string.IsNullOrEmpty(txtPass.Text) ? "Vui lòng nhập tên đăng nhập!" : "Vui lòng nhập mật khẩu!";
         }
 
-        private void txtPass_Validating(object sender, CancelEventArgs e)
-        {
-
-        }
-
         private void label4_Click(object sender, EventArgs e)
         {
             Form frm = new Hethong.FormDangKy();
             frm.Text = "Đăng Ký";
             frm.ShowDialog();
         }
-    
-
-        private void FormDangNhap_FormClosing(object sender, FormClosingEventArgs e)
+   
+        private int CountClick = 0;
+        private void lbhienthi_Click(object sender, EventArgs e)
         {
-        }
-        private void FormDangNhap_GiveFeedback(object sender, GiveFeedbackEventArgs e)
-        {
+            if(CountClick % 2 == 0)
+            {
+                txtPass.PasswordChar = '\0';
+            }
+            else
+            {
+                txtPass.PasswordChar = '*';
+            }
+            CountClick++;
         }
     }
 }

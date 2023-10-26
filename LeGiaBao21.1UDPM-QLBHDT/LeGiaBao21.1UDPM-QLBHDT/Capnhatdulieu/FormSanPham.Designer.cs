@@ -75,7 +75,7 @@
             this.btnThoat.Margin = new System.Windows.Forms.Padding(4);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(173, 52);
-            this.btnThoat.TabIndex = 29;
+            this.btnThoat.TabIndex = 14;
             this.btnThoat.Text = "Thoát";
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -90,7 +90,7 @@
             this.btnSua.Margin = new System.Windows.Forms.Padding(4);
             this.btnSua.Name = "btnSua";
             this.btnSua.Size = new System.Drawing.Size(173, 52);
-            this.btnSua.TabIndex = 27;
+            this.btnSua.TabIndex = 12;
             this.btnSua.Text = "Sửa";
             this.btnSua.UseVisualStyleBackColor = false;
             this.btnSua.Click += new System.EventHandler(this.btnSua_Click);
@@ -105,7 +105,7 @@
             this.btnThem.Margin = new System.Windows.Forms.Padding(4);
             this.btnThem.Name = "btnThem";
             this.btnThem.Size = new System.Drawing.Size(173, 52);
-            this.btnThem.TabIndex = 26;
+            this.btnThem.TabIndex = 11;
             this.btnThem.Text = "Thêm";
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
@@ -120,7 +120,7 @@
             this.btnNhapMoi.Margin = new System.Windows.Forms.Padding(4);
             this.btnNhapMoi.Name = "btnNhapMoi";
             this.btnNhapMoi.Size = new System.Drawing.Size(173, 52);
-            this.btnNhapMoi.TabIndex = 25;
+            this.btnNhapMoi.TabIndex = 10;
             this.btnNhapMoi.Text = "Nhập mới";
             this.btnNhapMoi.UseVisualStyleBackColor = false;
             this.btnNhapMoi.Click += new System.EventHandler(this.btnNhapMoi_Click);
@@ -135,24 +135,24 @@
             this.btnXoa.Margin = new System.Windows.Forms.Padding(4);
             this.btnXoa.Name = "btnXoa";
             this.btnXoa.Size = new System.Drawing.Size(173, 52);
-            this.btnXoa.TabIndex = 28;
+            this.btnXoa.TabIndex = 13;
             this.btnXoa.Text = "Xóa";
             this.btnXoa.UseVisualStyleBackColor = false;
             this.btnXoa.Click += new System.EventHandler(this.btnXoa_Click);
             // 
             // txtGiaNhap
             // 
-            this.txtGiaNhap.Location = new System.Drawing.Point(628, 96);
+            this.txtGiaNhap.Location = new System.Drawing.Point(625, 96);
             this.txtGiaNhap.Margin = new System.Windows.Forms.Padding(4);
             this.txtGiaNhap.Name = "txtGiaNhap";
             this.txtGiaNhap.Size = new System.Drawing.Size(265, 22);
-            this.txtGiaNhap.TabIndex = 9;
+            this.txtGiaNhap.TabIndex = 6;
             // 
             // label4
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label4.Location = new System.Drawing.Point(512, 98);
+            this.label4.Location = new System.Drawing.Point(509, 98);
             this.label4.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(73, 18);
@@ -161,11 +161,11 @@
             // 
             // txtGiaBan
             // 
-            this.txtGiaBan.Location = new System.Drawing.Point(628, 154);
+            this.txtGiaBan.Location = new System.Drawing.Point(625, 154);
             this.txtGiaBan.Margin = new System.Windows.Forms.Padding(4);
             this.txtGiaBan.Name = "txtGiaBan";
             this.txtGiaBan.Size = new System.Drawing.Size(265, 22);
-            this.txtGiaBan.TabIndex = 11;
+            this.txtGiaBan.TabIndex = 7;
             // 
             // txtMaSP
             // 
@@ -179,7 +179,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label6.Location = new System.Drawing.Point(512, 156);
+            this.label6.Location = new System.Drawing.Point(509, 156);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(64, 18);
@@ -190,7 +190,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label5.Location = new System.Drawing.Point(512, 44);
+            this.label5.Location = new System.Drawing.Point(509, 44);
             this.label5.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(92, 18);
@@ -201,7 +201,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label3.Location = new System.Drawing.Point(31, 159);
+            this.label3.Location = new System.Drawing.Point(23, 157);
             this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(104, 18);
@@ -212,7 +212,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label2.Location = new System.Drawing.Point(31, 96);
+            this.label2.Location = new System.Drawing.Point(23, 94);
             this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(110, 18);
@@ -223,7 +223,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label1.Location = new System.Drawing.Point(31, 44);
+            this.label1.Location = new System.Drawing.Point(23, 42);
             this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(103, 18);
@@ -264,18 +264,18 @@
             this.checkMaSP.Location = new System.Drawing.Point(386, 45);
             this.checkMaSP.Name = "checkMaSP";
             this.checkMaSP.Size = new System.Drawing.Size(115, 20);
-            this.checkMaSP.TabIndex = 18;
+            this.checkMaSP.TabIndex = 9;
             this.checkMaSP.Text = "Nhập thủ công";
             this.checkMaSP.UseVisualStyleBackColor = true;
             this.checkMaSP.CheckedChanged += new System.EventHandler(this.checMaSP_CheckedChanged);
             // 
             // txtDonViTinh
             // 
-            this.txtDonViTinh.Location = new System.Drawing.Point(628, 44);
+            this.txtDonViTinh.Location = new System.Drawing.Point(625, 44);
             this.txtDonViTinh.Margin = new System.Windows.Forms.Padding(4);
             this.txtDonViTinh.Name = "txtDonViTinh";
             this.txtDonViTinh.Size = new System.Drawing.Size(265, 22);
-            this.txtDonViTinh.TabIndex = 17;
+            this.txtDonViTinh.TabIndex = 5;
             // 
             // txtSoLuong
             // 
@@ -283,7 +283,7 @@
             this.txtSoLuong.Margin = new System.Windows.Forms.Padding(4);
             this.txtSoLuong.Name = "txtSoLuong";
             this.txtSoLuong.Size = new System.Drawing.Size(265, 22);
-            this.txtSoLuong.TabIndex = 16;
+            this.txtSoLuong.TabIndex = 8;
             // 
             // label8
             // 
@@ -300,7 +300,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Arial", 9F, System.Drawing.FontStyle.Bold);
-            this.label7.Location = new System.Drawing.Point(39, 223);
+            this.label7.Location = new System.Drawing.Point(23, 221);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 18);
@@ -315,7 +315,7 @@
             this.cbMaCongTy.Margin = new System.Windows.Forms.Padding(4);
             this.cbMaCongTy.Name = "cbMaCongTy";
             this.cbMaCongTy.Size = new System.Drawing.Size(213, 24);
-            this.cbMaCongTy.TabIndex = 13;
+            this.cbMaCongTy.TabIndex = 4;
             this.cbMaCongTy.SelectedIndexChanged += new System.EventHandler(this.cbMaCongTy_SelectedIndexChanged);
             // 
             // cbMaLoaiHang
@@ -326,7 +326,7 @@
             this.cbMaLoaiHang.Margin = new System.Windows.Forms.Padding(4);
             this.cbMaLoaiHang.Name = "cbMaLoaiHang";
             this.cbMaLoaiHang.Size = new System.Drawing.Size(213, 24);
-            this.cbMaLoaiHang.TabIndex = 12;
+            this.cbMaLoaiHang.TabIndex = 3;
             this.cbMaLoaiHang.SelectedIndexChanged += new System.EventHandler(this.cbMaLoaiHang_SelectedIndexChanged);
             // 
             // txtTenSP
@@ -335,7 +335,7 @@
             this.txtTenSP.Margin = new System.Windows.Forms.Padding(4);
             this.txtTenSP.Name = "txtTenSP";
             this.txtTenSP.Size = new System.Drawing.Size(213, 22);
-            this.txtTenSP.TabIndex = 3;
+            this.txtTenSP.TabIndex = 2;
             // 
             // dgvSanPham
             // 
@@ -355,7 +355,7 @@
             this.dgvSanPham.Name = "dgvSanPham";
             this.dgvSanPham.RowHeadersWidth = 51;
             this.dgvSanPham.Size = new System.Drawing.Size(1077, 203);
-            this.dgvSanPham.TabIndex = 24;
+            this.dgvSanPham.TabIndex = 15;
             this.dgvSanPham.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvSanPham_CellContentClick);
             this.dgvSanPham.CellMouseClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvSanPham_CellMouseClick);
             // 

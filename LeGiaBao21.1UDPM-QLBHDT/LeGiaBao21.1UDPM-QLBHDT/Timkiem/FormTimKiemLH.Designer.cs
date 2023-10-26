@@ -60,13 +60,13 @@
             // 
             // cbMaLoaiHang
             // 
-            this.cbMaLoaiHang.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cbMaLoaiHang.FormattingEnabled = true;
             this.cbMaLoaiHang.Location = new System.Drawing.Point(225, 33);
             this.cbMaLoaiHang.Name = "cbMaLoaiHang";
             this.cbMaLoaiHang.Size = new System.Drawing.Size(237, 24);
             this.cbMaLoaiHang.TabIndex = 16;
             this.cbMaLoaiHang.SelectedIndexChanged += new System.EventHandler(this.cbMaLoaiHang_SelectedIndexChanged);
+            this.cbMaLoaiHang.TextChanged += new System.EventHandler(this.cbMaLoaiHang_TextChanged);
             // 
             // txtTenLoaiHang
             // 

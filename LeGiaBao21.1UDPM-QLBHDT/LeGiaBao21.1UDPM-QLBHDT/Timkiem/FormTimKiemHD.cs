@@ -65,7 +65,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     dgvHoaDon.DataSource = from hd in db.HoaDons
-                                            where hd.MaHD == cbMaHD.SelectedItem.ToString()
+                                            where hd.MaHD == cbMaHD.Text.ToString()
                                             select new
                                             {
                                                 hd.MaHD,
@@ -88,7 +88,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     dgvHoaDon.DataSource = from hd in db.HoaDons
-                                           where hd.MaNV == cbMaNV.SelectedItem.ToString()
+                                           where hd.MaNV == cbMaNV.Text.ToString()
                                            select new
                                            {
                                                hd.MaHD,
@@ -111,7 +111,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 if (!string.IsNullOrEmpty(searchText))
                 {
                     dgvHoaDon.DataSource = from hd in db.HoaDons
-                                           where hd.MaKH == cbMaKH.SelectedItem.ToString()
+                                           where hd.MaKH == cbMaKH.Text.ToString()
                                            select new
                                            {
                                                hd.MaHD,
@@ -244,5 +244,57 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Timkiem
                 
         }
 
+        private void cbMaHD_TextChanged(object sender, EventArgs e)
+        {
+            if (dkienTimMaHD())
+            {
+                cbMaNV.Enabled = false;
+                cbMaKH.Enabled = false;
+                dtpNgayLapHD.Enabled = false;
+            }
+            else
+            {
+                cbMaNV.Enabled = true;
+                cbMaKH.Enabled = true;
+                dtpNgayLapHD.Enabled = true;
+            }
+        }
+
+        private void cbMaNV_TextChanged(object sender, EventArgs e)
+        {
+            if (dkienTimMaNV())
+            {
+                cbMaHD.Enabled = false;
+                cbMaKH.Enabled = false;
+                dtpNgayLapHD.Enabled = false;
+            }
+            else
+            {
+                cbMaHD.Enabled = true;
+                cbMaKH.Enabled = true;
+                dtpNgayLapHD.Enabled = true;
+            }
+        }
+
+        private void cbMaKH_TextChanged(object sender, EventArgs e)
+        {
+            if (dkienTimMaKH())
+            {
+                cbMaHD.Enabled = false;
+                cbMaNV.Enabled = false;
+                dtpNgayLapHD.Enabled = false;
+            }
+            else
+            {
+                cbMaHD.Enabled = true;
+                cbMaNV.Enabled = true;
+                dtpNgayLapHD.Enabled = true;
+            }
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
