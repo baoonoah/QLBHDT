@@ -15,7 +15,7 @@ create table GIANG_VIEN
  (
 	Ma_HK nvarchar(30),
 	primary key(Ma_HK),
-	Namhoc nvarchar(30),
+	Namhoc nvarchar(30),S
 	Hocky nvarchar(30)
  )
 
@@ -135,3 +135,23 @@ insert into QUATRINH_HOCTAP Values('MaSV002','MaHK002','MaMH002',1,'True');
 insert into QUATRINH_HOCTAP Values('MaSV003','MaHK003','MaMH003',1,'True');
 insert into QUATRINH_HOCTAP Values('MaSV004','MaHK004','MaMH004',1,'True');
 insert into QUATRINH_HOCTAP Values('MaSV005','MaHK005','MaMH005',1,'True');
+
+CREATE VIEW So_Buoi_Vang AS
+	SELECT SDB.Ma_MH,HK.Ma_HK,MH.Ten_MH, Sum(SDB.Soluong_vang) AS SoBuoiVang
+	from SO_DAU_BAI SDB, MON_HOC MH, HOC_KY HK
+	where SDB.Ma_MH = MH.Ma_MH and SDB.Ma_HK = HK.Ma_HK
+	GROUP BY SDB.Ma_MH,HK.Ma_HK, MH.Ten_MH;
+
+
+CREATE VIEW So_Gio_Con_Lai AS
+SELECT MH.Ma_MH,HK.Ma_HK,HK.Namhoc,MH.Sotiet, MH.Sotiet - SUM(SDB.Sogio) AS SoGioConLai
+from SO_DAU_BAI SDB, MON_HOC MH, HOC_KY HK
+where SDB.Ma_MH = MH.Ma_MH and SDB.Ma_HK = HK.Ma_HK
+GROUP BY MH.Ma_MH,HK.Ma_HK, HK.Namhoc, MH.Sotiet;
+
+
+	CREATE VIEW MH_KetThuc AS
+	SELECT SDB.Ma_MH,HK.Ma_HK,HK.Namhoc,MH.Ten_MH
+	from SO_DAU_BAI SDB, MON_HOC MH, HOC_KY HK
+	where SDB.Ma_MH = MH.Ma_MH and SDB.Ma_HK = HK.Ma_HK and ((MH.Sotiet *45/60) - SDB.Sogio <= 0)
+	GROUP BY SDB.Ma_MH,HK.Ma_HK,HK.Namhoc, MH.Ten_MH;

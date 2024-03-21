@@ -659,6 +659,8 @@ namespace thi_de2.Baocao {
             
             private global::System.Data.DataColumn columnNamhoc;
             
+            private global::System.Data.DataColumn columnSotiet;
+            
             private global::System.Data.DataColumn columnSoGioConLai;
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -720,6 +722,14 @@ namespace thi_de2.Baocao {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public global::System.Data.DataColumn SotietColumn {
+                get {
+                    return this.columnSotiet;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public global::System.Data.DataColumn SoGioConLaiColumn {
                 get {
                     return this.columnSoGioConLai;
@@ -763,12 +773,13 @@ namespace thi_de2.Baocao {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public So_Gio_Con_LaiRow AddSo_Gio_Con_LaiRow(string Ma_MH, string Ma_HK, string Namhoc, int SoGioConLai) {
+            public So_Gio_Con_LaiRow AddSo_Gio_Con_LaiRow(string Ma_MH, string Ma_HK, string Namhoc, int Sotiet, int SoGioConLai) {
                 So_Gio_Con_LaiRow rowSo_Gio_Con_LaiRow = ((So_Gio_Con_LaiRow)(this.NewRow()));
                 object[] columnValuesArray = new object[] {
                         Ma_MH,
                         Ma_HK,
                         Namhoc,
+                        Sotiet,
                         SoGioConLai};
                 rowSo_Gio_Con_LaiRow.ItemArray = columnValuesArray;
                 this.Rows.Add(rowSo_Gio_Con_LaiRow);
@@ -777,8 +788,9 @@ namespace thi_de2.Baocao {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public So_Gio_Con_LaiRow FindByMa_HK(string Ma_HK) {
+            public So_Gio_Con_LaiRow FindByMa_MHMa_HK(string Ma_MH, string Ma_HK) {
                 return ((So_Gio_Con_LaiRow)(this.Rows.Find(new object[] {
+                            Ma_MH,
                             Ma_HK})));
             }
             
@@ -802,6 +814,7 @@ namespace thi_de2.Baocao {
                 this.columnMa_MH = base.Columns["Ma_MH"];
                 this.columnMa_HK = base.Columns["Ma_HK"];
                 this.columnNamhoc = base.Columns["Namhoc"];
+                this.columnSotiet = base.Columns["Sotiet"];
                 this.columnSoGioConLai = base.Columns["SoGioConLai"];
             }
             
@@ -814,15 +827,19 @@ namespace thi_de2.Baocao {
                 base.Columns.Add(this.columnMa_HK);
                 this.columnNamhoc = new global::System.Data.DataColumn("Namhoc", typeof(string), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnNamhoc);
+                this.columnSotiet = new global::System.Data.DataColumn("Sotiet", typeof(int), null, global::System.Data.MappingType.Element);
+                base.Columns.Add(this.columnSotiet);
                 this.columnSoGioConLai = new global::System.Data.DataColumn("SoGioConLai", typeof(int), null, global::System.Data.MappingType.Element);
                 base.Columns.Add(this.columnSoGioConLai);
                 this.Constraints.Add(new global::System.Data.UniqueConstraint("Constraint1", new global::System.Data.DataColumn[] {
+                                this.columnMa_MH,
                                 this.columnMa_HK}, true));
+                this.columnMa_MH.AllowDBNull = false;
                 this.columnMa_MH.MaxLength = 30;
                 this.columnMa_HK.AllowDBNull = false;
-                this.columnMa_HK.Unique = true;
                 this.columnMa_HK.MaxLength = 30;
                 this.columnNamhoc.MaxLength = 30;
+                this.columnSotiet.AllowDBNull = false;
                 this.columnSoGioConLai.ReadOnly = true;
             }
             
@@ -1381,12 +1398,7 @@ namespace thi_de2.Baocao {
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public string Ma_MH {
                 get {
-                    try {
-                        return ((string)(this[this.tableSo_Gio_Con_Lai.Ma_MHColumn]));
-                    }
-                    catch (global::System.InvalidCastException e) {
-                        throw new global::System.Data.StrongTypingException("The value for column \'Ma_MH\' in table \'So_Gio_Con_Lai\' is DBNull.", e);
-                    }
+                    return ((string)(this[this.tableSo_Gio_Con_Lai.Ma_MHColumn]));
                 }
                 set {
                     this[this.tableSo_Gio_Con_Lai.Ma_MHColumn] = value;
@@ -1422,6 +1434,17 @@ namespace thi_de2.Baocao {
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
             [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
+            public int Sotiet {
+                get {
+                    return ((int)(this[this.tableSo_Gio_Con_Lai.SotietColumn]));
+                }
+                set {
+                    this[this.tableSo_Gio_Con_Lai.SotietColumn] = value;
+                }
+            }
+            
+            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
             public int SoGioConLai {
                 get {
                     try {
@@ -1434,18 +1457,6 @@ namespace thi_de2.Baocao {
                 set {
                     this[this.tableSo_Gio_Con_Lai.SoGioConLaiColumn] = value;
                 }
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public bool IsMa_MHNull() {
-                return this.IsNull(this.tableSo_Gio_Con_Lai.Ma_MHColumn);
-            }
-            
-            [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
-            [global::System.CodeDom.Compiler.GeneratedCodeAttribute("System.Data.Design.TypedDataSetGenerator", "17.0.0.0")]
-            public void SetMa_MHNull() {
-                this[this.tableSo_Gio_Con_Lai.Ma_MHColumn] = global::System.Convert.DBNull;
             }
             
             [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
@@ -1983,6 +1994,7 @@ namespace thi_de2.Baocao.DataSet1TableAdapters {
             tableMapping.ColumnMappings.Add("Ma_MH", "Ma_MH");
             tableMapping.ColumnMappings.Add("Ma_HK", "Ma_HK");
             tableMapping.ColumnMappings.Add("Namhoc", "Namhoc");
+            tableMapping.ColumnMappings.Add("Sotiet", "Sotiet");
             tableMapping.ColumnMappings.Add("SoGioConLai", "SoGioConLai");
             this._adapter.TableMappings.Add(tableMapping);
         }
@@ -2000,7 +2012,7 @@ namespace thi_de2.Baocao.DataSet1TableAdapters {
             this._commandCollection = new global::System.Data.SqlClient.SqlCommand[1];
             this._commandCollection[0] = new global::System.Data.SqlClient.SqlCommand();
             this._commandCollection[0].Connection = this.Connection;
-            this._commandCollection[0].CommandText = "SELECT Ma_MH, Ma_HK, Namhoc, SoGioConLai FROM dbo.So_Gio_Con_Lai";
+            this._commandCollection[0].CommandText = "SELECT Ma_MH, Ma_HK, Namhoc, Sotiet, SoGioConLai FROM dbo.So_Gio_Con_Lai";
             this._commandCollection[0].CommandType = global::System.Data.CommandType.Text;
         }
         

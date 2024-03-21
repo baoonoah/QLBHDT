@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="onthiTH1" Class="OnTH1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=DESKTOP-5FLMMC7\SQLEXPRESS;Initial Catalog=onthiTH1;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="OnTH1.Properties.Settings" SettingsPropertyName="onthiTH1ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.GIANG_VIEN" Member="GIANG_VIENs">
+    <Type Name="GIANG_VIEN">
+      <Column Name="Ma_GV" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten_GV" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Sdt_GV" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Email_GV" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="GIANG_VIEN_PHONG" Member="PHONGs" ThisKey="Ma_GV" OtherKey="Nguoi_quanly" Type="PHONG" />
+      <Association Name="GIANG_VIEN_THANH_LY" Member="THANH_Lies" ThisKey="Ma_GV" OtherKey="Nguoinhan_TB" Type="THANH_LY" />
+    </Type>
+  </Table>
+  <Table Name="dbo.THIET_BI" Member="THIET_BIs">
+    <Type Name="THIET_BI">
+      <Column Name="Ma_TB" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten_TB" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Code_TB" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Ngaynhap_TB" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Thongtin_TB" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Vitri_truoc_TB" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Vitri_hientai_TB" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Tinhtrang_TB" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Association Name="THIET_BI_SUA_CHUA" Member="SUA_CHUAs" ThisKey="Ma_TB" OtherKey="Ma_TB" Type="SUA_CHUA" />
+      <Association Name="THIET_BI_THANH_LY" Member="THANH_Lies" ThisKey="Ma_TB" OtherKey="Ma_TB" Type="THANH_LY" />
+      <Association Name="PHONG_THIET_BI" Member="PHONG" ThisKey="Vitri_hientai_TB" OtherKey="Ma_phong" Type="PHONG" IsForeignKey="true" />
+      <Association Name="PHONG_THIET_BI1" Member="PHONG1" ThisKey="Vitri_truoc_TB" OtherKey="Ma_phong" Type="PHONG" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.PHONG" Member="PHONGs">
+    <Type Name="PHONG">
+      <Column Name="Ma_phong" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten_phong" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Vitri_phong" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Nguoi_quanly" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="PHONG_THIET_BI" Member="THIET_BIs" ThisKey="Ma_phong" OtherKey="Vitri_hientai_TB" Type="THIET_BI" />
+      <Association Name="PHONG_THIET_BI1" Member="THIET_BIs1" ThisKey="Ma_phong" OtherKey="Vitri_truoc_TB" Type="THIET_BI" />
+      <Association Name="GIANG_VIEN_PHONG" Member="GIANG_VIEN" ThisKey="Nguoi_quanly" OtherKey="Ma_GV" Type="GIANG_VIEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SUA_CHUA" Member="SUA_CHUAs">
+    <Type Name="SUA_CHUA">
+      <Column Name="Ma_SC" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ma_TB" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngaygiao_TB" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoinhan_TB" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Tinhtrang_TB_lucgiao" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Column Name="Tinhtrang_TB" Type="System.String" DbType="NVarChar(60)" CanBeNull="true" />
+      <Association Name="THIET_BI_SUA_CHUA" Member="THIET_BI" ThisKey="Ma_TB" OtherKey="Ma_TB" Type="THIET_BI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.THANH_LY" Member="THANH_Lies">
+    <Type Name="THANH_LY">
+      <Column Name="Ma_TL" Type="System.String" DbType="NVarChar(10) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ma_TB" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Column Name="Ngaygiao_TB" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Nguoinhan_TB" Type="System.String" DbType="NVarChar(10) NOT NULL" CanBeNull="false" />
+      <Association Name="THIET_BI_THANH_LY" Member="THIET_BI" ThisKey="Ma_TB" OtherKey="Ma_TB" Type="THIET_BI" IsForeignKey="true" />
+      <Association Name="GIANG_VIEN_THANH_LY" Member="GIANG_VIEN" ThisKey="Nguoinhan_TB" OtherKey="Ma_GV" Type="GIANG_VIEN" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>

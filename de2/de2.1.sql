@@ -77,16 +77,15 @@ CREATE VIEW So_Buoi_Vang AS
 	GROUP BY SDB.Ma_MH,HK.Ma_HK, MH.Ten_MH;
 
 
-
 CREATE VIEW So_Gio_Con_Lai AS
-SELECT SDB.Ma_MH,HK.Ma_HK,HK.Namhoc, MH.Sotiet - SUM(SDB.Sogio) AS SoGioConLai
+SELECT MH.Ma_MH,HK.Ma_HK,HK.Namhoc,MH.Sotiet, MH.Sotiet - SUM(SDB.Sogio) AS SoGioConLai
 from SO_DAU_BAI SDB, MON_HOC MH, HOC_KY HK
 where SDB.Ma_MH = MH.Ma_MH and SDB.Ma_HK = HK.Ma_HK
-GROUP BY SDB.Ma_MH,HK.Ma_HK, HK.Namhoc, MH.Sotiet;
+GROUP BY MH.Ma_MH,HK.Ma_HK, HK.Namhoc, MH.Sotiet;
 
 
 	CREATE VIEW MH_KetThuc AS
 	SELECT SDB.Ma_MH,HK.Ma_HK,HK.Namhoc,MH.Ten_MH
 	from SO_DAU_BAI SDB, MON_HOC MH, HOC_KY HK
-	where SDB.Ma_MH = MH.Ma_MH and SDB.Ma_HK = HK.Ma_HK and (MH.Sotiet -SDB.Sogio <= 0)
+	where SDB.Ma_MH = MH.Ma_MH and SDB.Ma_HK = HK.Ma_HK and ((MH.Sotiet *45/60) - SDB.Sogio <= 0)
 	GROUP BY SDB.Ma_MH,HK.Ma_HK,HK.Namhoc, MH.Ten_MH;

@@ -381,7 +381,7 @@
         <DataProvider>System.Data.DataSet</DataProvider>
         <ConnectString>/* Local Connection */</ConnectString>
       </ConnectionProperties>
-      <rd:DataSourceID>d76f30c3-a1c1-4108-883e-e8cd89a06b14</rd:DataSourceID>
+      <rd:DataSourceID>d0796b69-642a-4223-9668-c2e88bc758f2</rd:DataSourceID>
     </DataSource>
   </DataSources>
   <DataSets>
@@ -401,7 +401,7 @@
         </Field>
         <Field Name="Namhoc">
           <DataField>Namhoc</DataField>
-          <rd:TypeName>System.Int32</rd:TypeName>
+          <rd:TypeName>System.String</rd:TypeName>
         </Field>
         <Field Name="Ten_MH">
           <DataField>Ten_MH</DataField>
@@ -410,7 +410,7 @@
       </Fields>
       <rd:DataSetInfo>
         <rd:DataSetName>DataSet1</rd:DataSetName>
-        <rd:SchemaPath>D:\CSDLnC#\THI\de2\thi_de2\thi_de2\Baocao\DataSet1.xsd</rd:SchemaPath>
+        <rd:SchemaPath>D:\CSDLnC#\QLBHDT\de2\thi_de2\thi_de2\Baocao\DataSet1.xsd</rd:SchemaPath>
         <rd:TableName>MH_KetThuc</rd:TableName>
         <rd:TableAdapterFillMethod>Fill</rd:TableAdapterFillMethod>
         <rd:TableAdapterGetDataMethod>GetData</rd:TableAdapterGetDataMethod>
@@ -419,5 +419,5 @@
     </DataSet>
   </DataSets>
   <rd:ReportUnitType>Inch</rd:ReportUnitType>
-  <rd:ReportID>86d4021c-c116-4c8e-96ca-c7b4be456e30</rd:ReportID>
+  <rd:ReportID>8ca4ff39-376a-459b-bf35-29fab6914ecd</rd:ReportID>
 </Report>

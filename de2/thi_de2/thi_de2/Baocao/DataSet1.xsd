@@ -32,7 +32,7 @@
               <DbSource ConnectionRef="onThiTH2ConnectionString (Settings)" DbObjectName="onThiTH2.dbo.So_Gio_Con_Lai" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
                 <SelectCommand>
                   <DbCommand CommandType="Text" ModifiedByUser="false">
-                    <CommandText>SELECT Ma_MH, Ma_HK, Namhoc, SoGioConLai FROM dbo.So_Gio_Con_Lai</CommandText>
+                    <CommandText>SELECT Ma_MH, Ma_HK, Namhoc, Sotiet, SoGioConLai FROM dbo.So_Gio_Con_Lai</CommandText>
                     <Parameters />
                   </DbCommand>
                 </SelectCommand>
@@ -42,6 +42,7 @@
               <Mapping SourceColumn="Ma_MH" DataSetColumn="Ma_MH" />
               <Mapping SourceColumn="Ma_HK" DataSetColumn="Ma_HK" />
               <Mapping SourceColumn="Namhoc" DataSetColumn="Namhoc" />
+              <Mapping SourceColumn="Sotiet" DataSetColumn="Sotiet" />
               <Mapping SourceColumn="SoGioConLai" DataSetColumn="SoGioConLai" />
             </Mappings>
             <Sources />
@@ -110,7 +111,7 @@
         <xs:element name="So_Gio_Con_Lai" msprop:Generator_RowEvHandlerName="So_Gio_Con_LaiRowChangeEventHandler" msprop:Generator_RowDeletedName="So_Gio_Con_LaiRowDeleted" msprop:Generator_RowDeletingName="So_Gio_Con_LaiRowDeleting" msprop:Generator_RowEvArgName="So_Gio_Con_LaiRowChangeEvent" msprop:Generator_TablePropName="So_Gio_Con_Lai" msprop:Generator_RowChangedName="So_Gio_Con_LaiRowChanged" msprop:Generator_RowChangingName="So_Gio_Con_LaiRowChanging" msprop:Generator_TableClassName="So_Gio_Con_LaiDataTable" msprop:Generator_RowClassName="So_Gio_Con_LaiRow" msprop:Generator_TableVarName="tableSo_Gio_Con_Lai" msprop:Generator_UserTableName="So_Gio_Con_Lai">
           <xs:complexType>
             <xs:sequence>
-              <xs:element name="Ma_MH" msprop:Generator_ColumnPropNameInRow="Ma_MH" msprop:Generator_ColumnPropNameInTable="Ma_MHColumn" msprop:Generator_ColumnVarNameInTable="columnMa_MH" msprop:Generator_UserColumnName="Ma_MH" minOccurs="0">
+              <xs:element name="Ma_MH" msprop:Generator_ColumnPropNameInRow="Ma_MH" msprop:Generator_ColumnPropNameInTable="Ma_MHColumn" msprop:Generator_ColumnVarNameInTable="columnMa_MH" msprop:Generator_UserColumnName="Ma_MH">
                 <xs:simpleType>
                   <xs:restriction base="xs:string">
                     <xs:maxLength value="30" />
@@ -131,6 +132,7 @@
                   </xs:restriction>
                 </xs:simpleType>
               </xs:element>
+              <xs:element name="Sotiet" msprop:Generator_ColumnPropNameInRow="Sotiet" msprop:Generator_ColumnPropNameInTable="SotietColumn" msprop:Generator_ColumnVarNameInTable="columnSotiet" msprop:Generator_UserColumnName="Sotiet" type="xs:int" />
               <xs:element name="SoGioConLai" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="SoGioConLai" msprop:Generator_ColumnPropNameInTable="SoGioConLaiColumn" msprop:Generator_ColumnVarNameInTable="columnSoGioConLai" msprop:Generator_UserColumnName="SoGioConLai" type="xs:int" minOccurs="0" />
             </xs:sequence>
           </xs:complexType>
@@ -171,6 +173,7 @@
     </xs:unique>
     <xs:unique name="So_Gio_Con_Lai_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
       <xs:selector xpath=".//mstns:So_Gio_Con_Lai" />
+      <xs:field xpath="mstns:Ma_MH" />
       <xs:field xpath="mstns:Ma_HK" />
     </xs:unique>
     <xs:unique name="So_Buoi_Vang_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
