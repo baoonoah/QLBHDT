@@ -29,6 +29,8 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Baocao
             this.reportViewer1.RefreshReport();
             this.reportViewer2.RefreshReport();
             this.reportViewer3.RefreshReport();
+            this.reportViewer4.RefreshReport();
+            this.reportViewer4.RefreshReport();
         }
     }
 }

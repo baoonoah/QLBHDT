@@ -1,0 +1,181 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema id="DataSet1" targetNamespace="http://tempuri.org/DataSet1.xsd" xmlns:mstns="http://tempuri.org/DataSet1.xsd" xmlns="http://tempuri.org/DataSet1.xsd" xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:msdata="urn:schemas-microsoft-com:xml-msdata" xmlns:msprop="urn:schemas-microsoft-com:xml-msprop" attributeFormDefault="qualified" elementFormDefault="qualified">
+  <xs:annotation>
+    <xs:appinfo source="urn:schemas-microsoft-com:xml-msdatasource">
+      <DataSource DefaultConnectionIndex="1" FunctionsComponentName="QueriesTableAdapter" Modifier="AutoLayout, AnsiClass, Class, Public" SchemaSerializationMode="IncludeSchema" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
+        <Connections>
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="thi2ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="thi2ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.thi_de2.Properties.Settings.GlobalReference.Default.thi2ConnectionString" Provider="System.Data.SqlClient" />
+          <Connection AppSettingsObjectName="Settings" AppSettingsPropertyName="onThiTH2ConnectionString" ConnectionStringObject="" IsAppSettingsProperty="true" Modifier="Assembly" Name="onThiTH2ConnectionString (Settings)" ParameterPrefix="@" PropertyReference="ApplicationSettings.thi_de2.Properties.Settings.GlobalReference.Default.onThiTH2ConnectionString" Provider="System.Data.SqlClient" />
+        </Connections>
+        <Tables>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="MH_KetThucTableAdapter" GeneratorDataComponentClassName="MH_KetThucTableAdapter" Name="MH_KetThuc" UserDataComponentName="MH_KetThucTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="onThiTH2ConnectionString (Settings)" DbObjectName="onThiTH2.dbo.MH_KetThuc" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Ma_MH, Ma_HK, Namhoc, Ten_MH FROM dbo.MH_KetThuc</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Ma_MH" DataSetColumn="Ma_MH" />
+              <Mapping SourceColumn="Ma_HK" DataSetColumn="Ma_HK" />
+              <Mapping SourceColumn="Namhoc" DataSetColumn="Namhoc" />
+              <Mapping SourceColumn="Ten_MH" DataSetColumn="Ten_MH" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="So_Gio_Con_LaiTableAdapter" GeneratorDataComponentClassName="So_Gio_Con_LaiTableAdapter" Name="So_Gio_Con_Lai" UserDataComponentName="So_Gio_Con_LaiTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="onThiTH2ConnectionString (Settings)" DbObjectName="onThiTH2.dbo.So_Gio_Con_Lai" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Ma_MH, Ma_HK, Namhoc, SoGioConLai FROM dbo.So_Gio_Con_Lai</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Ma_MH" DataSetColumn="Ma_MH" />
+              <Mapping SourceColumn="Ma_HK" DataSetColumn="Ma_HK" />
+              <Mapping SourceColumn="Namhoc" DataSetColumn="Namhoc" />
+              <Mapping SourceColumn="SoGioConLai" DataSetColumn="SoGioConLai" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+          <TableAdapter BaseClass="System.ComponentModel.Component" DataAccessorModifier="AutoLayout, AnsiClass, Class, Public" DataAccessorName="So_Buoi_VangTableAdapter" GeneratorDataComponentClassName="So_Buoi_VangTableAdapter" Name="So_Buoi_Vang" UserDataComponentName="So_Buoi_VangTableAdapter">
+            <MainSource>
+              <DbSource ConnectionRef="onThiTH2ConnectionString (Settings)" DbObjectName="onThiTH2.dbo.So_Buoi_Vang" DbObjectType="View" FillMethodModifier="Public" FillMethodName="Fill" GenerateMethods="Both" GenerateShortCommands="false" GeneratorGetMethodName="GetData" GeneratorSourceName="Fill" GetMethodModifier="Public" GetMethodName="GetData" QueryType="Rowset" ScalarCallRetval="System.Object, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" UseOptimisticConcurrency="true" UserGetMethodName="GetData" UserSourceName="Fill">
+                <SelectCommand>
+                  <DbCommand CommandType="Text" ModifiedByUser="false">
+                    <CommandText>SELECT Ma_MH, Ma_HK, Ten_MH, SoBuoiVang FROM dbo.So_Buoi_Vang</CommandText>
+                    <Parameters />
+                  </DbCommand>
+                </SelectCommand>
+              </DbSource>
+            </MainSource>
+            <Mappings>
+              <Mapping SourceColumn="Ma_MH" DataSetColumn="Ma_MH" />
+              <Mapping SourceColumn="Ma_HK" DataSetColumn="Ma_HK" />
+              <Mapping SourceColumn="Ten_MH" DataSetColumn="Ten_MH" />
+              <Mapping SourceColumn="SoBuoiVang" DataSetColumn="SoBuoiVang" />
+            </Mappings>
+            <Sources />
+          </TableAdapter>
+        </Tables>
+        <Sources />
+      </DataSource>
+    </xs:appinfo>
+  </xs:annotation>
+  <xs:element name="DataSet1" msdata:IsDataSet="true" msdata:UseCurrentLocale="true" msprop:Generator_UserDSName="DataSet1" msprop:EnableTableAdapterManager="true" msprop:Generator_DataSetName="DataSet1">
+    <xs:complexType>
+      <xs:choice minOccurs="0" maxOccurs="unbounded">
+        <xs:element name="MH_KetThuc" msprop:Generator_RowEvHandlerName="MH_KetThucRowChangeEventHandler" msprop:Generator_RowDeletedName="MH_KetThucRowDeleted" msprop:Generator_RowDeletingName="MH_KetThucRowDeleting" msprop:Generator_RowEvArgName="MH_KetThucRowChangeEvent" msprop:Generator_TablePropName="MH_KetThuc" msprop:Generator_RowChangedName="MH_KetThucRowChanged" msprop:Generator_RowChangingName="MH_KetThucRowChanging" msprop:Generator_TableClassName="MH_KetThucDataTable" msprop:Generator_RowClassName="MH_KetThucRow" msprop:Generator_TableVarName="tableMH_KetThuc" msprop:Generator_UserTableName="MH_KetThuc">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ma_MH" msprop:Generator_ColumnPropNameInRow="Ma_MH" msprop:Generator_ColumnPropNameInTable="Ma_MHColumn" msprop:Generator_ColumnVarNameInTable="columnMa_MH" msprop:Generator_UserColumnName="Ma_MH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ma_HK" msprop:Generator_ColumnPropNameInRow="Ma_HK" msprop:Generator_ColumnPropNameInTable="Ma_HKColumn" msprop:Generator_ColumnVarNameInTable="columnMa_HK" msprop:Generator_UserColumnName="Ma_HK">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Namhoc" msprop:Generator_ColumnPropNameInRow="Namhoc" msprop:Generator_ColumnPropNameInTable="NamhocColumn" msprop:Generator_ColumnVarNameInTable="columnNamhoc" msprop:Generator_UserColumnName="Namhoc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ten_MH" msprop:Generator_ColumnPropNameInRow="Ten_MH" msprop:Generator_ColumnPropNameInTable="Ten_MHColumn" msprop:Generator_ColumnVarNameInTable="columnTen_MH" msprop:Generator_UserColumnName="Ten_MH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="So_Gio_Con_Lai" msprop:Generator_RowEvHandlerName="So_Gio_Con_LaiRowChangeEventHandler" msprop:Generator_RowDeletedName="So_Gio_Con_LaiRowDeleted" msprop:Generator_RowDeletingName="So_Gio_Con_LaiRowDeleting" msprop:Generator_RowEvArgName="So_Gio_Con_LaiRowChangeEvent" msprop:Generator_TablePropName="So_Gio_Con_Lai" msprop:Generator_RowChangedName="So_Gio_Con_LaiRowChanged" msprop:Generator_RowChangingName="So_Gio_Con_LaiRowChanging" msprop:Generator_TableClassName="So_Gio_Con_LaiDataTable" msprop:Generator_RowClassName="So_Gio_Con_LaiRow" msprop:Generator_TableVarName="tableSo_Gio_Con_Lai" msprop:Generator_UserTableName="So_Gio_Con_Lai">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ma_MH" msprop:Generator_ColumnPropNameInRow="Ma_MH" msprop:Generator_ColumnPropNameInTable="Ma_MHColumn" msprop:Generator_ColumnVarNameInTable="columnMa_MH" msprop:Generator_UserColumnName="Ma_MH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ma_HK" msprop:Generator_ColumnPropNameInRow="Ma_HK" msprop:Generator_ColumnPropNameInTable="Ma_HKColumn" msprop:Generator_ColumnVarNameInTable="columnMa_HK" msprop:Generator_UserColumnName="Ma_HK">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Namhoc" msprop:Generator_ColumnPropNameInRow="Namhoc" msprop:Generator_ColumnPropNameInTable="NamhocColumn" msprop:Generator_ColumnVarNameInTable="columnNamhoc" msprop:Generator_UserColumnName="Namhoc" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SoGioConLai" msdata:ReadOnly="true" msprop:Generator_ColumnPropNameInRow="SoGioConLai" msprop:Generator_ColumnPropNameInTable="SoGioConLaiColumn" msprop:Generator_ColumnVarNameInTable="columnSoGioConLai" msprop:Generator_UserColumnName="SoGioConLai" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="So_Buoi_Vang" msprop:Generator_RowEvHandlerName="So_Buoi_VangRowChangeEventHandler" msprop:Generator_RowDeletedName="So_Buoi_VangRowDeleted" msprop:Generator_RowDeletingName="So_Buoi_VangRowDeleting" msprop:Generator_RowEvArgName="So_Buoi_VangRowChangeEvent" msprop:Generator_TablePropName="So_Buoi_Vang" msprop:Generator_RowChangedName="So_Buoi_VangRowChanged" msprop:Generator_RowChangingName="So_Buoi_VangRowChanging" msprop:Generator_TableClassName="So_Buoi_VangDataTable" msprop:Generator_RowClassName="So_Buoi_VangRow" msprop:Generator_TableVarName="tableSo_Buoi_Vang" msprop:Generator_UserTableName="So_Buoi_Vang">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="Ma_MH" msprop:Generator_ColumnPropNameInRow="Ma_MH" msprop:Generator_ColumnPropNameInTable="Ma_MHColumn" msprop:Generator_ColumnVarNameInTable="columnMa_MH" msprop:Generator_UserColumnName="Ma_MH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ma_HK" msprop:Generator_ColumnPropNameInRow="Ma_HK" msprop:Generator_ColumnPropNameInTable="Ma_HKColumn" msprop:Generator_ColumnVarNameInTable="columnMa_HK" msprop:Generator_UserColumnName="Ma_HK">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="30" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="Ten_MH" msprop:Generator_ColumnPropNameInRow="Ten_MH" msprop:Generator_ColumnPropNameInTable="Ten_MHColumn" msprop:Generator_ColumnVarNameInTable="columnTen_MH" msprop:Generator_UserColumnName="Ten_MH" minOccurs="0">
+                <xs:simpleType>
+                  <xs:restriction base="xs:string">
+                    <xs:maxLength value="20" />
+                  </xs:restriction>
+                </xs:simpleType>
+              </xs:element>
+              <xs:element name="SoBuoiVang" msprop:Generator_ColumnPropNameInRow="SoBuoiVang" msprop:Generator_ColumnPropNameInTable="SoBuoiVangColumn" msprop:Generator_ColumnVarNameInTable="columnSoBuoiVang" msprop:Generator_UserColumnName="SoBuoiVang" type="xs:int" minOccurs="0" />
+            </xs:sequence>
+          </xs:complexType>
+        </xs:element>
+      </xs:choice>
+    </xs:complexType>
+    <xs:unique name="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:MH_KetThuc" />
+      <xs:field xpath="mstns:Ma_HK" />
+    </xs:unique>
+    <xs:unique name="So_Gio_Con_Lai_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:So_Gio_Con_Lai" />
+      <xs:field xpath="mstns:Ma_HK" />
+    </xs:unique>
+    <xs:unique name="So_Buoi_Vang_Constraint1" msdata:ConstraintName="Constraint1" msdata:PrimaryKey="true">
+      <xs:selector xpath=".//mstns:So_Buoi_Vang" />
+      <xs:field xpath="mstns:Ma_HK" />
+    </xs:unique>
+  </xs:element>
+</xs:schema>

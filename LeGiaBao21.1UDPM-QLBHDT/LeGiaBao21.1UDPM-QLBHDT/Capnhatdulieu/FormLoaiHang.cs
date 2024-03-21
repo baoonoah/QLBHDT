@@ -53,7 +53,7 @@ namespace LeGiaBao21._1UDPM_QLBHDT.Capnhatdulieu
             }
             if (dkienrong())
             {
-                MessageBox.Show(dkienthieutt(), "Thông báo"); ;
+                MessageBox.Show(dkienthieutt(), "Thông báo"); ; 
                 return;
             }
             try

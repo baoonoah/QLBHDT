@@ -1,0 +1,82 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="onThiTH2" Class="de2DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=LAPTOP-O9SMJSLO\SQLEXPRESS;Initial Catalog=onThiTH2;Integrated Security=True;Trust Server Certificate=True" SettingsObjectName="thi_de2.Properties.Settings" SettingsPropertyName="onThiTH2ConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.GIANG_VIEN" Member="GIANG_VIENs">
+    <Type Name="GIANG_VIEN">
+      <Column Name="Ma_GV" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten_GV" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Sdt_GV" Type="System.String" DbType="NVarChar(15)" CanBeNull="true" />
+      <Column Name="Email_GV" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="GIANG_VIEN_SO_DAU_BAI" Member="SO_DAU_BAIs" ThisKey="Ma_GV" OtherKey="Ma_GV" Type="SO_DAU_BAI" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SO_DAU_BAI" Member="SO_DAU_BAIs">
+    <Type Name="SO_DAU_BAI">
+      <Column Name="ID_BH" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Ma_GV" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Ma_HK" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Ma_MH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Ma_LOP" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Thoigian_batdau" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Thoigian_ketthuc" Type="System.DateTime" DbType="DateTime NOT NULL" CanBeNull="false" />
+      <Column Name="Soluong_vang" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Noidung_BH" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="DG_Hoctap" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="DG_Renluyen" Type="System.String" DbType="NVarChar(40)" CanBeNull="true" />
+      <Column Name="Sogio" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="SO_DAU_BAI_QUATRINH_HOCTAP" Member="QUATRINH_HOCTAPs" ThisKey="ID_BH" OtherKey="Ngay_lenlop" Type="QUATRINH_HOCTAP" />
+      <Association Name="GIANG_VIEN_SO_DAU_BAI" Member="GIANG_VIEN" ThisKey="Ma_GV" OtherKey="Ma_GV" Type="GIANG_VIEN" IsForeignKey="true" />
+      <Association Name="HOC_KY_SO_DAU_BAI" Member="HOC_KY" ThisKey="Ma_HK" OtherKey="Ma_HK" Type="HOC_KY" IsForeignKey="true" />
+      <Association Name="LOP_SO_DAU_BAI" Member="LOP" ThisKey="Ma_LOP" OtherKey="Ma_LOP" Type="LOP" IsForeignKey="true" />
+      <Association Name="MON_HOC_SO_DAU_BAI" Member="MON_HOC" ThisKey="Ma_MH" OtherKey="Ma_MH" Type="MON_HOC" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.HOC_KY" Member="HOC_Kies">
+    <Type Name="HOC_KY">
+      <Column Name="Ma_HK" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Namhoc" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Hocky" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="HOC_KY_SO_DAU_BAI" Member="SO_DAU_BAIs" ThisKey="Ma_HK" OtherKey="Ma_HK" Type="SO_DAU_BAI" />
+      <Association Name="HOC_KY_QUATRINH_HOCTAP" Member="QUATRINH_HOCTAPs" ThisKey="Ma_HK" OtherKey="Ma_HK" Type="QUATRINH_HOCTAP" />
+    </Type>
+  </Table>
+  <Table Name="dbo.LOP" Member="LOPs">
+    <Type Name="LOP">
+      <Column Name="Ma_LOP" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten_LOP" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Association Name="LOP_SO_DAU_BAI" Member="SO_DAU_BAIs" ThisKey="Ma_LOP" OtherKey="Ma_LOP" Type="SO_DAU_BAI" />
+      <Association Name="LOP_SINH_VIEN" Member="SINH_VIENs" ThisKey="Ma_LOP" OtherKey="Ma_LOP" Type="SINH_VIEN" />
+    </Type>
+  </Table>
+  <Table Name="dbo.MON_HOC" Member="MON_HOCs">
+    <Type Name="MON_HOC">
+      <Column Name="Ma_MH" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten_MH" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="So_TC" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Sotiet" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="MON_HOC_SO_DAU_BAI" Member="SO_DAU_BAIs" ThisKey="Ma_MH" OtherKey="Ma_MH" Type="SO_DAU_BAI" />
+      <Association Name="MON_HOC_QUATRINH_HOCTAP" Member="QUATRINH_HOCTAPs" ThisKey="Ma_MH" OtherKey="Ma_MH" Type="QUATRINH_HOCTAP" />
+    </Type>
+  </Table>
+  <Table Name="dbo.QUATRINH_HOCTAP" Member="QUATRINH_HOCTAPs">
+    <Type Name="QUATRINH_HOCTAP">
+      <Column Name="Ma_SV" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ma_HK" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Ma_MH" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Column Name="Ngay_lenlop" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="Thamgia_BH" Type="System.Boolean" DbType="Bit" CanBeNull="true" />
+      <Association Name="HOC_KY_QUATRINH_HOCTAP" Member="HOC_KY" ThisKey="Ma_HK" OtherKey="Ma_HK" Type="HOC_KY" IsForeignKey="true" />
+      <Association Name="MON_HOC_QUATRINH_HOCTAP" Member="MON_HOC" ThisKey="Ma_MH" OtherKey="Ma_MH" Type="MON_HOC" IsForeignKey="true" />
+      <Association Name="SO_DAU_BAI_QUATRINH_HOCTAP" Member="SO_DAU_BAI" ThisKey="Ngay_lenlop" OtherKey="ID_BH" Type="SO_DAU_BAI" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.SINH_VIEN" Member="SINH_VIENs">
+    <Type Name="SINH_VIEN">
+      <Column Name="Ma_SV" Type="System.String" DbType="NVarChar(30) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="Ten_SV" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Sdt_SV" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Email" Type="System.String" DbType="NVarChar(20)" CanBeNull="true" />
+      <Column Name="Ma_LOP" Type="System.String" DbType="NVarChar(30)" CanBeNull="true" />
+      <Association Name="LOP_SINH_VIEN" Member="LOP" ThisKey="Ma_LOP" OtherKey="Ma_LOP" Type="LOP" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
